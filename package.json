@@ -1,0 +1,19 @@
+{
+  "name": "laya-social-scout",
+  "version": "1.0.0",
+  "private": true,
+  "description": "海外社媒高流量交友软广采集对标工具 —— 支持 IG / Facebook / X / Threads 四平台采集、视觉大模型防废片审核、软广复刻指南生成与飞书实时分表归档同步",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "dev": "node main.js",
+    "test": "node scripts/self_test.js"
+  },
+  "engines": {
+    "node": "20.x"
+  },
+  "dependencies": {},
+  "optionalDependencies": {
+    "@vercel/blob": "^0.23.0"
+  }
+}

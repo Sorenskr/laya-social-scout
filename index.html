@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1440, initial-scale=1.0" />
+  <title>交友软广抓视频 & 案例拆解工作台</title>
+  <link rel="stylesheet" href="./style.css?v=2.0.0" />
+</head>
+<body>
+  <!-- 顶部红色紧急提醒条 -->
+  <div id="top-alert-container" class="top-alert-container hidden"></div>
+
+  <!-- 顶部跨电脑连接状态栏（无论在本机还是在 GitHub 网页打开都能看清当前状态） -->
+  <div class="top-connection-bar">
+    <div class="conn-left">
+      <span id="conn-dot" class="conn-dot"></span>
+      <strong id="conn-mode-title">正在连接后台…</strong>
+      <span id="conn-mode-desc" class="conn-desc"></span>
+    </div>
+    <div class="conn-right">
+      <button id="btn-set-backend-url" class="btn btn-ghost btn-xs hidden">🔗 填写主力电脑后台地址</button>
+      <button id="btn-open-clone-help" class="btn btn-ghost btn-xs">💻 换别的电脑怎么也用来抓？</button>
+      <button id="btn-top-push-github" class="btn btn-success btn-xs">☁️ 一键同步到 GitHub 网页（让别的电脑也能看）</button>
+    </div>
+  </div>
+
+  <div class="app-layout">
+    <!-- 左侧 6 大直观中文菜单 -->
+    <aside class="sidebar">
+      <div class="brand-header">
+        <div class="brand-logo">🎯</div>
+        <div class="brand-titles">
+          <h1>交友软广雷达</h1>
+          <span id="sidebar-brand-tag">Laya 运营抓视频工作台</span>
+        </div>
+      </div>
+
+      <nav class="side-nav">
+        <button class="nav-btn active" data-view="dashboard">
+          <span class="nav-icon">📊</span>
+          <span>今日抓取总览</span>
+        </button>
+        <button class="nav-btn" data-view="results">
+          <span class="nav-icon">🎬</span>
+          <span>抓到的好视频</span>
+          <span id="nav-badge-samples" class="nav-badge">0</span>
+        </button>
+        <button class="nav-btn" data-view="analyzer">
+          <span class="nav-icon">🔍</span>
+          <span>丢链接/传图拆案例</span>
+          <span id="nav-badge-cases" class="nav-badge muted">0</span>
+        </button>
+        <button class="nav-btn" data-view="keywords">
+          <span class="nav-icon">📝</span>
+          <span>搜索词管理</span>
+          <span id="nav-badge-keywords" class="nav-badge muted">0</span>
+        </button>
+        <button class="nav-btn" data-view="trash">
+          <span class="nav-icon">🗑️</span>
+          <span>踢掉的废片 & 记录</span>
+          <span id="nav-badge-trash" class="nav-badge warn">0</span>
+        </button>
+        <button class="nav-btn" data-view="settings">
+          <span class="nav-icon">⚙️</span>
+          <span>同步与连接设置</span>
+        </button>
+      </nav>
+
+      <!-- 左下角机器运行小状态盒 -->
+      <div class="sidebar-status-box">
+        <div class="status-row">
+          <span>防废片看图</span>
+          <strong id="side-vision-label" class="text-ok">运行中</strong>
+        </div>
+        <div class="status-row">
+          <span>抓高清封面</span>
+          <strong id="side-ytdlp-label">检测中</strong>
+        </div>
+        <div class="status-row">
+          <span>飞书同步</span>
+          <strong id="side-feishu-label">待绑定</strong>
+        </div>
+        <div class="status-row">
+          <span>每天自动抓</span>
+          <strong id="side-cron-label">08:00 / 17:30</strong>
+        </div>
+        <button id="btn-open-crawl-modal" class="btn btn-primary btn-block mt-8">
+          ⚡ 选日期抓新视频
+        </button>
+      </div>
+    </aside>
+
+    <!-- 右侧主区域 -->
+    <div class="main-area">
+      <!-- 常驻顶部筛选栏（总览和好视频页用） -->
+      <header id="sticky-filter-bar" class="sticky-filter-bar">
+        <div class="filter-row">
+          <div class="filter-group">
+            <label class="filter-label">看哪个平台：</label>
+            <button id="btn-plat-all" class="chip active">全部5个</button>
+            <button class="chip plat-chip active" data-plat="instagram">Instagram</button>
+            <button class="chip plat-chip active" data-plat="facebook">Facebook</button>
+            <button class="chip plat-chip active" data-plat="x">X (Twitter)</button>
+            <button class="chip plat-chip active" data-plat="threads">Threads</button>
+            <button class="chip plat-chip active" data-plat="tiktok">TikTok</button>
+          </div>
+
+          <div class="filter-divider"></div>
+
+          <div class="filter-group">
+            <label class="filter-label">内容归属：</label>
+            <select id="flt-category" class="form-select compact">
+              <option value="all">全部好视频</option>
+              <option value="brand">提到我方品牌的</option>
+              <option value="competitor">提到竞品的</option>
+              <option value="generic">没提竞品可直接植入的</option>
+            </select>
+          </div>
+
+          <div class="filter-divider"></div>
+
+          <div class="filter-group">
+            <label class="filter-label">发布时间：</label>
+            <div class="btn-seg" id="flt-time-seg">
+              <button class="seg-btn active" data-time="all">全部</button>
+              <button class="seg-btn" data-time="day">选某一天</button>
+              <button class="seg-btn" data-time="7d">近7天</button>
+              <button class="seg-btn" data-time="30d">近30天</button>
+              <button class="seg-btn" data-time="custom">自己选起止</button>
+            </div>
+            <input type="date" id="flt-specific-date" class="form-input compact hidden" />
+            <span id="flt-custom-range" class="inline-dates hidden">
+              <input type="date" id="flt-start-date" class="form-input compact" />
+              <span>到</span>
+              <input type="date" id="flt-end-date" class="form-input compact" />
+            </span>
+          </div>
+        </div>
+
+        <div class="filter-row second-line">
+          <div class="filter-group">
+            <label class="filter-label">内容形态与类型：</label>
+            <select id="flt-content-type" class="form-select compact">
+              <option value="all">全部类型（视频+图文+文字）</option>
+              <option value="media:video">🎬 只看视频</option>
+              <option value="media:image">🖼️ 只看图文/图片</option>
+              <option value="media:text">📝 只看纯文字热帖</option>
+              <option value="聊天录屏类">聊天录屏类</option>
+              <option value="素材混剪类">素材混剪类</option>
+              <option value="图文聊天/配图类">图文聊天/配图类</option>
+              <option value="纯文字热帖/串文类">纯文字热帖/串文类</option>
+              <option value="其他可植入泛内容">其他可植入泛内容</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label class="filter-label">最少点赞：</label>
+            <input type="number" id="flt-min-likes" class="form-input compact w-90" placeholder="如 1000" min="0" step="500" />
+          </div>
+
+          <div class="filter-group">
+            <label class="filter-label">最少播放：</label>
+            <input type="number" id="flt-min-plays" class="form-input compact w-95" placeholder="如 10000" min="0" step="1000" />
+          </div>
+
+          <div class="filter-group">
+            <label class="filter-label">好不好抄：</label>
+            <select id="flt-max-diff" class="form-select compact">
+              <option value="0">不限</option>
+              <option value="1">1星（超级好抄）</option>
+              <option value="2">2星以内（简单）</option>
+              <option value="3">3星以内（中等）</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label class="filter-label">用过没：</label>
+            <select id="flt-used-state" class="form-select compact">
+              <option value="all">全部</option>
+              <option value="unused">只看没用过的</option>
+              <option value="favorited">只看我收藏的</option>
+              <option value="used">只看已经用过的</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label class="filter-label">排在前面：</label>
+            <select id="flt-sort" class="form-select compact">
+              <option value="traffic_desc" selected>🔥 综合流量排行（点赞+浏览+评论）</option>
+              <option value="likes_desc">👍 点赞最多排最前</option>
+              <option value="plays_desc">▶️ 浏览/播放最多排最前</option>
+              <option value="comments_desc">💬 评论最多排最前</option>
+              <option value="laya_viral">🌟 Laya优先 + 高赞高浏览排最前</option>
+              <option value="score_time">💯 质量打分最高 + 最新</option>
+              <option value="time_desc">📅 发布时间最新</option>
+              <option value="difficulty_asc">⭐ 最容易照抄的排最前</option>
+            </select>
+          </div>
+
+          <div class="filter-group search-grow">
+            <input type="text" id="flt-q" class="form-input compact full-w" placeholder="搜标题、文案、品牌词、音乐名…" />
+            <button id="btn-apply-filter" class="btn btn-primary btn-sm">搜一下</button>
+            <button id="btn-reset-filter" class="btn btn-ghost btn-sm">清空条件</button>
+          </div>
+        </div>
+      </header>
+
+      <!-- 实时抓取进度大横幅（抓取时自动展开，实时看进展） -->
+      <div id="live-crawl-panel" class="live-crawl-panel hidden">
+        <div class="live-crawl-head">
+          <div class="inline-btns">
+            <span class="spinner"></span>
+            <strong id="live-crawl-title">正在抓视频中…</strong>
+            <span id="live-browser-channel" class="rate-pill">通道准备中</span>
+            <span id="live-crawl-range" class="rate-pill"></span>
+          </div>
+          <strong id="live-crawl-pct">0%</strong>
+        </div>
+        <div class="progress-track">
+          <div id="live-crawl-bar" class="progress-fill" style="width:0%"></div>
+        </div>
+        <div class="live-stats-row">
+          <div class="live-stat-pill"><span>👀 刚刚看过</span><strong id="live-cnt-fetched">0</strong></div>
+          <div class="live-stat-pill good"><span>✅ 已收录好片</span><strong id="live-cnt-qualified">0</strong></div>
+          <div class="live-stat-pill warn"><span>🗑️ 自动拦掉废片</span><strong id="live-cnt-trash">0</strong></div>
+          <div class="live-stat-pill sync"><span>📤 已实时写进飞书</span><strong id="live-cnt-feishu">0</strong></div>
+        </div>
+        <div id="live-recent-covers" class="live-covers-strip hidden"></div>
+        <div id="live-crawl-logs" class="live-crawl-logs"></div>
+      </div>
+
+      <!-- ==================== 视图 1：今日抓取总览 ==================== -->
+      <section id="view-dashboard" class="view-section active">
+        <div class="section-head">
+          <div>
+            <h2>今日抓取总览 & 实时进度看板</h2>
+            <p class="sub-desc">一眼看清抓了多少条、留下了多少条能直接照抄的视频、踢掉了多少露脸/游戏废片，以及正在抓的实时进展</p>
+          </div>
+          <div class="quick-actions">
+            <button id="qa-today-viral" class="btn btn-accent">🔥 直接看今天最火的爆款</button>
+            <button id="qa-manual-crawl" class="btn btn-primary">⚡ 选日期抓新视频</button>
+            <button id="qa-sync-feishu" class="btn btn-success">📤 把好视频发到飞书表格</button>
+          </div>
+        </div>
+
+        <!-- 防封静默浏览器通道（免买额外 AI / 用你自己的指纹浏览器悄悄抓） -->
+        <div class="fp-browser-card">
+          <div class="fp-browser-head">
+            <div>
+              <strong>🛡️ 防封静默浏览器通道（用你自己的指纹浏览器 / 0元专用防封窗口悄悄翻网页，稳防封号）</strong>
+              <div class="muted-small" id="fp-quota-label">正在检测电脑上有没有打开 比特浏览器 / AdsPower / 0元防封独立窗口…</div>
+            </div>
+            <span id="fp-browser-status" class="rate-pill">检测中…</span>
+          </div>
+          <div class="fp-browser-controls">
+            <select id="fp-profile-select" class="form-select">
+              <option value="">正在读取指纹浏览器环境列表…</option>
+            </select>
+            <button id="btn-fp-refresh" class="btn btn-ghost btn-sm">🔄 重新检测环境</button>
+            <button id="btn-fp-open-profile" class="btn btn-primary btn-sm">🪟 打开选中的指纹环境</button>
+            <button id="btn-fp-launch-free" class="btn btn-success btn-sm">🛡️ 0元启动专用防封窗口（Edge/Chrome）</button>
+          </div>
+        </div>
+
+        <div class="metrics-grid-3">
+          <div class="stat-card">
+            <div class="stat-card-head">
+              <span class="stat-badge">📅 今天抓的数据</span>
+              <span id="stat-day-rate" class="rate-pill">留存率 --%</span>
+            </div>
+            <div class="stat-numbers-3">
+              <div><small>一共看了</small><strong id="stat-day-total">0</strong></div>
+              <div><small>留下好视频</small><strong id="stat-day-qual" class="text-ok">0</strong></div>
+              <div><small>踢掉废片</small><strong id="stat-day-trash" class="text-danger">0</strong></div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-card-head">
+              <span class="stat-badge">📆 这周抓的数据</span>
+              <span id="stat-week-rate" class="rate-pill">留存率 --%</span>
+            </div>
+            <div class="stat-numbers-3">
+              <div><small>一共看了</small><strong id="stat-week-total">0</strong></div>
+              <div><small>留下好视频</small><strong id="stat-week-qual" class="text-ok">0</strong></div>
+              <div><small>踢掉废片</small><strong id="stat-week-trash" class="text-danger">0</strong></div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-card-head">
+              <span class="stat-badge">🗓️ 这个月抓的数据</span>
+              <span id="stat-month-rate" class="rate-pill">留存率 --%</span>
+            </div>
+            <div class="stat-numbers-3">
+              <div><small>一共看了</small><strong id="stat-month-total">0</strong></div>
+              <div><small>留下好视频</small><strong id="stat-month-qual" class="text-ok">0</strong></div>
+              <div><small>踢掉废片</small><strong id="stat-month-trash" class="text-danger">0</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-mid-grid">
+          <div class="panel-card">
+            <div class="panel-title-row">
+              <h3>四个平台抓到的好视频比例</h3>
+              <span class="badge-highlight">过万赞爆款共：<strong id="dash-total-viral">0</strong> 条</span>
+            </div>
+            <div id="platform-ratio-list" class="platform-ratio-list"></div>
+          </div>
+
+          <div class="panel-card">
+            <div class="panel-title-row">
+              <h3>最新抓取实况黑板（看看刚才后台干了啥）</h3>
+              <button class="btn btn-ghost btn-xs" data-goto="results">去看大封面列表 →</button>
+            </div>
+            <div id="dash-live-blackboard" class="live-blackboard"></div>
+          </div>
+        </div>
+
+        <div class="dash-mid-grid">
+          <div class="panel-card">
+            <div class="panel-title-row">
+              <h3>飞书表格同步 & 代理线路情况</h3>
+              <button class="btn btn-ghost btn-xs" data-goto="settings">去设置里修改 →</button>
+            </div>
+            <div class="health-grid">
+              <div class="health-item">
+                <div class="health-label">飞书表格同步状态</div>
+                <div id="dash-feishu-state" class="health-value">未绑定</div>
+                <div id="dash-feishu-sub" class="health-sub">绑定后新抓到的视频 1 分钟内自动写进表格</div>
+              </div>
+              <div class="health-item">
+                <div class="health-label">海外代理 IP 线路可用率</div>
+                <div id="dash-proxy-rate" class="health-value">--</div>
+                <div id="dash-proxy-sub" class="health-sub">坏了的线路会自动踢掉并换新线路</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel-card">
+            <div class="panel-title-row">
+              <h3>最近遇到拦截/限流自动处理记录（前10条）</h3>
+              <button class="btn btn-ghost btn-xs" data-goto="trash">看完整记录 →</button>
+            </div>
+            <div class="table-wrap max-h-220">
+              <table class="data-table compact-table">
+                <thead>
+                  <tr>
+                    <th>时间</th>
+                    <th>平台</th>
+                    <th>情况说明（自动换IP换词处理）</th>
+                  </tr>
+                </thead>
+                <tbody id="dash-recent-failures"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 视图 2：抓到的好视频（带大封面列表） ==================== -->
+      <section id="view-results" class="view-section">
+        <div class="section-head">
+          <div>
+            <h2>抓到的好视频（高清大封面卡片）<span id="results-count-label" class="muted-small">(共 0 条)</span></h2>
+            <p class="sub-desc">每条左边都有大图封面（点封面可放大），不用点开原视频就知道哪个对哪个；全部踢掉了真人露脸和游戏废片</p>
+          </div>
+          <div class="quick-actions">
+            <button id="btn-results-sync-feishu" class="btn btn-success">📤 把这些视频同步到飞书</button>
+          </div>
+        </div>
+
+        <div id="samples-card-grid" class="samples-card-grid"></div>
+      </section>
+
+      <!-- ==================== 视图 3：丢链接 / 传截图拆解案例 ==================== -->
+      <section id="view-analyzer" class="view-section">
+        <div class="section-head">
+          <div>
+            <h2>丢链接 / 传截图，帮你拆解爆款案例并写好文案</h2>
+            <p class="sub-desc">看到一条不错的外网视频或朋友发来的截图，丢进来就能帮你提取封面、分析它为什么火、有没有踩雷坑，并直接写出 3 套可照抄脚本</p>
+          </div>
+        </div>
+
+        <div class="analyzer-layout">
+          <div class="panel-card">
+            <h3>第 1 步：放进你想拆解的链接或图片</h3>
+            <div class="form-stack mt-10">
+              <div class="form-field">
+                <label>视频或帖子链接（Instagram / Facebook / X / Threads / TikTok 都能直接贴）：</label>
+                <input type="text" id="an-url-input" class="form-input" placeholder="把链接粘贴到这里，比如 https://www.instagram.com/reel/..." />
+              </div>
+
+              <div class="form-field">
+                <label>上传截图，或者直接按 Ctrl+V 把微信/手机截图粘到下面框里（最多 4 张）：</label>
+                <div id="an-dropzone" class="upload-dropzone" tabindex="0">
+                  <input type="file" id="an-file-input" accept="image/*" multiple class="hidden" />
+                  <div class="dropzone-hint">
+                    <div style="font-size:28px;margin-bottom:6px;">🖼️</div>
+                    <strong>点击这里选电脑里的截图，或者直接把图片拖进来，或者鼠标点一下这里按 Ctrl+V 粘贴截图</strong>
+                    <p class="muted-small" style="margin:4px 0 0;">支持多张截图一起分析，系统会自动把第一张存成案例大封面</p>
+                  </div>
+                  <div id="an-preview-strip" class="preview-strip"></div>
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label>补充一句你想问的重点（选填）：</label>
+                <textarea id="an-note-input" class="form-textarea" rows="3" placeholder="例如：这条聊天记录播放量很高，帮我看看第几秒最适合自然带出我们的 Laya 语音交友App，最好改成偏台湾男生的口吻"></textarea>
+              </div>
+
+              <button id="btn-run-case-analyze" class="btn btn-primary btn-lg">
+                ✨ 开始帮我拆解这个案例
+              </button>
+            </div>
+          </div>
+
+          <div class="panel-card">
+            <div class="panel-title-row">
+              <h3>第 2 步：案例拆解结果与直接能抄的文案</h3>
+              <span id="an-engine-tag" class="rate-pill">等待提交</span>
+            </div>
+            <div id="an-result-box" class="an-result-box">
+              <div class="empty-tip">
+                <div style="font-size:36px;margin-bottom:8px;">💡</div>
+                <p>在左边贴一个链接或者传几张图点「开始帮我拆解」，结果会立刻显示在这里！</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-card mt-14">
+          <div class="panel-title-row">
+            <h3>以前拆解过的案例库（带大封面，换电脑在 GitHub 也能直接看）</h3>
+          </div>
+          <div id="an-history-grid" class="case-history-grid"></div>
+        </div>
+      </section>
+
+      <!-- ==================== 视图 4：搜索词管理 ==================== -->
+      <section id="view-keywords" class="view-section">
+        <div class="section-head">
+          <div>
+            <h2>搜索词管理（不用改代码，这里添删立刻生效）</h2>
+            <p class="sub-desc">分成三类词库管理，还可以一键导入我们配好的高转化热词包，或者贴个 GitHub 词单链接自动拉取</p>
+          </div>
+          <div class="quick-actions">
+            <button id="btn-kw-crawl-enabled" class="btn btn-success">🚀 立即用当前开启的词开抓</button>
+            <button id="btn-kw-pack-open" class="btn btn-accent">🎁 一键导入现成热词包 / 从GitHub拉词</button>
+            <button id="btn-kw-batch-open" class="btn btn-primary">📋 批量粘贴词单</button>
+            <button id="btn-kw-export" class="btn btn-ghost">⬇️ 导出词库备份</button>
+          </div>
+        </div>
+
+        <div class="kw-bucket-tabs">
+          <button class="kw-tab active" data-bucket="brand">
+            ① 我方品牌词（监控自己） <span id="kw-cnt-brand" class="pill-num">0</span>
+          </button>
+          <button class="kw-tab" data-bucket="competitor">
+            ② 竞品词（监控别人家App） <span id="kw-cnt-competitor" class="pill-num">0</span>
+          </button>
+          <button class="kw-tab" data-bucket="generic">
+            ③ 泛流量词（不提竞品直接套壳） <span id="kw-cnt-generic" class="pill-num">0</span>
+          </button>
+        </div>
+
+        <div class="panel-card">
+          <div class="kw-add-bar">
+            <input type="text" id="kw-new-word" class="form-input" placeholder="输入想搜的词（如：深夜连麦、Goodnight语音、Laya）" />
+            <input type="text" id="kw-new-group" class="form-input w-180" placeholder="分类标签（如：聊天记录类）" list="kw-group-suggestions" />
+            <datalist id="kw-group-suggestions">
+              <option value="聊天记录类"></option>
+              <option value="暧昧剧情类"></option>
+              <option value="脱单吐槽类"></option>
+              <option value="语音连麦类"></option>
+              <option value="海外语音交友"></option>
+              <option value="品牌主词"></option>
+            </datalist>
+            <input type="text" id="kw-new-synonyms" class="form-input" placeholder="搜不到时自动换啥词重试（逗号隔开，如：处CP聊天,女生连麦）" />
+            <button id="btn-kw-add" class="btn btn-primary">＋ 添加搜索词</button>
+          </div>
+
+          <div id="kw-group-filter-bar" class="kw-group-filter-bar"></div>
+
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th style="width:90px">开关</th>
+                  <th style="width:200px">搜索词</th>
+                  <th style="width:160px">分类标签</th>
+                  <th>搜不到/被限流时自动替换的备选词</th>
+                  <th style="width:120px">操作</th>
+                </tr>
+              </thead>
+              <tbody id="kw-table-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 视图 5：踢掉的废片 & 操作记录 ==================== -->
+      <section id="view-trash" class="view-section">
+        <div class="section-head">
+          <div>
+            <h2>被踢掉的废片回收站 · 黑名单 · 全部记录</h2>
+            <p class="sub-desc">游戏录屏、直白硬广、涉政低俗或无关跑题水帖自动踢到这里；如果系统错杀了某条好内容，点一下就能救回来</p>
+          </div>
+          <div class="quick-actions">
+            <button id="btn-refresh-trash" class="btn btn-ghost">🔄 刷新一下</button>
+            <button id="btn-clear-trash" class="btn btn-danger-outline">清空废片回收站</button>
+          </div>
+        </div>
+
+        <div class="sub-tabs" id="trash-sub-tabs">
+          <button class="sub-tab active" data-sub="trash-list">🗑️ 被踢掉的废片（可救回）</button>
+          <button class="sub-tab" data-sub="blacklist-mgr">🚫 拉黑的垃圾账号和屏蔽词</button>
+          <button class="sub-tab" data-sub="ratelimit-logs">🛡️ 被限流自动换IP重试记录</button>
+          <button class="sub-tab" data-sub="op-logs">📝 大家的操作历史留痕</button>
+        </div>
+
+        <div id="sub-trash-list" class="sub-panel active panel-card">
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th style="width:110px">废片封面</th>
+                  <th style="width:95px">平台</th>
+                  <th style="width:150px">为什么被踢</th>
+                  <th>视频标题 & 具体踢掉原因</th>
+                  <th style="width:140px">发布账号</th>
+                  <th style="width:140px">操作</th>
+                </tr>
+              </thead>
+              <tbody id="trash-table-body"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="sub-blacklist-mgr" class="sub-panel panel-card hidden">
+          <div class="two-col-grid">
+            <div>
+              <h3>拉黑的账号（以后看到他发的直接踢）</h3>
+              <div class="inline-form mb-12">
+                <select id="blk-acc-plat" class="form-select compact w-120">
+                  <option value="">全部平台</option>
+                  <option value="instagram">Instagram</option>
+                  <option value="facebook">Facebook</option>
+                  <option value="x">X</option>
+                  <option value="threads">Threads</option>
+                  <option value="tiktok">TikTok</option>
+                </select>
+                <input type="text" id="blk-acc-handle" class="form-input compact" placeholder="输入要拉黑的账号名" />
+                <button id="btn-add-blk-acc" class="btn btn-primary btn-sm">加入拉黑</button>
+              </div>
+              <div id="blk-acc-list" class="tag-manage-list"></div>
+            </div>
+
+            <div>
+              <h3>屏蔽的废片词（文案里带这些词直接踢）</h3>
+              <div class="inline-form mb-12">
+                <input type="text" id="blk-kw-word" class="form-input compact" placeholder="输入想屏蔽的词" />
+                <button id="btn-add-blk-kw" class="btn btn-primary btn-sm">添加屏蔽词</button>
+              </div>
+              <div id="blk-kw-list" class="tag-manage-list"></div>
+            </div>
+          </div>
+        </div>
+
+        <div id="sub-ratelimit-logs" class="sub-panel panel-card hidden">
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th style="width:170px">发生时间</th>
+                  <th style="width:100px">平台</th>
+                  <th style="width:190px">当时用的代理线路</th>
+                  <th style="width:220px">原词 → 自动改搜的备选词</th>
+                  <th style="width:90px">重试几次</th>
+                  <th>处理结果</th>
+                </tr>
+              </thead>
+              <tbody id="ratelimit-table-body"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="sub-op-logs" class="sub-panel panel-card hidden">
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th style="width:170px">时间</th>
+                  <th style="width:120px">操作人</th>
+                  <th style="width:120px">功能板块</th>
+                  <th style="width:190px">干了什么</th>
+                  <th style="width:90px">状态</th>
+                  <th>详细说明</th>
+                </tr>
+              </thead>
+              <tbody id="oplogs-table-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 视图 6：同步与连接设置 ==================== -->
+      <section id="view-settings" class="view-section">
+        <div class="section-head">
+          <div>
+            <h2>同步到 GitHub · 抓封面插件 · AI 钥匙 · 飞书与代理设置</h2>
+            <p class="sub-desc">所有高级开关全放在这里，改完点右上角「保存全部设置」立刻生效</p>
+          </div>
+          <div class="quick-actions">
+            <button id="btn-save-all-settings" class="btn btn-primary">💾 保存全部设置</button>
+          </div>
+        </div>
+
+        <div class="settings-grid">
+          <!-- 模块 A：GitHub 跨电脑查看与一键同步 -->
+          <div class="panel-card span-2">
+            <div class="panel-title-row">
+              <h3>1. GitHub 跨电脑同步设置（让团队在任何电脑都能直接看网页）</h3>
+              <span id="gh-status-pill" class="rate-pill">正在检查仓库…</span>
+            </div>
+            <details class="guide-box mb-14" open>
+              <summary>📖 大白话 3 步教程：怎么让任何电脑都能打开网页看抓取结果 + 在任意电脑也能直接跑抓取？</summary>
+              <ol class="guide-steps">
+                <li><strong>看网页（所有电脑通用）</strong>：去 GitHub.com 新建一个仓库，把仓库网址填在下面，在 GitHub 仓库的 <code>Settings → Pages</code> 把分支选成 <code>main</code> 保存。以后你在这台电脑抓完视频，点一下网页右上角 <strong>「☁️ 一键同步到 GitHub 网页」</strong>，全团队在任何电脑打开那个 GitHub 网页就能直接看大封面和拆解案例！（你的密码和AI钥匙不会传上去，绝对安全）</li>
+                <li><strong>换别的电脑也能抓视频</strong>：别的同事想用自己的电脑直接抓，只要在 GitHub 仓库点绿色按钮 <code>Download ZIP</code> 下载解压（或用 Git 拉下来），再双击文件夹里的 <strong><code>一键启动工作台.bat</code></strong>，就跟在你这台电脑上一模一样跑起来！</li>
+              </ol>
+            </details>
+
+            <div class="form-grid-3">
+              <div class="form-field span-2">
+                <label>你的 GitHub 仓库地址（填好后点一键同步就会传到这里）：</label>
+                <input type="text" id="cfg-gh-repo" class="form-input" value="https://github.com/Sorenskr/laya-social-scout.git" placeholder="例如：https://github.com/你的用户名/laya-social-scout.git" />
+              </div>
+              <div class="form-field">
+                <label>分支名称 & 操作：</label>
+                <div class="inline-btns">
+                  <input type="text" id="cfg-gh-branch" class="form-input w-90" value="main" />
+                  <button id="btn-settings-push-gh" class="btn btn-success">☁️ 立即同步上 GitHub</button>
+                </div>
+              </div>
+            </div>
+            <div class="mt-8 inline-btns" style="justify-content:space-between;">
+              <label class="check-row">
+                <input type="checkbox" id="cfg-gh-autopush" />
+                <span>每次抓取完视频后，自动把最新封面和结果同步到 GitHub 网页</span>
+              </label>
+              <span id="gh-pages-link-box" class="muted-small"></span>
+            </div>
+          </div>
+
+          <!-- 模块 B：GitHub 开源高清抓封面插件一键安装 -->
+          <div class="panel-card">
+            <div class="panel-title-row">
+              <h3>2. 高清真封面抓取插件（GitHub 开源组件 yt-dlp）</h3>
+              <span id="ytdlp-status-pill" class="rate-pill">检测中…</span>
+            </div>
+            <p class="card-hint">装上这个 GitHub 上最火的免费开源小插件后，丢进去 Instagram / Facebook / X / Threads / TikTok 链接都能直接扒出原视频的高清真封面和真实播放点赞数，不用自己手动截图。</p>
+            <div class="inline-btns">
+              <button id="btn-install-ytdlp" class="btn btn-primary">⚡ 一键从 GitHub 自动安装高清抓封面插件</button>
+            </div>
+          </div>
+
+          <!-- 模块 C：看图防废片 & 拆解案例 AI 设置（默认完全免费） -->
+          <div class="panel-card">
+            <div class="panel-title-row">
+              <h3>3. 看图防废片 & 拆解案例引擎（默认 0 额外费用）</h3>
+              <button id="btn-test-vision" class="btn btn-primary btn-xs">⚡ 测一下引擎状态</button>
+            </div>
+            <div class="form-stack">
+              <div class="form-field">
+                <label>我方产品名字 & 卖点介绍</label>
+                <div class="inline-form">
+                  <input type="text" id="cfg-brand-name" class="form-input w-120" placeholder="Laya" />
+                  <input type="text" id="cfg-brand-pos" class="form-input" placeholder="主打男生的语音连麦陪伴交友App" />
+                </div>
+              </div>
+              <div class="form-field">
+                <label>用哪个引擎来踢废片和写复刻脚本</label>
+                <select id="cfg-vision-provider" class="form-select">
+                  <option value="local_free">🆓 本地 0 费用智能引擎（完全免费，不花一分钱，直接可用）</option>
+                  <option value="gemini">可选扩展：Google Gemini API（需要自己填 Key）</option>
+                  <option value="openai_compatible">可选扩展：OpenAI / GPT-4o / 国内中转站 Key</option>
+                </select>
+              </div>
+              <div class="muted-small">✅ 选「本地 0 费用智能引擎」时，自动通过像素肤色/游戏横屏特征 + 关键词过滤真人露脸和游戏广告，并自动生成分镜话术，<strong>不会收取任何额外 AI 费用</strong>。</div>
+              <details class="details-advanced">
+                <summary>⚙️ 可选扩展：如果你自己已经有外部大模型 Key 想插进来用，点这里展开填写（默认不用填）</summary>
+                <div class="form-stack">
+                  <div class="form-field">
+                    <label>AI 钥匙 <span id="vision-key-hint" class="muted-small"></span></label>
+                    <input type="password" id="cfg-vision-key" class="form-input" placeholder="0 费用模式不用填这里" />
+                  </div>
+                  <div class="form-grid-2">
+                    <div class="form-field">
+                      <label>接口网址（一般不用改）</label>
+                      <input type="text" id="cfg-vision-baseurl" class="form-input" />
+                    </div>
+                    <div class="form-field">
+                      <label>具体模型名字</label>
+                      <input type="text" id="cfg-vision-model" class="form-input" />
+                    </div>
+                  </div>
+                  <label class="check-row">
+                    <input type="checkbox" id="cfg-vision-fallback" checked />
+                    <span>没填外部 Key 时，自动用本地 0 费用引擎保底（绝不中断采集）</span>
+                  </label>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <!-- 模块 D：飞书绑定、直接贴表格链接 & 每日实时自动写入 -->
+          <div class="panel-card span-2">
+            <div class="panel-title-row">
+              <h3>4. 飞书绑定 & 每天自动按日期实时写进你的飞书文档</h3>
+              <span id="feishu-auth-badge" class="rate-pill">待配置</span>
+            </div>
+            <div class="form-stack">
+              <div class="form-grid-2">
+                <div class="form-field">
+                  <label>方式一（推荐最省事）：直接粘贴你现有的飞书表格 / 多维表格链接</label>
+                  <input type="text" id="cfg-fs-docurl" class="form-input" placeholder="例如 https://xxx.feishu.cn/sheets/xxxx 或 .../base/xxxx" />
+                </div>
+                <div class="form-field">
+                  <label>免建应用极速通道（可选）：飞书多维表格自动化 / 群机器人 Webhook 链接</label>
+                  <input type="text" id="cfg-fs-rtwebhook" class="form-input" placeholder="https://open.feishu.cn/...（填这个连 AppID 都不用建就能实时收新数据）" />
+                </div>
+              </div>
+              <label class="check-row">
+                <input type="checkbox" id="cfg-fs-mastertab" checked />
+                <span><strong>自动维护最左侧「📊 全部内容总表」</strong>：把全部 5 个平台、每天新抓到的所有内容统一汇总在这张总表里（自带全景总览表、按平台看板、爆款卡片画册 3 大视图）！</span>
+              </label>
+              <label class="check-row">
+                <input type="checkbox" id="cfg-fs-dailytab" checked />
+                <span><strong>每天自动按当天日期建子工作表（例如 📅 今日新增 2026-11-14）</strong>：每抓到 1 条合格视频，立即实时追加到今天日期的子表里，你每天打开同一个飞书文档就能看到当天最新汇总！</span>
+              </label>
+
+              <div class="form-grid-3">
+                <div class="form-field">
+                  <label>飞书应用编号 (App ID，贴链接同步时需要)</label>
+                  <input type="text" id="cfg-fs-appid" class="form-input" placeholder="cli_xxxxxxxxxxxx" />
+                </div>
+                <div class="form-field">
+                  <label>飞书应用密钥 (App Secret)</label>
+                  <input type="password" id="cfg-fs-secret" class="form-input" placeholder="不改可以留空" />
+                </div>
+                <div class="form-field">
+                  <label>飞书账号扫码授权</label>
+                  <div class="inline-btns">
+                    <button id="btn-feishu-oauth" class="btn btn-success">📱 点我飞书扫码绑定</button>
+                    <button id="btn-feishu-unbind" class="btn btn-ghost btn-sm">解绑</button>
+                  </div>
+                </div>
+
+                <div class="form-field">
+                  <label>同步到哪种飞书表格</label>
+                  <select id="cfg-fs-mode" class="form-select">
+                    <option value="spreadsheet">飞书电子表格（自动按当天日期建子表 + 3总表 × 5平台）</option>
+                    <option value="bitable">飞书多维表格（全部内容总表 + 彩色标签/进度/星级 + 多视图）</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label>总表子工作表按什么分</label>
+                  <select id="cfg-fs-split" class="form-select">
+                    <option value="platform">按 5 个平台分开（IG / FB / X / Threads / TikTok）</option>
+                    <option value="contentType">按内容类型分开（聊天录屏 / 混剪 / 泛软广）</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label>表格美化与建表操作</label>
+                  <div class="inline-btns">
+                    <button id="btn-fs-rebuild-pretty" class="btn btn-accent btn-sm">✨ 一键美化重整飞书总表 &amp; 全部分表</button>
+                    <button id="btn-fs-init-sheets" class="btn btn-primary btn-sm">初始化分表</button>
+                    <button id="btn-fs-archive-daily" class="btn btn-ghost btn-sm">试一下单日归档</button>
+                  </div>
+                </div>
+
+                <div class="form-field">
+                  <label>目标文件夹编号（选填，留空建在根目录）</label>
+                  <input type="text" id="cfg-fs-folder" class="form-input" placeholder="留空即可" />
+                </div>
+                <div class="form-field span-2">
+                  <label>飞书群报警机器人链接（抓空、需要人工过验证、报错时自动在飞书群提醒）</label>
+                  <input type="text" id="cfg-fs-webhook" class="form-input" placeholder="https://open.feishu.cn/open-apis/bot/v2/hook/..." />
+                </div>
+              </div>
+            </div>
+            <div class="mt-12">
+              <label class="block-label">勾选哪些信息要同步写进飞书表格（不需要的勾掉就行）：</label>
+              <div id="cfg-fs-fields-box" class="checkbox-wall"></div>
+            </div>
+          </div>
+
+          <!-- 模块 E：抓取方式、防封浏览器参数、定时任务与过滤门槛 -->
+          <div class="panel-card">
+            <h3>5. 抓取渠道、指纹浏览器防封参数 & 过滤门槛</h3>
+            <div class="form-stack">
+              <div class="form-field">
+                <label>抓视频用哪种通道（默认用指纹浏览器静默抓）</label>
+                <select id="cfg-collector-mode" class="form-select">
+                  <option value="fingerprint">🛡️ 防封指纹浏览器静默抓（比特浏览器 / AdsPower / 0元防封窗口，推荐防封）</option>
+                  <option value="hybrid">真实代理 + 网页公开抓取</option>
+                  <option value="api_only">只用自己买的第三方接口</option>
+                  <option value="sandbox">本地模拟测试模式（用来演练防废片和限流效果）</option>
+                </select>
+              </div>
+              <div class="form-grid-3">
+                <div class="form-field"><label>每次刷完停几秒(最少)</label><input type="number" id="cfg-fp-delay-min" class="form-input" value="6" min="2" max="60" /></div>
+                <div class="form-field"><label>每次刷完停几秒(最多)</label><input type="number" id="cfg-fp-delay-max" class="form-input" value="14" min="3" max="120" /></div>
+                <div class="form-field"><label>单号每天最多搜几次(防封)</label><input type="number" id="cfg-fp-daily-max" class="form-input" value="30" min="5" max="200" /></div>
+              </div>
+              <details class="details-advanced">
+                <summary>🔧 比特浏览器 / AdsPower / 第三方接口连接参数（一般保持默认即可）</summary>
+                <div class="form-stack">
+                  <div class="form-grid-2">
+                    <div class="form-field"><label>比特浏览器本地接口</label><input type="text" id="cfg-fp-biturl" class="form-input" value="http://127.0.0.1:54345" /></div>
+                    <div class="form-field"><label>比特接口密钥 (x-api-key，没开校验可留空)</label><input type="password" id="cfg-fp-bitkey" class="form-input" placeholder="选填" /></div>
+                  </div>
+                  <div class="form-grid-2">
+                    <div class="form-field"><label>AdsPower 本地接口</label><input type="text" id="cfg-fp-adsurl" class="form-input" value="http://127.0.0.1:50325" /></div>
+                    <div class="form-field"><label>0元防封独立窗口调试端口</label><input type="number" id="cfg-fp-port" class="form-input" value="9222" /></div>
+                  </div>
+                  <div class="form-grid-2">
+                    <div class="form-field">
+                      <label>Apify 抓取钥匙（选填）</label>
+                      <input type="password" id="cfg-apify-token" class="form-input" placeholder="有 Apify 就填在这里" />
+                    </div>
+                    <div class="form-field">
+                      <label>第三方抓取接口网址（选填）</label>
+                      <input type="text" id="cfg-custom-api-url" class="form-input" placeholder="https://..." />
+                    </div>
+                  </div>
+                </div>
+              </details>
+              <div class="form-grid-2">
+                <div class="form-field">
+                  <label>每天自动开抓时间点</label>
+                  <input type="text" id="cfg-sched-times" class="form-input" value="08:00, 17:30" />
+                </div>
+                <div class="form-field">
+                  <label>低于几分直接当废片踢掉</label>
+                  <input type="number" id="cfg-min-score" class="form-input" value="60" min="1" max="95" />
+                </div>
+              </div>
+              <div class="form-grid-3">
+                <div class="form-field"><label>最低播放量</label><input type="number" id="cfg-min-plays" class="form-input" value="3000" /></div>
+                <div class="form-field"><label>最低点赞数</label><input type="number" id="cfg-min-likes" class="form-input" value="150" /></div>
+                <div class="form-field"><label>账号最少粉丝</label><input type="number" id="cfg-min-followers" class="form-input" value="1000" /></div>
+              </div>
+              <div class="form-grid-4">
+                <div class="form-field"><label>IG 间隔(秒)</label><input type="number" id="cfg-int-ig" class="form-input" value="12" /></div>
+                <div class="form-field"><label>FB 间隔(秒)</label><input type="number" id="cfg-int-fb" class="form-input" value="10" /></div>
+                <div class="form-field"><label>X 间隔(秒)</label><input type="number" id="cfg-int-x" class="form-input" value="8" /></div>
+                <div class="form-field"><label>Threads(秒)</label><input type="number" id="cfg-int-th" class="form-input" value="10" /></div>
+                <div class="form-field"><label>TikTok(秒)</label><input type="number" id="cfg-int-tt" class="form-input" value="10" /></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 模块 F：美区/台湾代理 IP 批量粘贴 -->
+          <div class="panel-card">
+            <div class="panel-title-row">
+              <h3>6. 美区 / 台湾代理 IP 线路池</h3>
+              <div class="inline-btns">
+                <button id="btn-proxy-check-all" class="btn btn-primary btn-xs">🩺 检测全部分线能不能连</button>
+                <button id="btn-proxy-clear-bad" class="btn btn-ghost btn-xs">清掉坏线路</button>
+              </div>
+            </div>
+            <div class="inline-form mb-8">
+              <label>默认地区：</label>
+              <select id="proxy-default-region" class="form-select compact w-120">
+                <option value="美区">美区代理</option>
+                <option value="台湾">台湾代理</option>
+                <option value="日本">日本代理</option>
+                <option value="新加坡">新加坡代理</option>
+              </select>
+            </div>
+            <textarea id="proxy-import-textarea" class="form-textarea" rows="3" placeholder="一行贴一个代理，比如：&#10;198.51.100.11:8080:用户名:密码&#10;[台湾] 103.12.34.56:9000:账号:密码"></textarea>
+            <button id="btn-proxy-import" class="btn btn-primary btn-sm mt-8 mb-10">📥 批量导入代理线路</button>
+            <div class="table-wrap max-h-220">
+              <table class="data-table compact-table">
+                <thead>
+                  <tr><th>地区</th><th>节点地址</th><th>状态</th><th>速度</th><th>删</th></tr>
+                </thead>
+                <tbody id="proxy-table-body"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- 模块 G：自定义扩展列与清理工具 -->
+          <div class="panel-card span-2">
+            <div class="two-col-grid">
+              <div>
+                <h3>7. 自己加新表格列（免改代码，飞书表格也会自动多这一列）</h3>
+                <div class="inline-form mb-10">
+                  <input type="text" id="cf-new-label" class="form-input compact" placeholder="想加的列名（如：剪辑负责人）" />
+                  <input type="text" id="cf-new-options" class="form-input compact" placeholder="下拉选项逗号隔开（可不填）" />
+                  <button id="btn-cf-add" class="btn btn-primary btn-sm">＋ 加上这列</button>
+                </div>
+                <div id="custom-fields-list" class="tag-manage-list"></div>
+              </div>
+
+              <div>
+                <h3>8. 测试演示 & 上线前一键清空工具</h3>
+                <div class="inline-btns wrap-btns mt-10">
+                  <button class="btn btn-ghost btn-sm btn-sim-alert" data-sim="proxy_low_rate">🚨 试看：代理不够红警</button>
+                  <button class="btn btn-ghost btn-sm btn-sim-alert" data-sim="platform_zero_2h">🚨 试看：2小时没抓到红警</button>
+                  <button class="btn btn-ghost btn-sm btn-sim-alert" data-sim="feishu_sync_fail">🚨 试看：飞书报错红警</button>
+                  <button id="btn-clear-demo-data" class="btn btn-danger-outline btn-sm">🧹 清空所有演示视频，准备正式抓取</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- 弹窗 1：点击开始抓视频（核心带日期选择！） -->
+  <div id="modal-crawl" class="modal-backdrop hidden">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3>⚡ 选日期抓新视频</h3>
+        <button class="modal-close" data-close="modal-crawl">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-stack">
+          <div class="form-field">
+            <label>📅 第 1 步：要抓哪个日期范围发的视频？</label>
+            <div class="inline-btns wrap-btns mb-8" id="mc-date-presets">
+              <button type="button" class="chip active" data-range="all">不限日期</button>
+              <button type="button" class="chip" data-range="today">只抓今天</button>
+              <button type="button" class="chip" data-range="3d">最近 3 天</button>
+              <button type="button" class="chip" data-range="7d">最近 7 天</button>
+              <button type="button" class="chip" data-range="30d">最近 30 天</button>
+              <button type="button" class="chip" data-range="custom">自己选起止</button>
+            </div>
+            <div class="inline-dates">
+              <input type="date" id="mc-date-from" class="form-input compact" />
+              <span>到</span>
+              <input type="date" id="mc-date-to" class="form-input compact" />
+              <span class="muted-small">（留空表示不限）</span>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label>📱 第 2 步：去哪几个平台抓？</label>
+            <div class="inline-btns wrap-btns">
+              <label class="check-pill"><input type="checkbox" class="mc-plat" value="instagram" checked /> Instagram</label>
+              <label class="check-pill"><input type="checkbox" class="mc-plat" value="facebook" checked /> Facebook</label>
+              <label class="check-pill"><input type="checkbox" class="mc-plat" value="x" checked /> X (Twitter)</label>
+              <label class="check-pill"><input type="checkbox" class="mc-plat" value="threads" checked /> Threads</label>
+              <label class="check-pill"><input type="checkbox" class="mc-plat" value="tiktok" checked /> TikTok</label>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label>🎯 第 3 步：直接输入这次想搜的关键词（填什么就 100% 只搜什么！）</label>
+            <textarea id="mc-custom-keywords" class="form-textarea" rows="3" placeholder="多个词用逗号或换行隔开，例如：女友視角, 約會穿搭, 曖昧聊天紀錄, 搭訕&#10;（如果这里留空，就按下面勾选的词库抓）"></textarea>
+            <div class="inline-btns wrap-btns mt-8">
+              <label class="check-pill"><input type="checkbox" id="mc-save-custom-kw" checked /> 顺便把上面填的词存进词库</label>
+              <label class="check-pill"><input type="checkbox" id="mc-clear-old" /> 抓之前先清空旧内容列表，只留本次新抓结果</label>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label>🏷️ 第 4 步：如果上面留空，用哪几类词库抓？</label>
+            <div class="inline-btns wrap-btns">
+              <label class="check-pill"><input type="checkbox" class="mc-bucket" value="brand" checked /> 我方品牌词</label>
+              <label class="check-pill"><input type="checkbox" class="mc-bucket" value="competitor" checked /> 竞品词库</label>
+              <label class="check-pill"><input type="checkbox" class="mc-bucket" value="generic" checked /> 泛交友热词</label>
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-field">
+              <label>这次最多抓几条素材（建议 50~150）</label>
+              <input type="number" id="mc-limit" class="form-input" value="80" min="1" max="500" />
+            </div>
+            <div class="form-field">
+              <label>抓取方式</label>
+              <select id="mc-mode" class="form-select">
+                <option value="">跟随系统设置（默认防封指纹浏览器）</option>
+                <option value="fingerprint">🛡️ 用防封指纹浏览器 / 0元防封窗口悄悄抓</option>
+                <option value="hybrid">用真实代理抓外网</option>
+                <option value="sandbox">本地模拟演练（含废片拦截测试）</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" data-close="modal-crawl">取消</button>
+        <button id="btn-confirm-crawl" class="btn btn-primary">🚀 开始抓视频（界面实时看进度）</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 弹窗 2：大封面放大预览弹窗（不用跳外网直接看大图） -->
+  <div id="modal-cover-zoom" class="modal-backdrop hidden">
+    <div class="modal-dialog" style="width:460px;">
+      <div class="modal-header">
+        <h3 id="zoom-modal-title">视频大封面预览</h3>
+        <button class="modal-close" data-close="modal-cover-zoom">✕</button>
+      </div>
+      <div class="modal-body text-center">
+        <img id="zoom-modal-img" src="" alt="大封面" style="max-width:100%;max-height:66vh;border-radius:12px;background:#0f172a;" />
+        <div class="mt-12 inline-btns" style="justify-content:center;">
+          <a id="zoom-modal-link" href="#" target="_blank" rel="noopener" class="btn btn-primary">🔗 去原平台看完整视频</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 弹窗 3：怎么改才自然 + 照抄步骤弹窗 -->
+  <div id="modal-guide" class="modal-backdrop hidden">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-header">
+        <h3 id="guide-modal-title">💡 这条怎么抄、第几秒插广告指南</h3>
+        <button class="modal-close" data-close="modal-guide">✕</button>
+      </div>
+      <div id="guide-modal-body" class="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- 弹窗 4：一键导入现成热词包 / GitHub 词单弹窗 -->
+  <div id="modal-kw-pack" class="modal-backdrop hidden">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3>🎁 一键导入现成热词包 / 从 GitHub 链接导入</h3>
+        <button class="modal-close" data-close="modal-kw-pack">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-stack">
+          <div class="form-field">
+            <label>方法一：直接点下面整理好的现成高转化热词包</label>
+            <div id="preset-pack-buttons" class="form-stack"></div>
+          </div>
+          <hr style="border:none;border-top:1px dashed #cbd5e1;margin:8px 0;" />
+          <div class="form-field">
+            <label>方法二：粘贴 GitHub 上别人的词单 Raw 链接直接拉进来</label>
+            <input type="text" id="kw-remote-url" class="form-input" placeholder="https://raw.githubusercontent.com/..." />
+            <button id="btn-kw-pull-url" class="btn btn-primary btn-sm mt-8">🌐 从这个链接拉取词单</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 弹窗 5：批量粘贴导入词库 -->
+  <div id="modal-kw-import" class="modal-backdrop hidden">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3>📋 批量粘贴词单（自动去重）</h3>
+        <button class="modal-close" data-close="modal-kw-import">✕</button>
+      </div>
+      <div class="modal-body">
+        <p class="card-hint">一行写一个词，或者直接用逗号隔开全贴进来就行，重复的会自动跳过。</p>
+        <div class="form-field mb-10">
+          <label>统一分到哪个标签下：</label>
+          <input type="text" id="kw-batch-group" class="form-input" value="语音交友竞品" />
+        </div>
+        <textarea id="kw-batch-textarea" class="form-textarea" rows="8" placeholder="Omi&#10;Goodnight&#10;Litmatch&#10;Soul"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" data-close="modal-kw-import">取消</button>
+        <button id="btn-confirm-kw-import" class="btn btn-primary">确认导入</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 弹窗 6：换别的电脑怎么也用来抓视频（傻瓜指引 + 填主机地址） -->
+  <div id="modal-clone-help" class="modal-backdrop hidden">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3>💻 换一台电脑怎么也能抓视频、看数据？</h3>
+        <button class="modal-close" data-close="modal-clone-help">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="sop-block">
+          <h4>情况 1：只想看已经抓好的视频和案例（不用装任何东西）</h4>
+          <p style="margin:4px 0;">在任何一台电脑或手机浏览器打开你的 GitHub 网页网址就行，所有大封面、文案、拆解案例都在上面。</p>
+        </div>
+        <div class="sop-block">
+          <h4>情况 2：同事也想用他自己的电脑跑抓取（2 步搞定）</h4>
+          <ol style="margin:4px 0;padding-left:18px;">
+            <li>打开 GitHub 仓库页面，点绿色 <code>Code → Download ZIP</code> 下载解压（或者用 Git 克隆下来）；</li>
+            <li>双击文件夹里的 <strong><code>一键启动工作台.bat</code></strong>，就会和主电脑一样开始抓视频，抓完点一下右上角「同步到 GitHub 网页」就能汇总展示！</li>
+          </ol>
+        </div>
+        <div class="sop-block">
+          <h4>情况 3：正在用 GitHub 网页版，想连上开着后台的电脑</h4>
+          <div class="inline-form mt-8">
+            <input type="text" id="inp-custom-backend-url" class="form-input" placeholder="如 http://127.0.0.1:3080 或 http://192.168.1.88:3080" />
+            <button id="btn-save-backend-url" class="btn btn-primary btn-sm">连上这台电脑</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 弹窗 7：飞书扫码绑定弹窗 -->
+  <div id="modal-feishu-qr" class="modal-backdrop hidden">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3>📱 飞书扫码绑定账号</h3>
+        <button class="modal-close" data-close="modal-feishu-qr">✕</button>
+      </div>
+      <div class="modal-body text-center">
+        <p class="mb-12">点下面按钮会弹出飞书确认页，用手机飞书扫一扫点确认就行：</p>
+        <button id="btn-open-feishu-popup" class="btn btn-success btn-lg">打开飞书扫码确认窗口</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 右下角大白话轻提示 -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <script src="./app.js?v=2.0.0"></script>
+</body>
+</html>

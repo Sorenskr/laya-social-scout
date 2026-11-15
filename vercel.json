@@ -1,0 +1,17 @@
+{
+  "builds": [
+    {
+      "src": "api/app.js",
+      "use": "@vercel/node",
+      "config": { "includeFiles": "**" }
+    }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/api/app.js" }
+  ],
+  "crons": [
+    { "path": "/api/cron/collect", "schedule": "0 0 * * *" },
+    { "path": "/api/cron/collect", "schedule": "30 9 * * *" },
+    { "path": "/api/cron/archive", "schedule": "0 16 * * *" }
+  ]
+}

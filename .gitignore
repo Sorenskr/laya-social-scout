@@ -1,0 +1,9 @@
+node_modules/
+bin/
+data/
+.env
+.vercel
+.DS_Store
+data/db.json
+data/db.json.tmp
+data/backups/
