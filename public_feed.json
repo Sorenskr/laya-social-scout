@@ -1,230 +1,234 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-16T08:38:47.676Z",
+  "updatedAt": "2026-11-16T09:43:47.021Z",
   "hostComputer": "LAPTOP-64OLL33R",
   "brandName": "Laya",
   "remoteTunnelUrl": "https://calculation-analyses-anything-concluded.trycloudflare.com",
   "remoteTunnelUpdatedAt": "2026-11-16T03:32:46.653Z",
   "remotePinRequired": true,
   "crawlJob": {
-    "id": "job_mwiz3oov_8539fc",
+    "id": "job_mwj2byqr_886274",
     "running": false,
-    "startedAt": "2026-11-16T07:59:54.559Z",
-    "finishedAt": "2026-11-16T08:09:09.566Z",
+    "startedAt": "2026-11-16T09:30:19.695Z",
+    "finishedAt": "2026-11-16T09:43:46.737Z",
     "mode": "fingerprint",
     "browserChannelLabel": "🛡️ 指纹/防封浏览器通道",
     "platforms": [
-      "threads"
+      "instagram",
+      "facebook",
+      "x",
+      "threads",
+      "tiktok"
     ],
-    "dateFrom": "2026-11-14",
-    "dateTo": "2026-11-16",
-    "dateRangeLabel": "2026-11-14 至 2026-11-16",
-    "targetMax": 80,
+    "dateFrom": "",
+    "dateTo": "",
+    "dateRangeLabel": "不限发布日期",
+    "targetMax": 40,
     "progressPct": 100,
-    "totalFetched": 80,
-    "fetchedCount": 80,
-    "qualifiedAdded": 6,
-    "qualifiedCount": 6,
-    "filteredTrash": 66,
-    "filteredCount": 66,
-    "feishuSyncedCount": 5,
-    "duplicatesMerged": 8,
-    "rateLimitRetries": 0,
+    "totalFetched": 40,
+    "fetchedCount": 40,
+    "qualifiedAdded": 11,
+    "qualifiedCount": 11,
+    "filteredTrash": 25,
+    "filteredCount": 25,
+    "feishuSyncedCount": 9,
+    "duplicatesMerged": 4,
+    "rateLimitRetries": 2,
     "recentFoundSamples": [
       {
-        "id": "smp_mwizfem8_1952f5",
-        "title": "有人醒了嗎？😎 還是還沒睡好～😣",
-        "platform": "threads",
-        "coverUrl": "./covers/fp_th_075c3d32.jpg",
-        "likes": 94,
-        "qualityScore": 72
-      },
-      {
-        "id": "smp_mwiz8o1k_14f25e",
-        "title": "#台灣 #交友 #生活有點無聊 #想找個人一起聊聊天 #大叔最好",
-        "platform": "threads",
-        "coverUrl": "./covers/fp_th_d223f519.jpg",
-        "likes": 42,
-        "qualityScore": 89
-      },
-      {
-        "id": "smp_mwiz7ano_3d7533",
-        "title": "#交友 單純交友，本人 #單身 還能可以相信的真人嗎",
-        "platform": "threads",
-        "coverUrl": "./covers/fp_th_b1372adc.jpg",
-        "likes": 3,
-        "qualityScore": 82
-      },
-      {
-        "id": "smp_mwiz6xik_e12073",
-        "title": "#台灣 #交友 我還能找到愛情嗎",
-        "platform": "threads",
-        "coverUrl": "./covers/fp_th_b6d431b4.jpg",
-        "likes": 28,
-        "qualityScore": 79
-      },
-      {
-        "id": "smp_mwiz6g99_38ea54",
-        "title": "台灣交友#台灣 #交友 32歲了我還能找到愛情嗎",
-        "platform": "threads",
-        "coverUrl": "./covers/fp_th_26f87cc2.jpg",
-        "likes": 32,
+        "id": "smp_mwj2t9gw_356bbf",
+        "title": "當你第一次用Litmatch見網戀女友⋯#litmatch #網戀 #愛情 #交友 #戀愛 litmatchtaiwan_official5-16",
+        "platform": "tiktok",
+        "coverUrl": "./covers/fp_ti_7145f675.jpg",
+        "likes": 0,
         "qualityScore": 88
       },
       {
-        "id": "smp_mwiz4vty_bb6ef8",
-        "title": "幫朋友徵女友 急！",
-        "platform": "threads",
-        "coverUrl": "./covers/fp_th_6b4266a5.jpg",
-        "likes": 1,
+        "id": "smp_mwj2qtnv_7968a5",
+        "title": "美国🇺🇸女生想要认识中国🇨🇳朋友！ JOEL2025-11-30",
+        "platform": "tiktok",
+        "coverUrl": "./covers/fp_ti_6d5e1755.jpg",
+        "likes": 0,
         "qualityScore": 71
+      },
+      {
+        "id": "smp_mwj2q7jt_d4c501",
+        "title": "#海外华人 #交友 #单身 #附近100米的人 柯基宝宝🫧10-16",
+        "platform": "tiktok",
+        "coverUrl": "./covers/fp_ti_093042dd.jpg",
+        "likes": 100,
+        "qualityScore": 84
+      },
+      {
+        "id": "smp_mwj2osyw_073876",
+        "title": "#台灣 #交友 35歲的我還能找到愛情嗎",
+        "platform": "threads",
+        "coverUrl": "./covers/fp_th_0ce673a0.jpg",
+        "likes": 35,
+        "qualityScore": 92
+      },
+      {
+        "id": "smp_mwj2nwkh_93189d",
+        "title": "林昕穎💤4,215 followers",
+        "platform": "threads",
+        "coverUrl": "./covers/fp_th_592df28e.jpg",
+        "likes": 4,
+        "qualityScore": 78
+      },
+      {
+        "id": "smp_mwj2m378_bd9275",
+        "title": "粉絲專頁 Litmatch Philippines應用程式專頁 · 8.7 萬位追蹤者Litmatch Philippines社群媒體代理商 · 841 位追蹤者Litmatc",
+        "platform": "facebook",
+        "coverUrl": "./covers/fp_fa_29423483.jpg",
+        "likes": 841,
+        "qualityScore": 79
       }
     ],
-    "currentStep": "本次抓取完成！留下 6 条好视频，踢掉 66 条废片",
+    "currentStep": "本次抓取完成！留下 11 条好视频，踢掉 25 条废片",
     "liveLogs": [
       {
-        "time": "16:09:19",
-        "text": "📤 刚刚抓到的好内容已实时写进今日飞书表格（累计 5 条）"
+        "time": "17:43:46",
+        "text": "🎉 抓取收工：共看 40 条，留下好视频 11 条，踢掉废片 25 条"
       },
       {
-        "time": "16:09:09",
-        "text": "🎉 抓取收工：共看 80 条，留下好视频 6 条，踢掉废片 66 条"
+        "time": "17:43:46",
+        "text": "✅ 留下好视频《當你第一次用Litmatch見網戀女》(88分 · 大封面已保存)"
       },
       {
-        "time": "16:09:09",
+        "time": "17:43:24",
         "text": "📸 从【🎯抓取爆款软广模版池】后台成功拿到 1 条内容（含视频/图文/文字）"
       },
       {
-        "time": "16:09:02",
-        "text": "⏳ 正在后台标签页拟人停顿 4 秒，等页面帖子和封面加载完…"
-      },
-      {
-        "time": "16:09:01",
-        "text": "🛡️ 正在通过【🎯抓取爆款软广模版池】后台静默标签页打开 THREADS 搜「甜妹日常」…"
-      },
-      {
-        "time": "16:09:01",
-        "text": "🔍 正在去 Threads 搜「甜妹日常」（防封静默窗口）"
-      },
-      {
-        "time": "16:09:01",
-        "text": "❌ 踢掉废片《有沒有人沒睡~~~聊聊天ㄅ》— 低互动量过滤"
-      },
-      {
-        "time": "16:09:01",
-        "text": "✅ 留下好视频《有人醒了嗎？😎 還是還沒睡好～😣》(72分 · 大封面已保存)"
-      },
-      {
-        "time": "16:08:32",
-        "text": "⏭️ 跳过不在所选日期内的旧视频：《好想壞壞 晚上想約一下 來我家…有誰》"
-      },
-      {
-        "time": "16:08:32",
-        "text": "📸 从【🎯抓取爆款软广模版池】后台成功拿到 5 条内容（含视频/图文/文字）"
-      },
-      {
-        "time": "16:08:21",
+        "time": "17:43:11",
         "text": "⏳ 正在后台标签页拟人停顿 6 秒，等页面帖子和封面加载完…"
       },
       {
-        "time": "16:08:20",
-        "text": "🛡️ 正在通过【🎯抓取爆款软广模版池】后台静默标签页打开 THREADS 搜「有人還沒睡嗎」…"
+        "time": "17:43:11",
+        "text": "🛡️ 正在通过【🎯抓取爆款软广模版池】后台静默标签页打开 TIKTOK 搜「Litmatch」…"
       },
       {
-        "time": "16:08:20",
-        "text": "🔍 正在去 Threads 搜「有人還沒睡嗎」（防封静默窗口）"
+        "time": "17:43:11",
+        "text": "🔍 正在去 TikTok 搜「Litmatch」（防封静默窗口）"
       },
       {
-        "time": "16:08:20",
-        "text": "⏭️ 跳过不在所选日期内的旧视频：《聊天睡不著～有人要電話聊天嗎 我是真》"
+        "time": "17:43:01",
+        "text": "❌ 踢掉废片《🥳🥳🥳🥰#熱門推薦 #單》— 硬广内容过滤"
       },
       {
-        "time": "16:08:20",
-        "text": "⏭️ 跳过不在所选日期内的旧视频：《好無聊 睡不著 來陪我聊天～》"
+        "time": "17:42:41",
+        "text": "🔗 发现跨平台搬运同款视频，已自动合并省去重复占表：《#海外华人 #交友 #单身 #附近1》"
       },
       {
-        "time": "16:08:20",
-        "text": "⏭️ 跳过不在所选日期内的旧视频：《聊天💬睡不著聊天🫠》"
+        "time": "17:42:41",
+        "text": "📸 从【🎯抓取爆款软广模版池】后台成功拿到 2 条内容（含视频/图文/文字）"
       },
       {
-        "time": "16:08:20",
-        "text": "⏭️ 跳过不在所选日期内的旧视频：《聊天聊天嗎 好無聊🙀 講幹話也可以》"
+        "time": "17:42:31",
+        "text": "⏳ 正在后台标签页拟人停顿 3 秒，等页面帖子和封面加载完…"
       },
       {
-        "time": "16:08:20",
-        "text": "❌ 踢掉废片《#想聊天 曖昧亂聊+》— 低互动量过滤"
+        "time": "17:42:30",
+        "text": "🛡️ 正在通过【🎯抓取爆款软广模版池】后台静默标签页打开 TIKTOK 搜「Laya交友」…"
       },
       {
-        "time": "16:08:20",
-        "text": "❌ 踢掉废片《睡不著的都來一起聊天😭》— 低互动量过滤"
+        "time": "17:42:30",
+        "text": "🔍 正在去 TikTok 搜「Laya交友」（防封静默窗口）"
       },
       {
-        "time": "16:08:20",
-        "text": "⏭️ 跳过不在所选日期内的旧视频：《有人睡不著，要聊天的嗎？》"
+        "time": "17:42:20",
+        "text": "❌ 踢掉废片《我是想和中国朋友交朋友的韩国人 》— 无法复刻过滤"
       },
       {
-        "time": "16:08:20",
-        "text": "❌ 踢掉废片《有人要聊天嗎》— 低互动量过滤"
+        "time": "17:42:08",
+        "text": "📤 刚刚抓到的好内容已实时写进今日飞书表格（累计 9 条）"
       },
       {
-        "time": "16:08:20",
-        "text": "❌ 踢掉废片《來聊天睡不著好無聊》— 低互动量过滤"
+        "time": "17:42:06",
+        "text": "❌ 踢掉废片《如果你想找个女朋友的话，可以看看》— 硬广内容过滤"
       },
       {
-        "time": "16:08:20",
-        "text": "📸 从【🎯抓取爆款软广模版池】后台成功拿到 12 条内容（含视频/图文/文字）"
+        "time": "17:41:52",
+        "text": "✅ 留下好视频《美国🇺🇸女生想要认识中国🇨🇳》(71分 · 大封面已保存)"
       },
       {
-        "time": "16:08:03",
-        "text": "⏳ 正在后台标签页拟人停顿 4 秒，等页面帖子和封面加载完…"
+        "time": "17:41:41",
+        "text": "📤 刚刚抓到的好内容已实时写进今日飞书表格（累计 8 条）"
       },
       {
-        "time": "16:08:03",
-        "text": "🛡️ 正在通过【🎯抓取爆款软广模版池】后台静默标签页打开 THREADS 搜「睡不著聊天」…"
+        "time": "17:41:24",
+        "text": "✅ 留下好视频《#海外华人 #交友 #单身 #附近1》(84分 · 大封面已保存)"
       },
       {
-        "time": "16:08:03",
-        "text": "🔍 正在去 Threads 搜「睡不著聊天」（防封静默窗口）"
+        "time": "17:41:09",
+        "text": "❌ 踢掉废片《下班后的时光#附近100米的人 》— 无法复刻过滤"
       },
       {
-        "time": "16:08:03",
-        "text": "❌ 踢掉废片《和你約會 可以這樣穿嗎》— 低互动量过滤"
+        "time": "17:40:48",
+        "text": "📸 从【🎯抓取爆款软广模版池】后台成功拿到 5 条内容（含视频/图文/文字）"
       },
       {
-        "time": "16:08:03",
-        "text": "⏭️ 跳过不在所选日期内的旧视频：《我自行宣佈🙈 《第一屆Thread》"
+        "time": "17:40:35",
+        "text": "📤 刚刚抓到的好内容已实时写进今日飞书表格（累计 7 条）"
       },
       {
-        "time": "16:08:03",
-        "text": "⏭️ 跳过不在所选日期内的旧视频：《女孩们打算这个冬天怎么穿》"
+        "time": "17:40:29",
+        "text": "⏳ 正在后台标签页拟人停顿 3 秒，等页面帖子和封面加载完…"
       },
       {
-        "time": "16:08:03",
-        "text": "❌ 踢掉废片《今天的原味是黑蕾絲丁+nike襪》— 低互动量过滤"
+        "time": "17:40:28",
+        "text": "🛡️ 正在通过【🎯抓取爆款软广模版池】后台静默标签页打开 TIKTOK 搜「Laya」…"
+      },
+      {
+        "time": "17:40:28",
+        "text": "🔍 正在去 TikTok 搜「Laya」（防封静默窗口）"
+      },
+      {
+        "time": "17:40:18",
+        "text": "🔗 发现跨平台搬运同款视频，已自动合并省去重复占表：《林昕穎💤4,215 followe》"
+      },
+      {
+        "time": "17:40:18",
+        "text": "✅ 留下好视频《#台灣 #交友 35歲的我還能找到愛》(92分 · 大封面已保存)"
+      },
+      {
+        "time": "17:40:08",
+        "text": "📸 从【🎯抓取爆款软广模版池】后台成功拿到 3 条内容（含视频/图文/文字）"
+      },
+      {
+        "time": "17:39:57",
+        "text": "⏳ 正在后台标签页拟人停顿 5 秒，等页面帖子和封面加载完…"
+      },
+      {
+        "time": "17:39:56",
+        "text": "🛡️ 正在通过【🎯抓取爆款软广模版池】后台静默标签页打开 THREADS 搜「Laya交友」…"
+      },
+      {
+        "time": "17:39:56",
+        "text": "🔍 正在去 Threads 搜「Laya交友」（防封静默窗口）"
       }
     ]
   },
   "dashboard": {
     "periods": {
       "day": {
-        "total": 131,
-        "qualified": 104,
-        "filtered": 27
+        "total": 153,
+        "qualified": 115,
+        "filtered": 38
       },
       "week": {
-        "total": 131,
-        "qualified": 104,
-        "filtered": 27
+        "total": 153,
+        "qualified": 115,
+        "filtered": 38
       },
       "month": {
-        "total": 172,
-        "qualified": 104,
-        "filtered": 68
+        "total": 194,
+        "qualified": 115,
+        "filtered": 79
       },
       "allTime": {
-        "total": 172,
-        "qualified": 104,
-        "filtered": 68
+        "total": 194,
+        "qualified": 115,
+        "filtered": 79
       }
     },
     "platformBreakdown": [
@@ -233,17 +237,17 @@
         "name": "Instagram",
         "shortName": "IG",
         "color": "#E1306C",
-        "count": 49,
-        "ratioPct": 47,
-        "viralCount": 25
+        "count": 53,
+        "ratioPct": 46,
+        "viralCount": 28
       },
       {
         "id": "facebook",
         "name": "Facebook",
         "shortName": "FB",
         "color": "#1877F2",
-        "count": 3,
-        "ratioPct": 3,
+        "count": 5,
+        "ratioPct": 4,
         "viralCount": 0
       },
       {
@@ -252,7 +256,7 @@
         "shortName": "X",
         "color": "#111827",
         "count": 15,
-        "ratioPct": 14,
+        "ratioPct": 13,
         "viralCount": 0
       },
       {
@@ -260,8 +264,8 @@
         "name": "Threads",
         "shortName": "Threads",
         "color": "#000000",
-        "count": 37,
-        "ratioPct": 36,
+        "count": 39,
+        "ratioPct": 34,
         "viralCount": 3
       },
       {
@@ -269,14 +273,762 @@
         "name": "TikTok",
         "shortName": "TikTok",
         "color": "#ff0050",
-        "count": 0,
-        "ratioPct": 0,
+        "count": 3,
+        "ratioPct": 3,
         "viralCount": 0
       }
     ],
-    "totalViralCount": 28
+    "totalViralCount": 31
   },
   "samples": [
+    {
+      "id": "smp_mwj2t9gw_356bbf",
+      "platform": "tiktok",
+      "mediaType": "video",
+      "mergedPlatforms": [
+        "tiktok"
+      ],
+      "alternateUrls": [],
+      "duplicateCount": 1,
+      "title": "當你第一次用Litmatch見網戀女友⋯#litmatch #網戀 #愛情 #交友 #戀愛 litmatchtaiwan_official5-16",
+      "fullText": "當你第一次用Litmatch見網戀女友⋯#litmatch #網戀 #愛情 #交友 #戀愛 litmatchtaiwan_official5-16",
+      "videoUrl": "https://www.tiktok.com/@litmatchtaiwan_of/video/7640469800623295764",
+      "coverUrl": "./covers/fp_ti_7145f675.jpg",
+      "publishedAt": "2026-11-16T09:43:24.511Z",
+      "collectedAt": "2026-11-16T09:43:46.736Z",
+      "durationSec": 16,
+      "bgm": "浏览器真实音频",
+      "plays": 0,
+      "likes": 0,
+      "comments": 0,
+      "shares": 0,
+      "bookmarks": 0,
+      "topComments": [],
+      "authorHandle": "litmatchtaiwan_of",
+      "authorFollowers": 5000,
+      "authorAgeDays": 180,
+      "sourceKeyword": "",
+      "categoryGroup": "competitor",
+      "exposedBrands": [
+        "Litmatch"
+      ],
+      "contentType": "素材混剪类",
+      "hasHumanFace": false,
+      "isGameRelated": false,
+      "implantDifficulty": 2,
+      "qualityScore": 88,
+      "dimensions": {
+        "engagement": 17,
+        "maleFit": 23,
+        "replicability": 18,
+        "implantNaturalness": 17,
+        "completeness": 13
+      },
+      "implantGuide": {
+        "exactTiming": "第 04-07 秒（从奔现前路途第一视角空镜切入到双方过往深夜连麦/聊天记录回溯时）",
+        "visualHook": "手机屏幕第一视角展现与妹子的暧昧聊天界面，顶部轻度露出『Laya · 语音连麦 02:14:35』与甜妹发送的『到店里跟我说哦等你～』语音气泡",
+        "copyScript": "文案改写为：『在Laya上连麦聊了一个月的湾湾甜妹终于答应线下见面了…下车赴约这几分钟心跳直接飙到140，兄弟们祝我好运！』",
+        "commentSeedScript": "置顶热评小号A问：『这妹子声音也太温柔了吧！是在哪认识的？』；小号B自然回复：『看连麦界面是Laya，晚上11点后匹配到的基本都是这种声音超软的主动甜妹』"
+      },
+      "replicationSteps": [
+        "第一步（底版制作）：拍摄 3~5 秒第一视角走路/赴约的无露脸手部或街景空镜，前 2 秒通过文字大标题『第一次跟连麦一个月的网恋女友奔现…』精准锁定男性好奇心；",
+        "第二步（植入卡点）：第 4 秒通过手机屏幕展示过往深夜语音连麦记录与高甜语音条，自然无痕带出 Laya 语音通话UI与高互动粘性；",
+        "第三步（节奏包装）：搭配心跳音效与轻快小红书热门BGM，时长压缩在 12~16 秒之间，结尾设置留白悬念『见到了，兄弟们要看后续吗』拉爆评论区互动；",
+        "第四步（评论区承接）：发布后由小号迅速追问软件名与奔现技巧，置顶引导至 Laya 语音匹配心智完成转化。"
+      ],
+      "auditEngine": "gemini:gemini-3.8-flash",
+      "contentHash": "f95f6c91f73fcc18",
+      "mediaFingerprint": "",
+      "favorited": false,
+      "markedUsed": false,
+      "feishuSynced": false,
+      "feishuSyncedAt": "",
+      "customValues": {
+        "hookStyle": "网恋奔现反差"
+      }
+    },
+    {
+      "id": "smp_mwj2qtnv_7968a5",
+      "platform": "tiktok",
+      "mediaType": "video",
+      "mergedPlatforms": [
+        "tiktok"
+      ],
+      "alternateUrls": [],
+      "duplicateCount": 1,
+      "title": "美国🇺🇸女生想要认识中国🇨🇳朋友！ JOEL2025-11-30",
+      "fullText": "美国🇺🇸女生想要认识中国🇨🇳朋友！ JOEL2025-11-30",
+      "videoUrl": "https://www.tiktok.com/@lm102328/video/7578667191822716178",
+      "coverUrl": "./covers/fp_ti_6d5e1755.jpg",
+      "publishedAt": "2026-11-16T09:40:47.745Z",
+      "collectedAt": "2026-11-16T09:41:52.939Z",
+      "durationSec": 16,
+      "bgm": "浏览器真实音频",
+      "plays": 0,
+      "likes": 0,
+      "comments": 0,
+      "shares": 0,
+      "bookmarks": 0,
+      "topComments": [],
+      "authorHandle": "lm102328",
+      "authorFollowers": 5000,
+      "authorAgeDays": 180,
+      "sourceKeyword": "",
+      "categoryGroup": "generic",
+      "exposedBrands": [],
+      "contentType": "其他可植入泛内容",
+      "hasHumanFace": false,
+      "isGameRelated": false,
+      "implantDifficulty": 3,
+      "qualityScore": 71,
+      "dimensions": {
+        "engagement": 10,
+        "maleFit": 17,
+        "replicability": 14,
+        "implantNaturalness": 17,
+        "completeness": 13
+      },
+      "implantGuide": {
+        "exactTiming": "第 07 秒（情绪转折字幕切入手机锁屏私信弹窗瞬间）",
+        "visualHook": "夜景空镜上方叠加半透明手机通知横幅：「[Laya] 你匹配的小姐姐发来一段 9\" 晚安语音」",
+        "copyScript": "正文直接套用：「以为深夜语音匹配到的都是高冷慢热，结果刚连上3秒对面妹妹直接叫哥哥问睡不着要不要一起挂机听歌…谁懂这种顶不住的瞬间」",
+        "commentSeedScript": "主号不留链接防限流；发布 2 分钟后小号A评论：「求问这是什么聊天软件？怎么我平时匹配不到这么会聊的妹妹」，小号B回复：「看着像 Laya，开深夜语音速配基本秒接，回复超快」"
+      },
+      "replicationSteps": [
+        "1. 画面复刻：打开内部录屏制作台（如 Laya 播放器工作台），按原片节奏编排 4~5 轮短句对话，前 2 秒直接展示最具悬念/暧昧张力的首句；",
+        "2. 软广埋点：在第 7 秒第 3 轮互动处自然带出语音通话气泡或「连麦匹配」状态条，严禁出现下载二维码或推销字眼；",
+        "3. 音频卡点：选用「浏览器真实音频」同款慢节奏背景音，气泡弹出配清脆提示音，总时长控制在 16 秒左右；",
+        "4. 矩阵承接：发布至 TIKTOK 后用准备好的双小号在热评区完成「问软件名 -> 答 Laya/暗号」闭环引流。"
+      ],
+      "auditEngine": "local_free_smart_engine",
+      "contentHash": "0f00204a2af5ebb6",
+      "mediaFingerprint": "",
+      "favorited": false,
+      "markedUsed": false,
+      "feishuSynced": true,
+      "feishuSyncedAt": "2026-11-16T09:42:08.884Z",
+      "customValues": {
+        "hookStyle": "甜妹反差主动"
+      },
+      "feishuCoverTokens": {
+        "QeUGb7sJ1aT9CesSsP0cY8s8n3c": "PKnIbF4Miot7imx0fQLcDO1Mnxh"
+      }
+    },
+    {
+      "id": "smp_mwj2q7jt_d4c501",
+      "platform": "tiktok",
+      "mediaType": "video",
+      "mergedPlatforms": [
+        "tiktok"
+      ],
+      "alternateUrls": [],
+      "duplicateCount": 2,
+      "title": "#海外华人 #交友 #单身 #附近100米的人 柯基宝宝🫧10-16",
+      "fullText": "#海外华人 #交友 #单身 #附近100米的人 柯基宝宝🫧10-16",
+      "videoUrl": "https://www.tiktok.com/@f9hzgv7/video/7697134321051782421",
+      "coverUrl": "./covers/fp_ti_093042dd.jpg",
+      "publishedAt": "2026-11-16T09:40:46.741Z",
+      "collectedAt": "2026-11-16T09:41:24.281Z",
+      "durationSec": 16,
+      "bgm": "浏览器真实音频",
+      "plays": 2500,
+      "likes": 100,
+      "comments": 0,
+      "shares": 0,
+      "bookmarks": 25,
+      "topComments": [],
+      "authorHandle": "f9hzgv7",
+      "authorFollowers": 5000,
+      "authorAgeDays": 180,
+      "sourceKeyword": "",
+      "categoryGroup": "generic",
+      "exposedBrands": [],
+      "contentType": "素材混剪类",
+      "hasHumanFace": false,
+      "isGameRelated": false,
+      "implantDifficulty": 2,
+      "qualityScore": 84,
+      "dimensions": {
+        "engagement": 15,
+        "maleFit": 21,
+        "replicability": 19,
+        "implantNaturalness": 17,
+        "completeness": 12
+      },
+      "implantGuide": {
+        "exactTiming": "第 06 秒（画面出现宠物治愈空镜搭配异性打招呼气泡转折点）",
+        "visualHook": "萌宠日常或夜景空镜画面底部自然浮现带有距离提示的聊天悬浮条『附近500m · 正在收听同一首深夜电台』，无生硬Logo",
+        "copyScript": "文案优化为：『在异国他乡一个人遛狗总觉得孤独，直到在附近语音房连到了隔壁街区的同胞甜妹，原来合拍的人真的就在身边…』",
+        "commentSeedScript": "小号A提问：『海外华人圈子这么小，这是什么神仙软件能搜到这么近的？』；小号B回复：『是Laya，里面好多留学生和海外华人在深夜连麦匹配，破冰巨快』"
+      },
+      "replicationSteps": [
+        "第一步（素材准备）：搜集无版权高质量萌宠生活/城市夜景空镜，前2秒剪辑出带有孤独感与寻找同伴意愿的生活片段；",
+        "第二步（文案与钩子）：在画面中间打上高对比度花字『在海外单身一个人，如何低成本认识附近可爱的女孩子？』直击男性痛点；",
+        "第三步（软广植入）：第6秒转场切入聊天/语音条互动微缩气泡，展示在同城/附近频道的真实破冰体验；",
+        "第四步（评论区承接）：发布后利用小号在评论区以『求App名字/是不是留学生都在用』展开双簧互动，自然点出Laya并引导下载。"
+      ],
+      "auditEngine": "gemini:gemini-3.8-flash",
+      "contentHash": "08b1aaf7fef90ee1",
+      "mediaFingerprint": "",
+      "favorited": false,
+      "markedUsed": false,
+      "feishuSynced": true,
+      "feishuSyncedAt": "2026-11-16T09:41:41.107Z",
+      "customValues": {
+        "hookStyle": "同城附近破冰"
+      },
+      "feishuCoverTokens": {
+        "QeUGb7sJ1aT9CesSsP0cY8s8n3c": "KXQgbFrJpoMCa4x8aUEciWKens1"
+      },
+      "updatedAt": "2026-11-16T09:42:41.488Z"
+    },
+    {
+      "id": "smp_mwj2osyw_073876",
+      "platform": "threads",
+      "mediaType": "image",
+      "mergedPlatforms": [
+        "threads"
+      ],
+      "alternateUrls": [],
+      "duplicateCount": 1,
+      "title": "#台灣 #交友 35歲的我還能找到愛情嗎",
+      "fullText": "#台灣 #交友 35歲的我還能找到愛情嗎",
+      "videoUrl": "https://www.threads.com/@llama.70143342/post/Dfn7fguGpbS",
+      "coverUrl": "./covers/fp_th_0ce673a0.jpg",
+      "publishedAt": "2026-11-12T01:58:09.000Z",
+      "collectedAt": "2026-11-16T09:40:18.728Z",
+      "durationSec": 0,
+      "bgm": "图文热帖（无音频）",
+      "plays": 29379,
+      "likes": 35,
+      "comments": 677,
+      "shares": 0,
+      "bookmarks": 9,
+      "topComments": [],
+      "authorHandle": "llama.70143342",
+      "authorFollowers": 5000,
+      "authorAgeDays": 180,
+      "sourceKeyword": "",
+      "categoryGroup": "generic",
+      "exposedBrands": [],
+      "contentType": "纯文字热帖/串文类",
+      "hasHumanFace": false,
+      "isGameRelated": false,
+      "implantDifficulty": 1,
+      "qualityScore": 92,
+      "dimensions": {
+        "engagement": 18,
+        "maleFit": 23,
+        "replicability": 20,
+        "implantNaturalness": 18,
+        "completeness": 13
+      },
+      "implantGuide": {
+        "exactTiming": "正文第2段（痛点陈述后转折处）",
+        "visualHook": "单张极简黑底白字卡片或纯文本排版，搭配文字『35歲工程師，下班後的深夜連麥』截图",
+        "copyScript": "正文改写：『35歲的我還能在交友軟體找到愛情嗎？每天下班回家只有空調聲，朋友都結婚了。本來以為自己這年紀沒人理，直到前幾天在Laya隨機連麥，匹配到一個26歲在台北讀研的妹妹，聲音軟軟的陪我聊到凌晨兩點，第一次覺得被認真聽我說話…大齡男生真的別放棄。』",
+        "commentSeedScript": "小号A评论：『35歲大叔路過，真的一堆軟體看年紀就被刷掉，求問Laya上年齡會被嫌棄嗎？』；小号B回复：『不會，Laya深夜連麥都是先聽聲音再看資料，御姐和甜妹超多，聲音好聽直接破冰！』"
+      },
+      "replicationSteps": [
+        "第一步（底版制作）：提取大龄男性（30-38岁）职场孤独、脱单焦虑等强痛点，直接以『XX歲的我還能找到愛情嗎』制作黑底白字纯文字帖或Threads短串文；",
+        "第二步（植入卡点）：在描述深夜孤独感后，自然带出『原本不抱希望，结果在Laya随机语音连麦遇到高回复甜妹/温柔御姐』的被治愈反差体验；",
+        "第三步（节奏包装）：文案保持真实口语与走心纪实风，抛出开放式反问激发同龄男性抱团评论；",
+        "第四步（评论区承接）：发布后安排矩阵号在评论区以『同龄人现身说法+询问App体验』进行双簧互动，引导目标客群搜索下载Laya。"
+      ],
+      "auditEngine": "gemini:gemini-3.8-flash",
+      "contentHash": "fb4e725240dc6974",
+      "mediaFingerprint": "",
+      "favorited": false,
+      "markedUsed": false,
+      "feishuSynced": true,
+      "feishuSyncedAt": "2026-11-16T09:40:35.648Z",
+      "customValues": {
+        "hookStyle": "情绪共鸣扎心"
+      },
+      "feishuCoverTokens": {
+        "QeUGb7sJ1aT9CesSsP0cY8s8n3c": "UXqebBGNCoKcgXxmCbIc3hkwnIh"
+      }
+    },
+    {
+      "id": "smp_mwj2nwkh_93189d",
+      "platform": "threads",
+      "mediaType": "text",
+      "mergedPlatforms": [
+        "threads"
+      ],
+      "alternateUrls": [],
+      "duplicateCount": 2,
+      "title": "林昕穎💤4,215 followers",
+      "fullText": "林昕穎💤4,215 followers",
+      "videoUrl": "https://www.threads.com/@a4terb.s6y",
+      "coverUrl": "./covers/fp_th_592df28e.jpg",
+      "publishedAt": "2026-11-16T09:39:24.146Z",
+      "collectedAt": "2026-11-16T09:39:36.737Z",
+      "durationSec": 0,
+      "bgm": "纯文字热帖（无音频）",
+      "plays": 9134,
+      "likes": 4,
+      "comments": 215,
+      "shares": 0,
+      "bookmarks": 1,
+      "topComments": [],
+      "authorHandle": "a4terb.s6y",
+      "authorFollowers": 5000,
+      "authorAgeDays": 180,
+      "sourceKeyword": "",
+      "categoryGroup": "generic",
+      "exposedBrands": [],
+      "contentType": "纯文字热帖/串文类",
+      "hasHumanFace": false,
+      "isGameRelated": false,
+      "implantDifficulty": 1,
+      "qualityScore": 78,
+      "dimensions": {
+        "engagement": 13,
+        "maleFit": 17,
+        "replicability": 19,
+        "implantNaturalness": 19,
+        "completeness": 10
+      },
+      "implantGuide": {
+        "exactTiming": "第 2 段情绪转折处（引出声音匹配体验，非硬广直推）",
+        "visualHook": "纯文字第一视角克制描述使用细节，如「在 Laya 随手挂了个匿名语音房」，不贴下载链接",
+        "copyScript": "正文直接套用：「以为深夜语音匹配到的都是高冷慢热，结果刚连上3秒对面妹妹直接叫哥哥问睡不着要不要一起挂机听歌…谁懂这种顶不住的瞬间」",
+        "commentSeedScript": "主号不留链接防限流；发布 2 分钟后小号A评论：「求问这是什么聊天软件？怎么我平时匹配不到这么会聊的妹妹」，小号B回复：「看着像 Laya，开深夜语音速配基本秒接，回复超快」"
+      },
+      "replicationSteps": [
+        "1. 文案/图文改写：保留高赞原帖第一句钩子和情绪节奏，改成夜间男性第一视角分享；",
+        "2. 软广埋点：在正文后半段或第 2 张截图自然提及语音连麦细节，也可直接用录屏工作台一键转成聊天录屏视频；",
+        "3. 互动助推：发布至 THREADS 后用双小号在评论区完成「问软件名 -> 答 Laya」自然引流。"
+      ],
+      "auditEngine": "local_free_smart_engine",
+      "contentHash": "7ca92f55b4141f38",
+      "mediaFingerprint": "",
+      "favorited": false,
+      "markedUsed": false,
+      "feishuSynced": true,
+      "feishuSyncedAt": "2026-11-16T09:39:54.618Z",
+      "customValues": {
+        "hookStyle": "甜妹反差主动"
+      },
+      "feishuCoverTokens": {
+        "QeUGb7sJ1aT9CesSsP0cY8s8n3c": "IDVFbohjsopUmfxt2p0cFQhlncb"
+      },
+      "updatedAt": "2026-11-16T09:40:18.730Z"
+    },
+    {
+      "id": "smp_mwj2m378_bd9275",
+      "platform": "facebook",
+      "mediaType": "text",
+      "mergedPlatforms": [
+        "facebook"
+      ],
+      "alternateUrls": [],
+      "duplicateCount": 1,
+      "title": "粉絲專頁 Litmatch Philippines應用程式專頁 · 8.7 萬位追蹤者Litmatch Philippines社群媒體代理商 · 841 位追蹤者Litmatc",
+      "fullText": "粉絲專頁 Litmatch Philippines應用程式專頁 · 8.7 萬位追蹤者Litmatch Philippines社群媒體代理商 · 841 位追蹤者Litmatch Myanmar網路公司 · 531 位追蹤者查看全部",
+      "videoUrl": "https://www.facebook.com/LitmatchPhilippinesSocial",
+      "coverUrl": "./covers/fp_fa_29423483.jpg",
+      "publishedAt": "2026-11-16T09:37:49.643Z",
+      "collectedAt": "2026-11-16T09:38:12.020Z",
+      "durationSec": 0,
+      "bgm": "纯文字热帖（无音频）",
+      "plays": 45009,
+      "likes": 841,
+      "comments": 531,
+      "shares": 0,
+      "bookmarks": 210,
+      "topComments": [],
+      "authorHandle": "social_creator",
+      "authorFollowers": 5000,
+      "authorAgeDays": 180,
+      "sourceKeyword": "",
+      "categoryGroup": "competitor",
+      "exposedBrands": [
+        "Litmatch"
+      ],
+      "contentType": "纯文字热帖/串文类",
+      "hasHumanFace": false,
+      "isGameRelated": false,
+      "implantDifficulty": 2,
+      "qualityScore": 79,
+      "dimensions": {
+        "engagement": 14,
+        "maleFit": 20,
+        "replicability": 18,
+        "implantNaturalness": 17,
+        "completeness": 10
+      },
+      "implantGuide": {
+        "exactTiming": "正文第二段（在吐槽Litmatch等主流交友App机器人泛滥时）",
+        "visualHook": "纯文字排版开头加醒目标签与反问符号：『在东南亚玩 Litmatch 真的还能匹配到活人妹子吗？』",
+        "copyScript": "正文改写：『最近Litmatch菲律宾和缅甸区全是脚本假人，深夜想找个活人甜妹连麦挂机简直折磨…老哥们要是想找高颜值妹子聊天听声音，不如试试新出的 Laya，深夜1v1语音破冰秒接通，全是真实主动的台湾/东南亚软萌妹！』",
+        "commentSeedScript": "小号A评论：『Litmatch早就被假人占领了，求问哪个软件活人妹子多？』；小号B回复：『转战Laya了，睡前语音匹配基本都是秒回，昨晚还跟个甜妹连麦到两点』"
+      },
+      "replicationSteps": [
+        "第一步（痛点提炼）：针对Litmatch等东南亚主流社交软件上男性用户常见的『假人多、回复慢、语音匹配不到人』的真实痛点撰写纯文字避坑贴；",
+        "第二步（自然借势）：以真实海外老玩家视角切入，在文案中对比主流软件现状，顺理成章推荐转战语音陪伴新平台 Laya；",
+        "第三步（平台分发）：直接以纯文字串文或手机备忘录截图形式发布在 Facebook 华人/出海男性交友群组、Threads 或 Reddit；",
+        "第四步（评论引流）：在评论区使用双号自问自答，强化『Laya 活人率高、深夜秒连麦、妹子声优级』等核心卖点实现低成本截流转化。"
+      ],
+      "auditEngine": "gemini:gemini-3.8-flash",
+      "contentHash": "b0e14041c65e0cad",
+      "mediaFingerprint": "",
+      "favorited": false,
+      "markedUsed": false,
+      "feishuSynced": true,
+      "feishuSyncedAt": "2026-11-16T09:38:28.495Z",
+      "customValues": {
+        "hookStyle": "竞品痛点转移"
+      },
+      "feishuCoverTokens": {
+        "QeUGb7sJ1aT9CesSsP0cY8s8n3c": "Gr25bqaK1o188Px8nm7cqbXlnOd"
+      }
+    },
+    {
+      "id": "smp_mwj2ki9r_64bdd1",
+      "platform": "facebook",
+      "mediaType": "text",
+      "mergedPlatforms": [
+        "facebook"
+      ],
+      "alternateUrls": [],
+      "duplicateCount": 3,
+      "title": "社團 單身男女聊天交友群公開 · 4.2 萬位成員 · 一天 30 則以上貼文❤️全台寂寞男女交友圈❤️公開 · 1.6 萬位成員 · 一天 90 則以上貼文台灣單身交友 (T",
+      "fullText": "社團 單身男女聊天交友群公開 · 4.2 萬位成員 · 一天 30 則以上貼文❤️全台寂寞男女交友圈❤️公開 · 1.6 萬位成員 · 一天 90 則以上貼文台灣單身交友 (Tawan Single Imatch)公開 · 2.7 萬位成員 · 一天 30 則以上貼文查看全部",
+      "videoUrl": "https://www.facebook.com/groups/282556995176847",
+      "coverUrl": "./covers/fp_fa_2fd08a54.jpg",
+      "publishedAt": "2026-11-16T09:36:39.908Z",
+      "collectedAt": "2026-11-16T09:36:58.239Z",
+      "durationSec": 0,
+      "bgm": "纯文字热帖（无音频）",
+      "plays": 4530,
+      "likes": 60,
+      "comments": 0,
+      "shares": 0,
+      "bookmarks": 8,
+      "topComments": [],
+      "authorHandle": "social_creator",
+      "authorFollowers": 5000,
+      "authorAgeDays": 180,
+      "sourceKeyword": "",
+      "categoryGroup": "generic",
+      "exposedBrands": [],
+      "contentType": "纯文字热帖/串文类",
+      "hasHumanFace": false,
+      "isGameRelated": false,
+      "implantDifficulty": 1,
+      "qualityScore": 79,
+      "dimensions": {
+        "engagement": 12,
+        "maleFit": 19,
+        "replicability": 20,
+        "implantNaturalness": 17,
+        "completeness": 11
+      },
+      "implantGuide": {
+        "exactTiming": "正文第二段转折处（在对比传统单身社团效率低下后自然引出即时语音App）",
+        "visualHook": "纯文字排版使用清晰的『❌避坑 vs ✅推荐』对比符号，强化视觉抓力",
+        "copyScript": "实测劝退：加了这几个几万人的台湾单身交友群，进去90%都是诈骗和死人，发句哈啰根本没人理… 寂寞想找人说话还不如去Laya，深夜开个1v1语音匹配秒排到软萌台妹，连麦哄睡陪聊不香吗？",
+        "commentSeedScript": "小号A评论：『真的！FB社团现在全是机器人，求问最后那个秒回的叫什么？』小号B回复：『Laya，直接搜就有，晚上甜妹特别多』"
+      },
+      "replicationSteps": [
+        "第一步（底版制作）：提取社媒上男性扎堆的『单身交友社群/列表』作为吸睛引子，精准筛选有交友脱单意向的泛男性流量；",
+        "第二步（植入卡点）：采用『踩旧捧新』话术，吐槽传统社群人多但回复极慢、死群诈骗多，顺势植入 Laya 主打的『深夜语音秒匹配、高颜值高回复』优势；",
+        "第三步（节奏包装）：整理成易于阅读的条列式纯文字短贴，搭配反问句式引发评论区男性共鸣；",
+        "第四步（评论区承接）：发布后安排矩阵账号在评论区自导自演求软件名，指名 Laya 引导男性用户搜索下载转化。"
+      ],
+      "auditEngine": "gemini:gemini-3.8-flash",
+      "contentHash": "01a7794d0e03b0ad",
+      "mediaFingerprint": "",
+      "favorited": false,
+      "markedUsed": false,
+      "feishuSynced": true,
+      "feishuSyncedAt": "2026-11-16T09:37:18.493Z",
+      "customValues": {
+        "hookStyle": "干货避坑反差"
+      },
+      "feishuCoverTokens": {
+        "QeUGb7sJ1aT9CesSsP0cY8s8n3c": "WMAzbQSu2oDEqgxtyq7cXEE2nab"
+      },
+      "updatedAt": "2026-11-16T09:38:12.022Z"
+    },
+    {
+      "id": "smp_mwj2it2o_7e4036",
+      "platform": "instagram",
+      "mediaType": "video",
+      "mergedPlatforms": [
+        "instagram"
+      ],
+      "alternateUrls": [],
+      "duplicateCount": 1,
+      "title": "姐妹們，知道交友軟體怎麼玩了吧？ 在這個過度修圖的時代 還在靠換照交友？別鬧了 快來用 Omi 新推出的盲聊約會 blind date 新功能✨ 不看臉先聊天 畢竟長相只是門檻",
+      "fullText": "姐妹們，知道交友軟體怎麼玩了吧？ 在這個過度修圖的時代 還在靠換照交友？別鬧了 快來用 Omi 新推出的盲聊約會 blind date 新功能✨ 不看臉先聊天 畢竟長相只是門檻，幽默的是靈魂 濾鏡會騙人，情緒價值才是真的！ #Omi #BlindDate #盲測約會 #戀愛",
+      "videoUrl": "https://www.instagram.com/reel/DVYVxgtErny/",
+      "coverUrl": "./covers/fp_in_8dbf7829.jpg",
+      "publishedAt": "2026-03-02T11:32:11.000Z",
+      "collectedAt": "2026-11-16T09:35:38.928Z",
+      "durationSec": 16,
+      "bgm": "浏览器真实音频",
+      "plays": 106763,
+      "likes": 4357,
+      "comments": 156,
+      "shares": 0,
+      "bookmarks": 1089,
+      "topComments": [],
+      "authorHandle": "house.7934",
+      "authorFollowers": 5000,
+      "authorAgeDays": 180,
+      "sourceKeyword": "",
+      "categoryGroup": "competitor",
+      "exposedBrands": [
+        "Omi"
+      ],
+      "contentType": "聊天录屏类",
+      "hasHumanFace": false,
+      "isGameRelated": false,
+      "implantDifficulty": 2,
+      "qualityScore": 82,
+      "dimensions": {
+        "engagement": 16,
+        "maleFit": 18,
+        "replicability": 19,
+        "implantNaturalness": 17,
+        "completeness": 12
+      },
+      "implantGuide": {
+        "exactTiming": "第 05 秒（当画面/文案从『吐槽照骗/过度修图』切入到『不看脸先聊天』的转折卡点）",
+        "visualHook": "手机录屏展示正在进行『深夜匿名盲盒连麦』，界面中央显示甜妹软萌动态波形与『对方麦克风开启中』，右上角隐去竞品标、突出『Laya 连麦中』轻水印",
+        "copyScript": "正文男向改写：『兄弟們，在過度修圖的時代還在靠換照滑卡？別傻了！現在聰明的男生都在玩不看臉先開麥的深夜盲聊。畢竟濾鏡會騙人，但妹子耳邊一聲軟綿綿的「哥哥」給的情緒價值才是真的！』",
+        "commentSeedScript": "小号A评论：『真的受夠照騙了，求問這個只聽聲音的盲聊是哪個App？』；作者/小号B置顶回复：『Laya 的深夜匿名連麥，晚上基本都是不想露臉但聲音超甜的女大學生，純純情緒拉滿』"
+      },
+      "replicationSteps": [
+        "第一步（痛点重塑）：将原文女性向『姐妹們』逆转为戳中男性痛点的『兄弟們，別再傻傻看照片滑卡被照騙了』，前 3 秒以黑底白字或手机滑卡翻车录屏建立强烈共鸣；",
+        "第二步（卖点转移）：将 Omi 的盲聊功能平移至 Laya 的『深夜匿名语音匹配/心动连麦』，用 1v1 甜妹声音真实试听片段作为核心情绪价值交付；",
+        "第三步（极简制作）：录屏制作 15 秒以内的纯界面录屏（模糊背景+音频跳动波形），配上微醺Lo-Fi背景音乐即可零成本量产；",
+        "第四步（评论引流）：在评论区用小号自问自答，直指『Laya 深夜语音匹配』，把对照骗厌烦的男性流量快速承接转化。"
+      ],
+      "auditEngine": "gemini:gemini-3.8-flash",
+      "contentHash": "b5595a7c2a1f2db3",
+      "mediaFingerprint": "",
+      "favorited": false,
+      "markedUsed": false,
+      "feishuSynced": true,
+      "feishuSyncedAt": "2026-11-16T09:35:56.256Z",
+      "customValues": {
+        "hookStyle": "痛点反差/盲聊猎奇"
+      },
+      "feishuCoverTokens": {
+        "QeUGb7sJ1aT9CesSsP0cY8s8n3c": "NmjCbAmaIoLe6DxO5oBcAVBtnph"
+      }
+    },
+    {
+      "id": "smp_mwj2hwd1_2adeda",
+      "platform": "instagram",
+      "mediaType": "video",
+      "mergedPlatforms": [
+        "instagram"
+      ],
+      "alternateUrls": [],
+      "duplicateCount": 1,
+      "title": "想了三天，還是不懂萍萍為什麼不喜歡我 看到萍萍找到這麼優質的男生，我也想上去Omi交朋友了（淚奔 #Omi #funnyvideos #搞笑 #memes #迷因",
+      "fullText": "想了三天，還是不懂萍萍為什麼不喜歡我 看到萍萍找到這麼優質的男生，我也想上去Omi交朋友了（淚奔 #Omi #funnyvideos #搞笑 #memes #迷因",
+      "videoUrl": "https://www.instagram.com/reel/DbDU6XSTbC0/",
+      "coverUrl": "./covers/fp_in_a907be40.jpg",
+      "publishedAt": "2026-07-21T10:45:09.000Z",
+      "collectedAt": "2026-11-16T09:34:56.533Z",
+      "durationSec": 16,
+      "bgm": "浏览器真实音频",
+      "plays": 267376,
+      "likes": 12058,
+      "comments": 50,
+      "shares": 0,
+      "bookmarks": 3015,
+      "topComments": [],
+      "authorHandle": "chenhank1213",
+      "authorFollowers": 5000,
+      "authorAgeDays": 180,
+      "sourceKeyword": "",
+      "categoryGroup": "competitor",
+      "exposedBrands": [
+        "Omi"
+      ],
+      "contentType": "素材混剪类",
+      "hasHumanFace": false,
+      "isGameRelated": false,
+      "implantDifficulty": 2,
+      "qualityScore": 90,
+      "dimensions": {
+        "engagement": 18,
+        "maleFit": 23,
+        "replicability": 18,
+        "implantNaturalness": 18,
+        "completeness": 13
+      },
+      "implantGuide": {
+        "exactTiming": "第 08 秒（前半段男主舔狗破防梗转折处，画面切到深夜关灯看手机空镜）",
+        "visualHook": "手机屏幕自然浮现微光，顶部弹出『Laya · 甜妹连麦匹配成功 00:32:15』极简悬浮气泡，无Logo硬切",
+        "copyScript": "文案改写：『当舔狗三个月不如昨晚在Laya语音匹配的台湾妹妹跟我聊了三分钟…声音超软还主动叫我别熬夜，瞬间治愈了』",
+        "commentSeedScript": "置顶小号A：『别当舔狗了兄弟，萍萍不懂珍惜你』；小号B神回复：『真的，自从睡前在Laya连麦找妹子聊天，已经很久没当过怨种了』"
+      },
+      "replicationSteps": [
+        "第一步（底版制作）：搜集高点赞的网络无脸搞笑破防/失落背影迷因素材截取前 5 秒，文案直接打出『追不到白月光/当舔狗破防』男性痛点钩子；",
+        "第二步（反差植入）：在第 6~8 秒画面转入深夜空镜或手机录屏，自然嵌入 Laya 1v1 甜妹语音连麦、深夜哄睡的声音波形或聊天气泡；",
+        "第三步（节奏包装）：搭配伤感流行转温暖治愈 R&B 背景音乐，视频时长严格压缩在 12~16 秒提升完播率；",
+        "第四步（评论区承接）：发布后利用矩阵账号在评论区演双簧，以『劝退当舔狗，推荐去Laya找情绪价值』完成男性用户的丝滑转化。"
+      ],
+      "auditEngine": "gemini:gemini-3.8-flash",
+      "contentHash": "86c6308360b8aa2a",
+      "mediaFingerprint": "",
+      "favorited": false,
+      "markedUsed": false,
+      "feishuSynced": true,
+      "feishuSyncedAt": "2026-11-16T09:35:23.291Z",
+      "customValues": {
+        "hookStyle": "男向破防共情"
+      },
+      "feishuCoverTokens": {
+        "QeUGb7sJ1aT9CesSsP0cY8s8n3c": "WmK6bpJ7todBmMx0SoEcwe3KnAc"
+      }
+    },
+    {
+      "id": "smp_mwj2hk49_e9f0c9",
+      "platform": "instagram",
+      "mediaType": "video",
+      "mergedPlatforms": [
+        "instagram"
+      ],
+      "alternateUrls": [],
+      "duplicateCount": 1,
+      "title": "POV：當你在路上遇到蹲在地上吸菸的omi網友 A擋一根給她 B掉頭走人 C撿起地上的繼續抽",
+      "fullText": "POV：當你在路上遇到蹲在地上吸菸的omi網友 A擋一根給她 B掉頭走人 C撿起地上的繼續抽",
+      "videoUrl": "https://www.instagram.com/reel/CrTTlMzMp93/",
+      "coverUrl": "./covers/fp_in_e03b4eaa.jpg",
+      "publishedAt": "2026-11-16T09:33:43.762Z",
+      "collectedAt": "2026-11-16T09:34:40.666Z",
+      "durationSec": 16,
+      "bgm": "浏览器真实音频",
+      "plays": 325310,
+      "likes": 13954,
+      "comments": 104,
+      "shares": 0,
+      "bookmarks": 3489,
+      "topComments": [],
+      "authorHandle": "dollydollye",
+      "authorFollowers": 5000,
+      "authorAgeDays": 180,
+      "sourceKeyword": "",
+      "categoryGroup": "competitor",
+      "exposedBrands": [
+        "Omi"
+      ],
+      "contentType": "其他可植入泛内容",
+      "hasHumanFace": false,
+      "isGameRelated": false,
+      "implantDifficulty": 2,
+      "qualityScore": 88,
+      "dimensions": {
+        "engagement": 18,
+        "maleFit": 22,
+        "replicability": 18,
+        "implantNaturalness": 17,
+        "completeness": 13
+      },
+      "implantGuide": {
+        "exactTiming": "第 01 秒文案大字钩子及第 12 秒结尾选择题互动处",
+        "visualHook": "第一视角俯拍走向路边蹲着抽烟/玩手机的背影（不露脸），正中弹出大字POV互动选项，强化网友奔现的反差荒诞感",
+        "copyScript": "文案改写：『POV：當你在路上遇到昨晚在Laya連麥叫你哥哥的網友… A擋一根給她 B掉頭走人 C走過去問她：你昨晚甜死人的夾子音去哪了？』",
+        "commentSeedScript": "小号A带节奏：『笑死，在Laya上語音聽著是軟糯甜妹，線下見面居然是個酷姐抽菸』；小号B回复：『至少是真人，而且聲音好聽性格反差萌，我選D：直接坐過去陪她抽』"
+      },
+      "replicationSteps": [
+        "第一步（低成本拍摄）：第一视角用手机实拍一段朋友在街角、马路牙子蹲着吸烟或低头玩手机的侧影/背影空镜（全程不露正脸），保持8-15秒原生态手持感；",
+        "第二步（文案钩子移植）：将竞品Omi替换为我方Laya，利用男性极度感兴趣的『线上连麦甜妹 vs 线下反差酷姐』奔现翻车/搞笑冲突，抛出A/B/C选择题激发评论区疯狂站队互动；",
+        "第三步（音频与剪辑包装）：搭配具有诙谐搞笑或微醺反差感的海外流行BGM，配上高对比度居中文案弹幕，将时长控制在12-16秒以拉满完播率与二刷率；",
+        "第四步（评论区承接与截流）：发布后迅速用2个矩阵小号在评论区埋梗，强调该软件（Laya）连麦活跃度高、女生真实有个性、声音好听，自然引导男性用户搜索下载体验。"
+      ],
+      "auditEngine": "gemini:gemini-3.8-flash",
+      "contentHash": "26e238359b49af58",
+      "mediaFingerprint": "",
+      "favorited": false,
+      "markedUsed": false,
+      "feishuSynced": true,
+      "feishuSyncedAt": "2026-11-16T09:34:58.291Z",
+      "customValues": {
+        "hookStyle": "奔现反差搞怪"
+      },
+      "feishuCoverTokens": {
+        "QeUGb7sJ1aT9CesSsP0cY8s8n3c": "CuzMbb7p2oxyDtxWaYOcQ9IynRf"
+      }
+    },
+    {
+      "id": "smp_mwj2h3ql_52545e",
+      "platform": "instagram",
+      "mediaType": "video",
+      "mergedPlatforms": [
+        "instagram"
+      ],
+      "alternateUrls": [],
+      "duplicateCount": 1,
+      "title": "地府審案處24｜月老請吃飯 #omi",
+      "fullText": "地府審案處24｜月老請吃飯 #omi",
+      "videoUrl": "https://www.instagram.com/reel/DdyrKV1ymxA/",
+      "coverUrl": "./covers/fp_in_b35e021b.jpg",
+      "publishedAt": "2026-09-27T13:06:47.000Z",
+      "collectedAt": "2026-11-16T09:34:19.437Z",
+      "durationSec": 16,
+      "bgm": "浏览器真实音频",
+      "plays": 768048,
+      "likes": 34686,
+      "comments": 118,
+      "shares": 0,
+      "bookmarks": 8672,
+      "topComments": [],
+      "authorHandle": "dust.mite._.z",
+      "authorFollowers": 5000,
+      "authorAgeDays": 180,
+      "sourceKeyword": "",
+      "categoryGroup": "competitor",
+      "exposedBrands": [
+        "Omi"
+      ],
+      "contentType": "其他可植入泛内容",
+      "hasHumanFace": false,
+      "isGameRelated": false,
+      "implantDifficulty": 3,
+      "qualityScore": 78,
+      "dimensions": {
+        "engagement": 20,
+        "maleFit": 17,
+        "replicability": 14,
+        "implantNaturalness": 17,
+        "completeness": 10
+      },
+      "implantGuide": {
+        "exactTiming": "第 07 秒（情绪转折字幕切入手机锁屏私信弹窗瞬间）",
+        "visualHook": "夜景空镜上方叠加半透明手机通知横幅：「[Laya] 你匹配的小姐姐发来一段 9\" 晚安语音」",
+        "copyScript": "正文直接套用：「以为深夜语音匹配到的都是高冷慢热，结果刚连上3秒对面妹妹直接叫哥哥问睡不着要不要一起挂机听歌…谁懂这种顶不住的瞬间」",
+        "commentSeedScript": "主号不留链接防限流；发布 2 分钟后小号A评论：「求问这是什么聊天软件？怎么我平时匹配不到这么会聊的妹妹」，小号B回复：「看着像 Laya，开深夜语音速配基本秒接，回复超快」"
+      },
+      "replicationSteps": [
+        "1. 画面复刻：打开内部录屏制作台（如 Laya 播放器工作台），按原片节奏编排 4~5 轮短句对话，前 2 秒直接展示最具悬念/暧昧张力的首句；",
+        "2. 软广埋点：在第 7 秒第 3 轮互动处自然带出语音通话气泡或「连麦匹配」状态条，严禁出现下载二维码或推销字眼；",
+        "3. 音频卡点：选用「浏览器真实音频」同款慢节奏背景音，气泡弹出配清脆提示音，总时长控制在 16 秒左右；",
+        "4. 矩阵承接：发布至 INSTAGRAM 后用准备好的双小号在热评区完成「问软件名 -> 答 Laya/暗号」闭环引流。"
+      ],
+      "auditEngine": "local_free_smart_engine",
+      "contentHash": "8cc6e932a8ac9410",
+      "mediaFingerprint": "",
+      "favorited": false,
+      "markedUsed": false,
+      "feishuSynced": true,
+      "feishuSyncedAt": "2026-11-16T09:34:40.078Z",
+      "customValues": {
+        "hookStyle": "甜妹反差主动"
+      },
+      "feishuCoverTokens": {
+        "QeUGb7sJ1aT9CesSsP0cY8s8n3c": "CG1dbaDG7ojXoDx1YBwcPEaNnIb"
+      }
+    },
     {
       "id": "smp_mwizfem8_1952f5",
       "platform": "threads",
@@ -7261,6 +8013,358 @@
   ],
   "trash": [
     {
+      "id": "trsh_mwj2saav_af199b",
+      "trashType": "auto_filtered",
+      "filterCategory": "硬广内容过滤",
+      "vetoReason": "文案直接包含『#交友的看我主頁』等生硬招揽与直白引流标签，缺乏真实的异性互动情境、剧情铺垫或情绪价值，属于低质刷屏导流硬广，不符合高转化软广复刻标准。",
+      "platform": "tiktok",
+      "mediaType": "video",
+      "title": "🥳🥳🥳🥰#熱門推薦 #單身 #交友 #交友的看我主頁 created by 莱雅 with 莱雅’s 原声 - 莱雅",
+      "fullText": "🥳🥳🥳🥰#熱門推薦 #單身 #交友 #交友的看我主頁 created by 莱雅 with 莱雅’s 原声 - 莱雅",
+      "videoUrl": "https://www.tiktok.com/@laiya5555/video/7162784914323098881",
+      "coverUrl": "./covers/fp_ti_77d255dd.jpg",
+      "publishedAt": "2026-11-16T09:42:41.477Z",
+      "trashedAt": "2026-11-16T09:43:01.159Z",
+      "durationSec": 16,
+      "bgm": "浏览器真实音频",
+      "plays": 0,
+      "likes": 0,
+      "comments": 0,
+      "shares": 0,
+      "bookmarks": 0,
+      "topComments": [],
+      "authorHandle": "laiya5555",
+      "authorFollowers": 5000,
+      "authorAgeDays": 180,
+      "sourceKeyword": "",
+      "sourceBucket": "brand",
+      "qualityScore": 12,
+      "hasHumanFace": false,
+      "isGameRelated": false,
+      "contentHash": "359992d2685ae6b5",
+      "mediaFingerprint": ""
+    },
+    {
+      "id": "trsh_mwj2rf18_557eb5",
+      "trashType": "auto_filtered",
+      "filterCategory": "无法复刻过滤",
+      "vetoReason": "样本为真人自拍/口播交友视频，画面包含真人全脸出镜，直接触碰真人露脸一票否决红线；同时依赖真人出镜素材，运营团队无法通过聊天录屏或文字模板低成本批量复刻。",
+      "platform": "tiktok",
+      "mediaType": "video",
+      "title": "我是想和中国朋友交朋友的韩国人 tungoc.kim🇰🇷5-7",
+      "fullText": "我是想和中国朋友交朋友的韩国人 tungoc.kim🇰🇷5-7",
+      "videoUrl": "https://www.tiktok.com/@gyurang1029/video/7637048952923180309",
+      "coverUrl": "./covers/fp_ti_597670e6.jpg",
+      "publishedAt": "2026-11-16T09:40:48.581Z",
+      "trashedAt": "2026-11-16T09:42:20.636Z",
+      "durationSec": 16,
+      "bgm": "浏览器真实音频",
+      "plays": 0,
+      "likes": 0,
+      "comments": 0,
+      "shares": 0,
+      "bookmarks": 0,
+      "topComments": [],
+      "authorHandle": "gyurang1029",
+      "authorFollowers": 5000,
+      "authorAgeDays": 180,
+      "sourceKeyword": "",
+      "sourceBucket": "brand",
+      "qualityScore": 0,
+      "hasHumanFace": true,
+      "isGameRelated": false,
+      "contentHash": "3c843d3a97c42617",
+      "mediaFingerprint": ""
+    },
+    {
+      "id": "trsh_mwj2r3ta_fc7a29",
+      "trashType": "auto_filtered",
+      "filterCategory": "硬广内容过滤",
+      "vetoReason": "视频为跨国红娘/婚介真人女性出镜自拍展示与口播，触犯真人露脸一票否决规则（hasHumanFace），且涉及婚介线下业务与高复刻门槛，普通运营无法低成本批量复制。",
+      "platform": "tiktok",
+      "mediaType": "video",
+      "title": "如果你想找个女朋友的话，可以看看俄罗斯小姐姐哦！#交友 #俄罗斯女朋友 #跨国婚姻 #红娘 katya2025-8-26",
+      "fullText": "如果你想找个女朋友的话，可以看看俄罗斯小姐姐哦！#交友 #俄罗斯女朋友 #跨国婚姻 #红娘 katya2025-8-26",
+      "videoUrl": "https://www.tiktok.com/@katyakuzn/video/7542793251070201093",
+      "coverUrl": "./covers/fp_ti_a47351f9.jpg",
+      "publishedAt": "2026-11-16T09:40:48.223Z",
+      "trashedAt": "2026-11-16T09:42:06.094Z",
+      "durationSec": 16,
+      "bgm": "浏览器真实音频",
+      "plays": 0,
+      "likes": 0,
+      "comments": 0,
+      "shares": 0,
+      "bookmarks": 0,
+      "topComments": [],
+      "authorHandle": "katyakuzn",
+      "authorFollowers": 5000,
+      "authorAgeDays": 180,
+      "sourceKeyword": "",
+      "sourceBucket": "brand",
+      "qualityScore": 22,
+      "hasHumanFace": true,
+      "isGameRelated": false,
+      "contentHash": "46a13c4cdc089311",
+      "mediaFingerprint": ""
+    },
+    {
+      "id": "trsh_mwj2pvxa_15ca86",
+      "trashType": "auto_filtered",
+      "filterCategory": "无法复刻过滤",
+      "vetoReason": "样本为典型真人美女健身自拍与同城交友引流视频（文案含'健身'、个人IP'小雅'），画面存在真人全脸出镜自拍，触犯'真人露脸一票否决'铁律；且内容依赖真人颜值与实景拍摄，运营团队无法实现低成本批量复刻。",
+      "platform": "tiktok",
+      "mediaType": "video",
+      "title": "下班后的时光#附近100米的人 #单身交友 #overseaschinese #健身 小雅（私信必回）9-15",
+      "fullText": "下班后的时光#附近100米的人 #单身交友 #overseaschinese #健身 小雅（私信必回）9-15",
+      "videoUrl": "https://www.tiktok.com/@user5501429100204/video/7685657965780651277",
+      "coverUrl": "./covers/fp_ti_575c53ec.jpg",
+      "publishedAt": "2026-11-16T09:40:45.155Z",
+      "trashedAt": "2026-11-16T09:41:09.214Z",
+      "durationSec": 16,
+      "bgm": "浏览器真实音频",
+      "plays": 2500,
+      "likes": 100,
+      "comments": 0,
+      "shares": 0,
+      "bookmarks": 25,
+      "topComments": [],
+      "authorHandle": "user5501429100204",
+      "authorFollowers": 5000,
+      "authorAgeDays": 180,
+      "sourceKeyword": "",
+      "sourceBucket": "brand",
+      "qualityScore": 32,
+      "hasHumanFace": true,
+      "isGameRelated": false,
+      "contentHash": "0357b5534e8a9525",
+      "mediaFingerprint": ""
+    },
+    {
+      "id": "trsh_mwj2o3za_2159d4",
+      "trashType": "auto_filtered",
+      "filterCategory": "非男向/无关过滤",
+      "vetoReason": "样本正文仅包含作者个人简介及商务合作邮箱（'8怪 ᵕ̈多大點事 📪：xunchen0331@gmail.com'），无任何恋爱交友、深夜语音陪伴或异性情感互动相关实质内容，属于彻底的无关杂音内容。",
+      "platform": "threads",
+      "mediaType": "text",
+      "title": "8怪 ᵕ̈多大點事 📪：xunchen0331@gmail.com17.5K followers",
+      "fullText": "8怪 ᵕ̈多大點事 📪：xunchen0331@gmail.com17.5K followers",
+      "videoUrl": "https://www.threads.com/@xun_chen_0331",
+      "coverUrl": "./covers/fp_th_aeec5135.jpg",
+      "publishedAt": "2026-11-16T09:39:25.271Z",
+      "trashedAt": "2026-11-16T09:39:46.342Z",
+      "durationSec": 0,
+      "bgm": "纯文字热帖（无音频）",
+      "plays": 168,
+      "likes": 8,
+      "comments": 0,
+      "shares": 0,
+      "bookmarks": 2,
+      "topComments": [],
+      "authorHandle": "xun_chen_0331",
+      "authorFollowers": 5000,
+      "authorAgeDays": 180,
+      "sourceKeyword": "",
+      "sourceBucket": "brand",
+      "qualityScore": 18,
+      "hasHumanFace": false,
+      "isGameRelated": false,
+      "contentHash": "e63945d2ce6de7c2",
+      "mediaFingerprint": ""
+    },
+    {
+      "id": "trsh_mwj2n62k_70946b",
+      "trashType": "auto_filtered",
+      "filterCategory": "低质账号过滤",
+      "vetoReason": "一票否决：账号粉丝数 12 低于门槛（<1000 测试号/低权号）",
+      "platform": "x",
+      "mediaType": "text",
+      "title": "恶劣的是他们呢之前开了个幼儿园，一年学费4万人民币，差不多5700美元，收了160名孩子的钱后就跑路了，这些孩子难道不无辜吗，还说什么经营失",
+      "fullText": "恶劣的是他们呢之前开了个幼儿园，一年学费4万人民币，差不多5700美元，收了160名孩子的钱后就跑路了，这些孩子难道不无辜吗，还说什么经营失败，跟洗钱有什么区别",
+      "videoUrl": "https://x.com/Laya_sariel/status/2110618355635794295",
+      "coverUrl": "./covers/fp_card_625a75fe.jpg",
+      "publishedAt": "2026-10-15T06:26:44.000Z",
+      "trashedAt": "2026-11-16T09:39:02.396Z",
+      "durationSec": 0,
+      "bgm": "纯文字热帖（无音频）",
+      "plays": 14471,
+      "likes": 789,
+      "comments": 8,
+      "shares": 67,
+      "bookmarks": 27,
+      "topComments": [],
+      "authorHandle": "Laya_sariel",
+      "authorFollowers": 12,
+      "authorAgeDays": 240,
+      "sourceKeyword": "Laya",
+      "sourceBucket": "brand",
+      "qualityScore": 15,
+      "hasHumanFace": false,
+      "isGameRelated": false,
+      "contentHash": "4892e2084d53dbef",
+      "mediaFingerprint": ""
+    },
+    {
+      "id": "trsh_mwj2n5co_a786d9",
+      "trashType": "auto_filtered",
+      "filterCategory": "低质账号过滤",
+      "vetoReason": "一票否决：账号粉丝数 12 低于门槛（<1000 测试号/低权号）",
+      "platform": "x",
+      "mediaType": "image",
+      "title": "盛aijing退团，她妈妈张静一直威胁受害者",
+      "fullText": "盛aijing退团，她妈妈张静一直威胁受害者\n附上ai翻译也可以自行翻译，她妈就这幅嘴脸一直威胁受害者，谁信她以后有钱会还，现在不还以后百分之一百不会还，与其单赢不如双输，退团！！！！！\n#A2OLITE #AIJING",
+      "videoUrl": "https://x.com/Laya_sariel/status/2115327458572411107",
+      "coverUrl": "./covers/x_57fafbb7.jpg",
+      "publishedAt": "2026-10-28T06:19:01.000Z",
+      "trashedAt": "2026-11-16T09:39:01.464Z",
+      "durationSec": 0,
+      "bgm": "图文热帖（无音频）",
+      "plays": 24073,
+      "likes": 1081,
+      "comments": 3,
+      "shares": 62,
+      "bookmarks": 26,
+      "topComments": [],
+      "authorHandle": "Laya_sariel",
+      "authorFollowers": 12,
+      "authorAgeDays": 240,
+      "sourceKeyword": "Laya",
+      "sourceBucket": "brand",
+      "qualityScore": 15,
+      "hasHumanFace": false,
+      "isGameRelated": false,
+      "contentHash": "75dee2cece3f90b0",
+      "mediaFingerprint": ""
+    },
+    {
+      "id": "trsh_mwj2kqej_084f22",
+      "trashType": "auto_filtered",
+      "filterCategory": "非男向/无关过滤",
+      "vetoReason": "帖文标题及正文仅为UI占位符『查看全部』，缺乏任何实质性恋爱、深夜语音陪伴或异性社交内容，属于完全无关的无效抓取样本，予以一票否决。",
+      "platform": "facebook",
+      "mediaType": "text",
+      "title": "查看全部",
+      "fullText": "查看全部",
+      "videoUrl": "https://www.facebook.com/search/groups",
+      "coverUrl": "./covers/fp_card_b200a16d.jpg",
+      "publishedAt": "2026-11-16T09:36:40.048Z",
+      "trashedAt": "2026-11-16T09:37:08.779Z",
+      "durationSec": 0,
+      "bgm": "纯文字热帖（无音频）",
+      "plays": 0,
+      "likes": 0,
+      "comments": 0,
+      "shares": 0,
+      "bookmarks": 0,
+      "topComments": [],
+      "authorHandle": "social_creator",
+      "authorFollowers": 5000,
+      "authorAgeDays": 180,
+      "sourceKeyword": "",
+      "sourceBucket": "brand",
+      "qualityScore": 0,
+      "hasHumanFace": false,
+      "isGameRelated": false,
+      "contentHash": "65f3fb445d53b42e",
+      "mediaFingerprint": ""
+    },
+    {
+      "id": "trsh_mwj2jigk_1407bf",
+      "trashType": "auto_filtered",
+      "filterCategory": "非男向/无关过滤",
+      "vetoReason": "样本文案明确带有 #ootd（穿搭展示）及女性博主第一视角约会记录（'你地陪我第一次online dating啦'），属于规则明确禁止的女性向美妆穿搭与生活Vlog；同时涉及真人实拍出镜，无法由普通运营低成本复刻，严重背离男性脱单与深夜语音交友目标受众。",
+      "platform": "instagram",
+      "mediaType": "video",
+      "title": "你地陪我第一次online dating啦 #omi #dating #交友 #hk #ootd #00後",
+      "fullText": "你地陪我第一次online dating啦 #omi #dating #交友 #hk #ootd #00後",
+      "videoUrl": "https://www.instagram.com/reel/DOVxLblEgEL/",
+      "coverUrl": "./covers/fp_in_34a4d867.jpg",
+      "publishedAt": "2025-09-08T11:50:47.000Z",
+      "trashedAt": "2026-11-16T09:36:11.828Z",
+      "durationSec": 16,
+      "bgm": "浏览器真实音频",
+      "plays": 18687,
+      "likes": 675,
+      "comments": 11,
+      "shares": 0,
+      "bookmarks": 169,
+      "topComments": [],
+      "authorHandle": "h.wing_",
+      "authorFollowers": 5000,
+      "authorAgeDays": 180,
+      "sourceKeyword": "",
+      "sourceBucket": "competitor",
+      "qualityScore": 28,
+      "hasHumanFace": true,
+      "isGameRelated": false,
+      "contentHash": "2403bf28693ec6d9",
+      "mediaFingerprint": ""
+    },
+    {
+      "id": "trsh_mwj2j5la_616996",
+      "trashType": "auto_filtered",
+      "filterCategory": "无法复刻过滤",
+      "vetoReason": "样本明确标注‘影片中為臨演（Guy in reenactment is a paid actor）’，包含真人演员实拍重现剧情与露脸出镜，触犯真人露脸一票否决硬规则（hasHumanFace=true），且依赖真人演员实拍外景，普通剪辑运营无法零成本批量复刻（isUnreplicable=true）。",
+      "platform": "instagram",
+      "mediaType": "video",
+      "title": "真實故事；影片中為臨演 True story. Guy in reenactment is a paid actor. 現在很方便，不用跑影印店可以直接下載Omi交友認識新朋友",
+      "fullText": "真實故事；影片中為臨演 True story. Guy in reenactment is a paid actor. 現在很方便，不用跑影印店可以直接下載Omi交友認識新朋友💗 #真實 #故事 #Omi #交友 #交友軟體 #台灣生活 #台灣旅遊",
+      "videoUrl": "https://www.instagram.com/reel/DIOZwk0y-KY/",
+      "coverUrl": "./covers/fp_in_c57f6e02.jpg",
+      "publishedAt": "2025-04-09T12:00:00.000Z",
+      "trashedAt": "2026-11-16T09:35:55.150Z",
+      "durationSec": 16,
+      "bgm": "浏览器真实音频",
+      "plays": 89250,
+      "likes": 3500,
+      "comments": 125,
+      "shares": 0,
+      "bookmarks": 875,
+      "topComments": [],
+      "authorHandle": "yakitorisutan",
+      "authorFollowers": 5000,
+      "authorAgeDays": 180,
+      "sourceKeyword": "",
+      "sourceBucket": "competitor",
+      "qualityScore": 40,
+      "hasHumanFace": true,
+      "isGameRelated": false,
+      "contentHash": "0c1de5b948ef76a5",
+      "mediaFingerprint": ""
+    },
+    {
+      "id": "trsh_mwj2ic3h_e19a3d",
+      "trashType": "auto_filtered",
+      "filterCategory": "无法复刻过滤",
+      "vetoReason": "样本为网红博主出镜实地探访龙山寺拜月老的真人外景探店Vlog（含真人出镜口播），且依赖特定寺庙实景与个人IP拍摄，命中真人露脸及依赖实景不可低成本复刻一票否决规则。",
+      "platform": "instagram",
+      "mediaType": "video",
+      "title": "好多好多私訊問我要怎麼拜月老❓❕❓❕其實就是正常拜！但有些小撇步都在影片裡你們可以收藏起來ㄦ！🌟 我個人覺得單身交友有很多種方式 出社會後要認識新的人真的有點難 除了現實認識",
+      "fullText": "好多好多私訊問我要怎麼拜月老❓❕❓❕其實就是正常拜！但有些小撇步都在影片裡你們可以收藏起來ㄦ！🌟 我個人覺得單身交友有很多種方式 出社會後要認識新的人真的有點難 除了現實認識以外也可以滑交友軟體～～～透過omi 的標籤可以先知道對方是什麼樣的人 你們的共同興趣、話題、價值觀是否符合等… 只要健康交友都是很好的！嘿嘿！祝福大家早日遇見自己的幸福！ #月老 #龍山寺",
+      "videoUrl": "https://www.instagram.com/reel/DYjn3u9Rg_a/",
+      "coverUrl": "./covers/fp_in_860e1a92.jpg",
+      "publishedAt": "2026-05-20T10:11:42.000Z",
+      "trashedAt": "2026-11-16T09:35:16.925Z",
+      "durationSec": 16,
+      "bgm": "浏览器真实音频",
+      "plays": 167109,
+      "likes": 6169,
+      "comments": 13,
+      "shares": 0,
+      "bookmarks": 1542,
+      "topComments": [],
+      "authorHandle": "yyuchhing",
+      "authorFollowers": 5000,
+      "authorAgeDays": 180,
+      "sourceKeyword": "",
+      "sourceBucket": "competitor",
+      "qualityScore": 43,
+      "hasHumanFace": true,
+      "isGameRelated": false,
+      "contentHash": "52f93e9d4dd879e1",
+      "mediaFingerprint": ""
+    },
+    {
       "id": "trsh_mwizfemx_305d36",
       "trashType": "auto_filtered",
       "filterCategory": "低互动量过滤",
@@ -9531,6 +10635,156 @@
   },
   "recentLogs": [
     {
+      "id": "log_mwj2t9gx_68c79a",
+      "time": "2026-11-16T09:43:46.737Z",
+      "operator": "定时任务 (17:30)",
+      "module": "采集引擎",
+      "action": "执行社媒采集任务 (防封浏览器静默抓)",
+      "status": "success",
+      "detail": "日期范围=不限发布日期，共抓取 40 条：合格入库 11 条，一票否决过滤废片 25 条，跨平台搬运合并 4 条，限流换IP重试 2 次",
+      "errorReason": ""
+    },
+    {
+      "id": "log_mwj2r5ys_5be2e7",
+      "time": "2026-11-16T09:42:08.884Z",
+      "operator": "边抓边实时同步飞书",
+      "module": "飞书同步",
+      "action": "批量写入飞书表格",
+      "status": "success",
+      "detail": "成功同步 1 条合格样本至飞书总表及分表",
+      "errorReason": ""
+    },
+    {
+      "id": "log_mwj2qtnt_16ad3b",
+      "time": "2026-11-16T09:41:52.938Z",
+      "operator": "AI视觉审核器",
+      "module": "视觉大模型审核",
+      "action": "调用多模态API异常",
+      "status": "warning",
+      "detail": "样本「美国🇺🇸女生想要认识中国🇨🇳朋友！ JO」视觉接口报错，已切换本地0费用智能审片",
+      "errorReason": "代理TLS请求超时"
+    },
+    {
+      "id": "log_mwj2qkj7_e9fa87",
+      "time": "2026-11-16T09:41:41.107Z",
+      "operator": "边抓边实时同步飞书",
+      "module": "飞书同步",
+      "action": "批量写入飞书表格",
+      "status": "success",
+      "detail": "成功同步 1 条合格样本至飞书总表及分表",
+      "errorReason": ""
+    },
+    {
+      "id": "log_mwj2p60w_0d853e",
+      "time": "2026-11-16T09:40:35.650Z",
+      "operator": "边抓边实时同步飞书",
+      "module": "飞书同步",
+      "action": "批量写入飞书表格",
+      "status": "success",
+      "detail": "成功同步 1 条合格样本至飞书总表及分表",
+      "errorReason": ""
+    },
+    {
+      "id": "log_mwj2oad6_9b88d6",
+      "time": "2026-11-16T09:39:54.618Z",
+      "operator": "边抓边实时同步飞书",
+      "module": "飞书同步",
+      "action": "批量写入飞书表格",
+      "status": "success",
+      "detail": "成功同步 1 条合格样本至飞书总表及分表",
+      "errorReason": ""
+    },
+    {
+      "id": "log_mwj2nwka_bccdbe",
+      "time": "2026-11-16T09:39:36.730Z",
+      "operator": "AI视觉审核器",
+      "module": "视觉大模型审核",
+      "action": "调用多模态API异常",
+      "status": "warning",
+      "detail": "样本「林昕穎💤4,215 followers」视觉接口报错，已切换本地0费用智能审片",
+      "errorReason": "socket hang up"
+    },
+    {
+      "id": "log_mwj2mfwv_4b3264",
+      "time": "2026-11-16T09:38:28.495Z",
+      "operator": "边抓边实时同步飞书",
+      "module": "飞书同步",
+      "action": "批量写入飞书表格",
+      "status": "success",
+      "detail": "成功同步 1 条合格样本至飞书总表及分表",
+      "errorReason": ""
+    },
+    {
+      "id": "log_mwj2kxwe_c32d4a",
+      "time": "2026-11-16T09:37:18.494Z",
+      "operator": "边抓边实时同步飞书",
+      "module": "飞书同步",
+      "action": "批量写入飞书表格",
+      "status": "success",
+      "detail": "成功同步 1 条合格样本至飞书总表及分表",
+      "errorReason": ""
+    },
+    {
+      "id": "log_mwj2j6g0_c02bb2",
+      "time": "2026-11-16T09:35:56.256Z",
+      "operator": "边抓边实时同步飞书",
+      "module": "飞书同步",
+      "action": "批量写入飞书表格",
+      "status": "success",
+      "detail": "成功同步 1 条合格样本至飞书总表及分表",
+      "errorReason": ""
+    },
+    {
+      "id": "log_mwj2ih0b_1a727a",
+      "time": "2026-11-16T09:35:23.291Z",
+      "operator": "1分钟实时同步守护",
+      "module": "飞书同步",
+      "action": "批量写入飞书表格",
+      "status": "success",
+      "detail": "成功同步 1 条合格样本至飞书总表及分表",
+      "errorReason": ""
+    },
+    {
+      "id": "log_mwj2hxpv_1423d8",
+      "time": "2026-11-16T09:34:58.291Z",
+      "operator": "边抓边实时同步飞书",
+      "module": "飞书同步",
+      "action": "批量写入飞书表格",
+      "status": "success",
+      "detail": "成功同步 1 条合格样本至飞书总表及分表",
+      "errorReason": ""
+    },
+    {
+      "id": "log_mwj2hjny_fd505b",
+      "time": "2026-11-16T09:34:40.078Z",
+      "operator": "边抓边实时同步飞书",
+      "module": "飞书同步",
+      "action": "批量写入飞书表格",
+      "status": "success",
+      "detail": "成功同步 1 条合格样本至飞书总表及分表",
+      "errorReason": ""
+    },
+    {
+      "id": "log_mwj2h3qc_6e4bab",
+      "time": "2026-11-16T09:34:19.429Z",
+      "operator": "AI视觉审核器",
+      "module": "视觉大模型审核",
+      "action": "调用多模态API异常",
+      "status": "warning",
+      "detail": "样本「地府審案處24｜月老請吃飯 #omi」视觉接口报错，已切换本地0费用智能审片",
+      "errorReason": "代理TLS请求超时"
+    },
+    {
+      "id": "log_mwj0ht69_cb3337",
+      "time": "2026-11-16T08:38:53.170Z",
+      "operator": "新媒体运营团队",
+      "module": "GitHub同步",
+      "action": "一键同步网页与最新视频封面到 GitHub",
+      "status": "success",
+      "detail": "同步成功！任何电脑可打开：https://sorenskr.github.io/laya-social-scout/",
+      "errorReason": ""
+    },
+    {
       "id": "log_mwizfsqi_bd7ed1",
       "time": "2026-11-16T08:09:19.674Z",
       "operator": "边抓边实时同步飞书",
@@ -9578,156 +10832,6 @@
       "action": "批量写入飞书表格",
       "status": "success",
       "detail": "成功同步 1 条合格样本至飞书总表及分表",
-      "errorReason": ""
-    },
-    {
-      "id": "log_mwiz7cgi_160541",
-      "time": "2026-11-16T08:02:45.330Z",
-      "operator": "边抓边实时同步飞书",
-      "module": "飞书同步",
-      "action": "批量写入飞书表格",
-      "status": "success",
-      "detail": "成功同步 1 条合格样本至飞书总表及分表",
-      "errorReason": ""
-    },
-    {
-      "id": "log_mwiz6wl6_983a23",
-      "time": "2026-11-16T08:02:24.762Z",
-      "operator": "边抓边实时同步飞书",
-      "module": "飞书同步",
-      "action": "批量写入飞书表格",
-      "status": "success",
-      "detail": "成功同步 1 条合格样本至飞书总表及分表",
-      "errorReason": ""
-    },
-    {
-      "id": "log_mwiz5efa_715af6",
-      "time": "2026-11-16T08:01:14.566Z",
-      "operator": "边抓边实时同步飞书",
-      "module": "飞书同步",
-      "action": "批量写入飞书表格",
-      "status": "success",
-      "detail": "成功同步 1 条合格样本至飞书总表及分表",
-      "errorReason": ""
-    },
-    {
-      "id": "log_mwiz4vts_f8c6e0",
-      "time": "2026-11-16T08:00:50.464Z",
-      "operator": "AI视觉审核器",
-      "module": "视觉大模型审核",
-      "action": "调用多模态API异常",
-      "status": "warning",
-      "detail": "样本「幫朋友徵女友 急！」视觉接口报错，已切换本地0费用智能审片",
-      "errorReason": "代理TLS请求超时"
-    },
-    {
-      "id": "log_mwiz1qzl_4138da",
-      "time": "2026-11-16T07:58:24.225Z",
-      "operator": "新媒体运营团队",
-      "module": "远程唤醒",
-      "action": "远程启动/唤醒主电脑工作台与比特浏览器",
-      "status": "success",
-      "detail": "主电脑工作台与比特浏览器已就绪（窗口：🎯抓取爆款软广模版池），现在可直接开始搜词抓取！",
-      "errorReason": ""
-    },
-    {
-      "id": "log_mwiyipcc_ad3c9c",
-      "time": "2026-11-16T07:43:35.628Z",
-      "operator": "新媒体运营团队",
-      "module": "找同款引擎",
-      "action": "识别上传截图/文案生成同款中文搜词",
-      "status": "success",
-      "detail": "💬 暧昧聊天 / 私信对话截图同款 -> [睡前聊天, 睡不著聊天, 睡不着聊天, 有人還沒睡嗎, 有人还没睡吗, 深夜陪伴, 語音連麥, 語音聊天, 语音连麦]",
-      "errorReason": ""
-    },
-    {
-      "id": "log_mwiydgvm_d91c5a",
-      "time": "2026-11-16T07:39:31.384Z",
-      "operator": "新媒体运营团队",
-      "module": "GitHub同步",
-      "action": "一键同步网页与最新视频封面到 GitHub",
-      "status": "success",
-      "detail": "同步成功！任何电脑可打开：https://sorenskr.github.io/laya-social-scout/",
-      "errorReason": ""
-    },
-    {
-      "id": "log_mwiu2og7_5f482f",
-      "time": "2026-11-16T05:39:09.511Z",
-      "operator": "新媒体运营团队",
-      "module": "飞书同步",
-      "action": "飞书多维表格高颜值重构与总表同步",
-      "status": "success",
-      "detail": "已重建「📊 全部内容总表」(98条) +「📅 今日新增 2026-11-16」(98条) + 5个平台分表",
-      "errorReason": ""
-    },
-    {
-      "id": "log_mwituhoz_d8bfd7",
-      "time": "2026-11-16T05:32:47.507Z",
-      "operator": "新媒体运营团队",
-      "module": "内容审核",
-      "action": "标记垃圾内容并自动加黑过滤",
-      "status": "success",
-      "detail": "已将「7 FLIRTY TEXTS THAT MAKE」移入垃圾回收站",
-      "errorReason": ""
-    },
-    {
-      "id": "log_mwituhor_f59eef",
-      "time": "2026-11-16T05:32:47.499Z",
-      "operator": "新媒体运营团队",
-      "module": "内容审核",
-      "action": "标记垃圾内容并自动加黑过滤",
-      "status": "success",
-      "detail": "已将「160 / 43 Outfit of the d」移入垃圾回收站",
-      "errorReason": ""
-    },
-    {
-      "id": "log_mwitcmwi_74a21f",
-      "time": "2026-11-16T05:18:54.454Z",
-      "operator": "新媒体运营团队",
-      "module": "远程唤醒",
-      "action": "远程启动/唤醒主电脑工作台与比特浏览器",
-      "status": "success",
-      "detail": "主电脑工作台正在平滑重启中（约 2 秒恢复），并已检查比特浏览器状态",
-      "errorReason": ""
-    },
-    {
-      "id": "log_mwipwwwq_fc6bbc",
-      "time": "2026-11-16T03:42:42.074Z",
-      "operator": "新媒体运营团队",
-      "module": "远程唤醒",
-      "action": "远程启动/唤醒主电脑工作台与比特浏览器",
-      "status": "success",
-      "detail": "主电脑工作台与比特浏览器已就绪（窗口：🎯抓取爆款软广模版池），现在可直接开始搜词抓取！",
-      "errorReason": ""
-    },
-    {
-      "id": "log_mwipka5r_7f7e86",
-      "time": "2026-11-16T03:32:52.719Z",
-      "operator": "新媒体运营团队",
-      "module": "GitHub同步",
-      "action": "一键同步网页与最新视频封面到 GitHub",
-      "status": "success",
-      "detail": "同步成功！任何电脑可打开：https://sorenskr.github.io/laya-social-scout/",
-      "errorReason": ""
-    },
-    {
-      "id": "log_mwip58uy_163465",
-      "time": "2026-11-16T03:21:11.195Z",
-      "operator": "新媒体运营团队",
-      "module": "远程唤醒",
-      "action": "远程启动/唤醒主电脑工作台与比特浏览器",
-      "status": "success",
-      "detail": "主电脑工作台与比特浏览器已就绪（窗口：🎯抓取爆款软广模版池），现在可直接开始搜词抓取！",
-      "errorReason": ""
-    },
-    {
-      "id": "log_mwip4ufu_7b96a5",
-      "time": "2026-11-16T03:20:52.506Z",
-      "operator": "新媒体运营团队",
-      "module": "远程唤醒",
-      "action": "远程启动/唤醒主电脑工作台与比特浏览器",
-      "status": "success",
-      "detail": "主电脑工作台正在平滑重启中（约 2 秒恢复），并已检查比特浏览器状态",
       "errorReason": ""
     }
   ]
