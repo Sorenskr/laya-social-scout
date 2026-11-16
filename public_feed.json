@@ -1,8 +1,11 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-15T21:14:51.604Z",
+  "updatedAt": "2026-11-16T02:43:45.204Z",
   "hostComputer": "LAPTOP-64OLL33R",
   "brandName": "Laya",
+  "remoteTunnelUrl": "https://notebooks-beginners-element-handbags.trycloudflare.com",
+  "remoteTunnelUpdatedAt": "2026-11-16T02:43:45.151Z",
+  "remotePinRequired": true,
   "crawlJob": {
     "running": false,
     "fetchedCount": 0,
@@ -8120,6 +8123,16 @@
   },
   "recentLogs": [
     {
+      "id": "log_mwic2dme_fd67c0",
+      "time": "2026-11-15T21:15:02.390Z",
+      "operator": "新媒体运营团队",
+      "module": "GitHub同步",
+      "action": "一键同步网页与最新视频封面到 GitHub",
+      "status": "success",
+      "detail": "同步成功！任何电脑可打开：https://sorenskr.github.io/laya-social-scout/",
+      "errorReason": ""
+    },
+    {
       "id": "log_mwibj1q5_6fbe64",
       "time": "2026-11-15T21:00:00.509Z",
       "operator": "新媒体运营团队",
@@ -8302,16 +8315,6 @@
     {
       "id": "log_mwg3y5j4_b22c1b",
       "time": "2026-11-14T07:52:16.000Z",
-      "operator": "边抓边实时同步飞书",
-      "module": "飞书同步",
-      "action": "批量写入飞书表格",
-      "status": "success",
-      "detail": "成功同步 1 条合格样本至飞书（含原视频超链接与爆款/高难条件着色）",
-      "errorReason": ""
-    },
-    {
-      "id": "log_mwg3vstv_9a7468",
-      "time": "2026-11-14T07:50:26.227Z",
       "operator": "边抓边实时同步飞书",
       "module": "飞书同步",
       "action": "批量写入飞书表格",

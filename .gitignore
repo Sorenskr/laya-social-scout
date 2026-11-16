@@ -7,3 +7,6 @@ data/
 data/db.json
 data/db.json.tmp
 data/backups/
+data/tunnel_state.json
+data/guardian.pid
+data/guardian.log

@@ -7,10 +7,16 @@
  */
 (function () {
   const BACKEND_STORAGE_KEY = 'laya_scout_backend_url';
+  const REMOTE_PIN_STORAGE_KEY = 'laya_scout_remote_pin';
 
   const state = {
-    backendBase: '', // '' 表示同源；'http://127.0.0.1:3080' 表示连本机；null 表示云端静态只读模式
+    backendBase: '', // '' 表示同源；'http://127.0.0.1:3080' 或公网穿透地址表示已连后台；null 表示云端静态只读模式
     isReadOnlyCloud: false,
+    isRemoteHost: false,
+    remotePin: localStorage.getItem(REMOTE_PIN_STORAGE_KEY) || '',
+    pendingRemoteUrl: '',
+    hostComputerName: '',
+    lastProbedTunnelUrl: '',
     currentView: 'dashboard',
     platformsSelected: new Set(['instagram', 'facebook', 'x', 'threads', 'tiktok']),
     timePreset: 'all',
@@ -30,6 +36,8 @@
     crawlEventSource: null,
     cloudRefreshTimer: null,
     browserStatus: null,
+    lastFinishedJobId: '',
+    wasCrawlRunning: false,
   };
 
   /* ---------------- 通用工具 ---------------- */
@@ -76,42 +84,112 @@
     return `./${coverUrl}`;
   }
 
-  async function probeBackend(baseUrl) {
+  async function probeBackend(baseUrl, pin = state.remotePin) {
+    const isFastLocal = !baseUrl || baseUrl.includes('127.0.0.1') || baseUrl.includes('localhost');
+    const timeoutMs = isFastLocal ? 1200 : 4000;
     try {
       const controller = new AbortController();
-      const t = setTimeout(() => controller.abort(), 1600);
-      const r = await fetch(`${baseUrl}/api/health`, { signal: controller.signal });
+      const t = setTimeout(() => controller.abort(), timeoutMs);
+      const headers = pin ? { 'X-Remote-Pin': pin } : {};
+      const r = await fetch(`${baseUrl}/api/health?t=${Date.now()}`, { signal: controller.signal, headers });
       clearTimeout(t);
-      return r.ok;
+      if (!r.ok) return null;
+      const json = await r.json().catch(() => null);
+      return json && json.ok ? json : { ok: true };
     } catch (_) {
-      return false;
+      return null;
+    }
+  }
+
+  function openRemotePinModal(targetUrl = '') {
+    const target = targetUrl || state.pendingRemoteUrl || state.backendBase || '';
+    const lbl = document.getElementById('remote-pin-target-label');
+    if (lbl) lbl.textContent = target || '主电脑在线通道';
+    const inp = document.getElementById('inp-remote-pin');
+    if (inp) {
+      inp.value = state.remotePin || '';
+      setTimeout(() => inp.focus(), 50);
+    }
+    const modal = document.getElementById('modal-remote-pin');
+    if (modal) modal.classList.remove('hidden');
+  }
+
+  async function fetchCloudFeedSnapshot() {
+    try {
+      const resp = await fetch(`./public_feed.json?t=${Date.now()}`);
+      if (!resp.ok) return null;
+      const feed = await resp.json();
+      state.cloudFeed = feed;
+      return feed;
+    } catch (_) {
+      return null;
     }
   }
 
   async function detectConnectionMode() {
-    // 1. 先探测当前同源是不是本地/容器后台
-    if (window.location.protocol !== 'file:' && (await probeBackend(''))) {
-      state.backendBase = '';
+    const isGitHubPages = /\.github\.io$/i.test(window.location.hostname || '');
+    state.pendingRemoteUrl = '';
+
+    // 1. 先探测当前同源是不是本地/局域网后台（GitHub Pages 静态域名跳过）
+    if (window.location.protocol !== 'file:' && !isGitHubPages) {
+      const h = await probeBackend('');
+      if (h && h.ok) {
+        state.hostComputerName = h.hostComputer || state.hostComputerName;
+        if (!h.remotePinRequired || h.pinVerified) {
+          state.backendBase = '';
+          state.isReadOnlyCloud = false;
+          state.isRemoteHost = !h.isLocal;
+          updateConnectionBanner();
+          return;
+        }
+        state.pendingRemoteUrl = window.location.origin;
+      }
+    }
+
+    // 2. 在主电脑自己打开 GitHub 网页时，优先走本机 127.0.0.1:3080 回环（免输口令）
+    const localHealth = await probeBackend('http://127.0.0.1:3080');
+    if (localHealth && localHealth.ok && (!localHealth.remotePinRequired || localHealth.pinVerified)) {
+      state.backendBase = 'http://127.0.0.1:3080';
       state.isReadOnlyCloud = false;
+      state.isRemoteHost = false;
+      state.hostComputerName = localHealth.hostComputer || '';
       updateConnectionBanner();
       return;
     }
 
-    // 2. 如果是在 GitHub Pages 打开，自动尝试探测用户上次配的主机地址或本机 127.0.0.1:3080
+    // 3. 在其他电脑打开 GitHub 网页时，自动读取 ./public_feed.json 里主电脑发布的加密公网穿透地址（以及用户曾手填的地址）
+    const feed = await fetchCloudFeedSnapshot();
     const savedHost = (localStorage.getItem(BACKEND_STORAGE_KEY) || '').replace(/\/+$/, '');
-    const candidates = [savedHost, 'http://127.0.0.1:3080'].filter(Boolean);
+    const tunnelFromFeed = String((feed && feed.remoteTunnelUrl) || '').replace(/\/+$/, '');
+    if (tunnelFromFeed) state.lastProbedTunnelUrl = tunnelFromFeed;
+
+    const candidates = Array.from(new Set([tunnelFromFeed, savedHost].filter(Boolean)));
     for (const url of candidates) {
-      if (await probeBackend(url)) {
-        state.backendBase = url;
-        state.isReadOnlyCloud = false;
-        updateConnectionBanner();
-        return;
+      // 在 https:// 网页下浏览器会拦截非回环 http:// 内网请求，跳过明确不兼容地址避免白等
+      if (window.location.protocol === 'https:' && /^http:\/\//i.test(url) && !/^http:\/\/(127\.0\.0\.1|localhost)(:|\/|$)/i.test(url)) {
+        continue;
+      }
+      const h = await probeBackend(url);
+      if (h && h.ok) {
+        state.hostComputerName = h.hostComputer || (feed && feed.hostComputer) || '';
+        if (!h.remotePinRequired || h.pinVerified) {
+          state.backendBase = url;
+          state.isReadOnlyCloud = false;
+          state.isRemoteHost = !h.isLocal;
+          state.pendingRemoteUrl = '';
+          updateConnectionBanner();
+          return;
+        }
+        state.pendingRemoteUrl = url;
+        break;
       }
     }
 
-    // 3. 没连上任何电脑后台 -> 自动切换成 GitHub 网页查看模式（读 ./public_feed.json）
+    // 4. 还没通过口令解锁，或主电脑当前未开机在线 -> 先展示 GitHub 云端公开快照（不报错）
     state.backendBase = null;
     state.isReadOnlyCloud = true;
+    state.isRemoteHost = false;
+    if (feed && !state.hostComputerName) state.hostComputerName = feed.hostComputer || '';
     updateConnectionBanner();
   }
 
@@ -121,19 +199,40 @@
     const desc = document.getElementById('conn-mode-desc');
     const btnBackend = document.getElementById('btn-set-backend-url');
     const btnPush = document.getElementById('btn-top-push-github');
+    const btnUnlock = document.getElementById('btn-unlock-remote');
+    const btnWake = document.getElementById('btn-wake-host');
 
     if (!state.isReadOnlyCloud) {
       dot.className = 'conn-dot';
-      title.textContent = '🟢 已连上本机运行后台（可抓视频 · 可拆案例 · 可同步）';
-      desc.textContent = state.backendBase ? `正在控制后台：${state.backendBase}` : '本机直接运行中，操作全部实时生效';
+      if (state.isRemoteHost) {
+        title.textContent = `🟢 已加密直连主电脑「${state.hostComputerName || '主机'}」（跨网实时同步 · 可改词 · 可开抓）`;
+        desc.textContent = '任何操作与主电脑实时同步，抓完自动推上飞书和本网页';
+      } else {
+        title.textContent = '🟢 已连上本机运行后台（可抓视频 · 可拆案例 · 可同步）';
+        desc.textContent = state.backendBase ? `正在控制后台：${state.backendBase}` : '本机直接运行中，操作全部实时生效';
+      }
       btnBackend.classList.add('hidden');
+      if (btnUnlock) btnUnlock.classList.add('hidden');
+      if (btnWake) btnWake.classList.remove('hidden');
       btnPush.classList.remove('hidden');
+    } else if (state.pendingRemoteUrl) {
+      dot.className = 'conn-dot cloud';
+      const updated = state.cloudFeed?.updatedAt ? fmtTime(state.cloudFeed.updatedAt) : '刚刚';
+      const hostName = state.hostComputerName || state.cloudFeed?.hostComputer || '主电脑';
+      title.textContent = `🔐 已发现主电脑「${hostName}」在线！输入口令即可远程改词开抓`;
+      desc.textContent = `先预览云端同步的数据（${updated}）；点右侧输入 1 次口令（默认 8888）即永久记住`;
+      if (btnUnlock) btnUnlock.classList.remove('hidden');
+      if (btnWake) btnWake.classList.add('hidden');
+      btnBackend.classList.remove('hidden');
+      btnPush.classList.add('hidden');
     } else {
       dot.className = 'conn-dot cloud';
       const updated = state.cloudFeed?.updatedAt ? fmtTime(state.cloudFeed.updatedAt) : '刚刚';
       const hostName = state.cloudFeed?.hostComputer || '主电脑';
       title.textContent = '🌐 正在看 GitHub 云端同步过来的最新视频和案例';
-      desc.textContent = `上次从「${hostName}」同步时间：${updated}（当前电脑仅看结果，点右边可连后台或查看怎么在当前电脑启动抓取）`;
+      desc.textContent = `上次从「${hostName}」同步时间：${updated}（当前电脑仅看结果，待主电脑开机连网后自动可连）`;
+      if (btnUnlock) btnUnlock.classList.add('hidden');
+      if (btnWake) btnWake.classList.add('hidden');
       btnBackend.classList.remove('hidden');
       btnPush.classList.add('hidden');
     }
@@ -141,15 +240,33 @@
 
   async function api(url, method = 'GET', body = null) {
     if (state.isReadOnlyCloud) {
-      throw new Error('这台电脑现在是只看网页模式，还没连上运行后台！请点右上角「换别的电脑怎么也用来抓」开启本地抓取。');
+      if (state.pendingRemoteUrl) {
+        openRemotePinModal(state.pendingRemoteUrl);
+        throw new Error('请先输入一次主电脑远程口令（默认 8888），验证通过后就能在这台电脑操作啦！');
+      }
+      throw new Error('这台电脑现在是只看网页模式，主电脑后台暂未开机上线。如需在本地电脑直接抓取，请点右上角「换别的电脑怎么也用来抓」。');
     }
-    const opts = { method, headers: {} };
+    const headers = {};
+    if (state.remotePin) {
+      headers['X-Remote-Pin'] = state.remotePin;
+    }
+    const opts = { method, headers };
     if (body !== null) {
-      opts.headers['Content-Type'] = 'application/json; charset=utf-8';
+      headers['Content-Type'] = 'application/json; charset=utf-8';
       opts.body = JSON.stringify(body);
     }
     const resp = await fetch(`${state.backendBase || ''}${url}`, opts);
     const data = await resp.json().catch(() => ({}));
+    if (resp.status === 401 && data && data.needPin) {
+      const targetUrl = state.backendBase || window.location.origin;
+      state.remotePin = '';
+      localStorage.removeItem(REMOTE_PIN_STORAGE_KEY);
+      state.pendingRemoteUrl = targetUrl;
+      state.isReadOnlyCloud = true;
+      updateConnectionBanner();
+      openRemotePinModal(targetUrl);
+      throw new Error(data.error || '请重新输入主电脑远程控制口令');
+    }
     if (!resp.ok || data.error) {
       throw new Error(data.error || `操作失败 (${resp.status})`);
     }
@@ -286,9 +403,8 @@
   /* ---------------- 首页总览加载（支持云端只读 & 本地直连双通道） ---------------- */
   async function loadBootstrap() {
     if (state.isReadOnlyCloud) {
-      const resp = await fetch(`./public_feed.json?t=${Date.now()}`);
-      if (!resp.ok) throw new Error('还没找到云端数据快照 public_feed.json，请先在主电脑点一次「同步到 GitHub 网页」');
-      const feed = await resp.json();
+      const feed = state.cloudFeed || (await fetchCloudFeedSnapshot());
+      if (!feed) throw new Error('还没找到云端数据快照 public_feed.json，请先在主电脑点一次「同步到 GitHub 网页」');
       state.cloudFeed = feed;
       state.allCloudSamples = feed.samples || [];
       state.caseHistory = feed.caseAnalyses || [];
@@ -296,14 +412,26 @@
       renderDashboardData(feed.dashboard, feed.keywordsCount, feed.crawlJob, null);
 
       if (!state.cloudRefreshTimer) {
-        state.cloudRefreshTimer = setInterval(() => {
+        state.cloudRefreshTimer = setInterval(async () => {
           if (!state.isReadOnlyCloud) return;
-          loadBootstrap()
-            .then(() => {
-              if (state.currentView === 'results') loadSamples();
-            })
-            .catch(() => {});
-        }, 60000);
+          const freshFeed = await fetchCloudFeedSnapshot();
+          if (!freshFeed) return;
+          state.cloudFeed = freshFeed;
+          const newTunnel = String(freshFeed.remoteTunnelUrl || '').replace(/\/+$/, '');
+          if (newTunnel && newTunnel !== state.lastProbedTunnelUrl) {
+            await detectConnectionMode();
+            if (!state.isReadOnlyCloud) {
+              await loadBootstrap();
+              if (state.currentView === 'results') await loadSamples();
+              return;
+            }
+          }
+          state.allCloudSamples = freshFeed.samples || [];
+          state.caseHistory = freshFeed.caseAnalyses || [];
+          updateConnectionBanner();
+          renderDashboardData(freshFeed.dashboard, freshFeed.keywordsCount, freshFeed.crawlJob, null);
+          if (state.currentView === 'results') await loadSamples();
+        }, 25000);
       }
       return;
     }
@@ -321,7 +449,8 @@
     populateSettingsForm(state.settings, data.originUrl);
     loadBrowserStatus().catch(() => {});
 
-    if (data.crawlJob && data.crawlJob.running) {
+    // 只要处于在线连接状态，始终保持实时进度流订阅，实现跨电脑画面/抓取状态双向同步
+    if (!state.crawlEventSource) {
       connectCrawlStream();
     }
   }
@@ -763,7 +892,27 @@
       .join('');
   }
 
-  /* ---------------- SSE 实时抓取流（失败自动降级到轮询） ---------------- */
+  /* ---------------- SSE 实时抓取流（保持长连双向同步，断线自动降级轮询） ---------------- */
+  async function handleLiveJobSnapshot(job) {
+    renderLiveCrawlState(job);
+    if (job && job.running) {
+      state.wasCrawlRunning = true;
+      return;
+    }
+    if (job && !job.running && job.finishedAt && job.id && job.id !== state.lastFinishedJobId) {
+      const finishedAgo = Date.now() - new Date(job.finishedAt).getTime();
+      const shouldNotify = state.wasCrawlRunning || (!Number.isNaN(finishedAgo) && finishedAgo < 12000);
+      state.lastFinishedJobId = job.id;
+      state.wasCrawlRunning = false;
+      if (shouldNotify) {
+        toast(`抓完了！留下好内容 ${job.qualifiedAdded || 0} 条，踢掉无关/废片 ${job.filteredTrash || 0} 条`, 'success');
+        await loadBootstrap();
+        if (state.currentView === 'keywords') await loadKeywords();
+        if (state.currentView === 'results') await loadSamples();
+      }
+    }
+  }
+
   function connectCrawlStream() {
     if (state.isReadOnlyCloud) return;
     if (typeof EventSource !== 'function') return startCrawlPolling();
@@ -778,18 +927,13 @@
       state.crawlTimer = null;
     }
     try {
-      const es = new EventSource(`${state.backendBase || ''}/api/crawl/stream`);
+      const pinQs = state.remotePin ? `?pin=${encodeURIComponent(state.remotePin)}` : '';
+      const es = new EventSource(`${state.backendBase || ''}/api/crawl/stream${pinQs}`);
       state.crawlEventSource = es;
       es.onmessage = async (ev) => {
         try {
           const job = JSON.parse(ev.data || '{}');
-          renderLiveCrawlState(job);
-          if (job && !job.running && job.finishedAt) {
-            es.close();
-            if (state.crawlEventSource === es) state.crawlEventSource = null;
-            await loadBootstrap();
-            if (state.currentView === 'results') await loadSamples();
-          }
+          await handleLiveJobSnapshot(job);
         } catch (_) {}
       };
       es.onerror = () => {
@@ -804,24 +948,28 @@
     }
   }
 
-  /* ---------------- 轮询实时抓取进度 ---------------- */
+  /* ---------------- 轮询实时抓取进度（空闲期低频保活监听跨电脑抓取） ---------------- */
   function startCrawlPolling() {
     if (state.crawlTimer) clearInterval(state.crawlTimer);
+    let tick = 0;
     state.crawlTimer = setInterval(async () => {
+      if (state.isReadOnlyCloud) {
+        clearInterval(state.crawlTimer);
+        state.crawlTimer = null;
+        return;
+      }
+      tick += 1;
       try {
         const job = await api('/api/crawl/status');
-        renderLiveCrawlState(job);
-        if (!job.running) {
-          clearInterval(state.crawlTimer);
-          state.crawlTimer = null;
-          await loadBootstrap();
-          if (state.currentView === 'results') await loadSamples();
+        await handleLiveJobSnapshot(job);
+        if (!job.running && tick % 6 === 0) {
+          connectCrawlStream();
         }
       } catch (_) {
         clearInterval(state.crawlTimer);
         state.crawlTimer = null;
       }
-    }, 800);
+    }, 3000);
   }
 
   /* ---------------- 其他模块（指南、词库、废片回收站、设置） ---------------- */
@@ -983,7 +1131,22 @@
     document.getElementById('cfg-int-tt').value = s.antiCrawl?.intervalsSec?.tiktok ?? 10;
     document.getElementById('cfg-gh-repo').value = s.githubSync?.repoUrl || '';
     document.getElementById('cfg-gh-branch').value = s.githubSync?.branch || 'main';
-    document.getElementById('cfg-gh-autopush').checked = Boolean(s.githubSync?.autoPushAfterCrawl);
+    document.getElementById('cfg-gh-autopush').checked = s.githubSync?.autoPushAfterCrawl !== false;
+
+    const rc = s.remoteControl || {};
+    const rcPinEl = document.getElementById('cfg-remote-pin');
+    const rcAutoEl = document.getElementById('cfg-remote-autostart');
+    const rcTunnelEl = document.getElementById('cfg-remote-tunnel-label');
+    if (rcPinEl) {
+      rcPinEl.value = rc.pin || '';
+      rcPinEl.placeholder = rc.hasPin ? '已保存口令（不改留空，默认 8888）' : '默认 8888';
+    }
+    if (rcAutoEl) rcAutoEl.checked = rc.autoStartEnabled ?? rc.autoStartGuardian ?? true;
+    if (rcTunnelEl) {
+      rcTunnelEl.textContent = rc.tunnelUrl
+        ? `公网穿透已在线：${rc.tunnelUrl}`
+        : '后台守护启动穿透后会自动生成（公网网址仅推送至 GitHub，口令永不上传）';
+    }
 
     const fs = s.feishu || {};
     document.getElementById('cfg-fs-docurl').value = fs.targetDocUrl || '';
@@ -1095,7 +1258,17 @@
         branch: document.getElementById('cfg-gh-branch').value.trim() || 'main',
         autoPushAfterCrawl: document.getElementById('cfg-gh-autopush').checked,
       },
+      remoteControl: {
+        enabled: true,
+        pin: document.getElementById('cfg-remote-pin')?.value.trim() || undefined,
+        autoStartGuardian: Boolean(document.getElementById('cfg-remote-autostart')?.checked),
+      },
     });
+    const savedPin = document.getElementById('cfg-remote-pin')?.value.trim();
+    if (savedPin) {
+      state.remotePin = savedPin;
+      localStorage.setItem(REMOTE_PIN_STORAGE_KEY, savedPin);
+    }
     toast('设置已保存并生效！', 'success');
     await loadBootstrap();
   }
@@ -1112,6 +1285,77 @@
 
     document.getElementById('btn-open-clone-help').addEventListener('click', () => document.getElementById('modal-clone-help').classList.remove('hidden'));
     document.getElementById('btn-set-backend-url').addEventListener('click', () => document.getElementById('modal-clone-help').classList.remove('hidden'));
+    document.getElementById('btn-unlock-remote')?.addEventListener('click', () => openRemotePinModal(state.pendingRemoteUrl));
+
+    const submitRemotePin = async () => {
+      const targetUrl = (state.pendingRemoteUrl || localStorage.getItem(BACKEND_STORAGE_KEY) || state.cloudFeed?.remoteTunnelUrl || '').replace(/\/+$/, '');
+      const pin = (document.getElementById('inp-remote-pin')?.value || '').trim();
+      if (!targetUrl) return toast('暂未检测到主电脑在线通道，请确认主电脑开机联网且已运行工作台', 'error');
+      if (!pin) return toast('请输入主电脑远程控制口令（默认 8888）', 'error');
+
+      const btn = document.getElementById('btn-confirm-remote-pin');
+      if (btn) btn.disabled = true;
+      try {
+        const resp = await fetch(`${targetUrl}/api/remote/verify-pin`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json; charset=utf-8', 'X-Remote-Pin': pin },
+          body: JSON.stringify({ pin }),
+        });
+        const data = await resp.json().catch(() => ({}));
+        if (!resp.ok || !data.ok) {
+          throw new Error(data.error || '口令验证失败，请核对后再试');
+        }
+        state.remotePin = pin;
+        localStorage.setItem(REMOTE_PIN_STORAGE_KEY, pin);
+        state.backendBase = targetUrl;
+        state.isReadOnlyCloud = false;
+        state.isRemoteHost = true;
+        state.pendingRemoteUrl = '';
+        state.hostComputerName = data.hostComputer || state.hostComputerName;
+        document.getElementById('modal-remote-pin').classList.add('hidden');
+        updateConnectionBanner();
+        toast(`🔓 口令通过！已连上主电脑「${state.hostComputerName || '主机'}」，现在可自由搜词同步抓取`, 'success');
+
+        await loadBootstrap();
+        await loadSamples();
+        await loadCaseHistory();
+        if (state.currentView === 'keywords') await loadKeywords();
+        if (state.currentView === 'settings') await loadSettingsExtras();
+
+        if (document.getElementById('chk-wake-bitbrowser-on-connect')?.checked) {
+          api('/api/remote/wake-workbench', 'POST', { openProfile: true })
+            .then((w) => {
+              if (w && w.message) toast(w.message, w.bitbrowserOnline ? 'success' : 'info');
+              loadBrowserStatus();
+            })
+            .catch(() => {});
+        }
+      } catch (err) {
+        toast(err.message, 'error');
+      } finally {
+        if (btn) btn.disabled = false;
+      }
+    };
+    document.getElementById('btn-confirm-remote-pin')?.addEventListener('click', submitRemotePin);
+    document.getElementById('inp-remote-pin')?.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') submitRemotePin();
+    });
+
+    document.getElementById('btn-wake-host')?.addEventListener('click', async () => {
+      const btn = document.getElementById('btn-wake-host');
+      if (btn) btn.disabled = true;
+      try {
+        toast('正在通知主电脑检查并启动工作台和比特浏览器窗口…', 'info');
+        const res = await api('/api/remote/wake-workbench', 'POST', { openProfile: true, openHostBrowser: false });
+        toast(res.message || '主电脑工作台与比特浏览器已就绪', res.bitbrowserOnline ? 'success' : 'info');
+        await loadBrowserStatus();
+      } catch (err) {
+        toast(err.message, 'error');
+      } finally {
+        if (btn) btn.disabled = false;
+      }
+    });
+
     document.getElementById('btn-save-backend-url').addEventListener('click', async () => {
       const url = document.getElementById('inp-custom-backend-url').value.trim().replace(/\/+$/, '');
       if (!url) return;
@@ -1119,7 +1363,11 @@
       document.getElementById('modal-clone-help').classList.add('hidden');
       await detectConnectionMode();
       await loadBootstrap();
-      toast(state.isReadOnlyCloud ? '这台地址还没连上，确认那台电脑开着工作台黑框' : '已成功连上后台电脑！', state.isReadOnlyCloud ? 'error' : 'success');
+      if (state.isReadOnlyCloud && state.pendingRemoteUrl) {
+        openRemotePinModal(state.pendingRemoteUrl);
+      } else {
+        toast(state.isReadOnlyCloud ? '这台地址还没连上，确认那台电脑开着工作台且浏览器未拦截HTTP' : '已成功连上后台电脑！', state.isReadOnlyCloud ? 'error' : 'success');
+      }
     });
 
     // 一键同步到 GitHub 网页
@@ -1169,6 +1417,11 @@
     document.getElementById('btn-open-crawl-modal').addEventListener('click', openCrawl);
 
     document.getElementById('btn-confirm-crawl').addEventListener('click', async () => {
+      if (state.isReadOnlyCloud && state.pendingRemoteUrl) {
+        openRemotePinModal(state.pendingRemoteUrl);
+        toast('请先输入一次主电脑口令，验证后点开始抓即可！', 'info');
+        return;
+      }
       const platforms = Array.from(document.querySelectorAll('.mc-plat:checked')).map((el) => el.value);
       const buckets = Array.from(document.querySelectorAll('.mc-bucket:checked')).map((el) => el.value);
       const customKeywords = document.getElementById('mc-custom-keywords').value.trim();
@@ -1178,6 +1431,7 @@
       const dateFrom = document.getElementById('mc-date-from').value;
       const dateTo = document.getElementById('mc-date-to').value;
       const modeOverride = document.getElementById('mc-mode').value;
+      const useAsync = Boolean(state.isRemoteHost || (state.backendBase && !/^https?:\/\/(127\.0\.0\.1|localhost)(:|\/|$)/i.test(state.backendBase)));
       document.getElementById('modal-crawl').classList.add('hidden');
 
       connectCrawlStream();
@@ -1192,9 +1446,27 @@
           dateFrom,
           dateTo,
           modeOverride,
+          async: useAsync,
           fastTest: true,
         });
+        if (res.started || res.alreadyRunning) {
+          state.wasCrawlRunning = true;
+          toast(
+            res.alreadyRunning
+              ? '主电脑当前正在抓取中，已为您同步直播进度…'
+              : '🚀 已派发给主电脑开始抓词！两边页面会同步显示进度，抓完自动刷新并推送飞书与 GitHub',
+            'info'
+          );
+          return;
+        }
         const r = res.result || {};
+        if (r.alreadyRunning) {
+          state.wasCrawlRunning = true;
+          toast('主电脑当前正在抓取中，已为您同步直播进度…', 'info');
+          return;
+        }
+        state.lastFinishedJobId = r.id || state.lastFinishedJobId;
+        state.wasCrawlRunning = false;
         toast(`抓完了！留下好内容 ${r.qualifiedAdded || 0} 条，踢掉无关/废片 ${r.filteredTrash || 0} 条`, 'success');
         await loadBootstrap();
         if (state.currentView === 'keywords') await loadKeywords();

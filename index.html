@@ -18,6 +18,8 @@
       <span id="conn-mode-desc" class="conn-desc"></span>
     </div>
     <div class="conn-right">
+      <button id="btn-unlock-remote" class="btn btn-primary btn-xs hidden">🔑 输入口令连上主电脑（开启远程抓词）</button>
+      <button id="btn-wake-host" class="btn btn-accent btn-xs hidden">🚀 远程启动/唤醒主电脑工作台</button>
       <button id="btn-set-backend-url" class="btn btn-ghost btn-xs hidden">🔗 填写主力电脑后台地址</button>
       <button id="btn-open-clone-help" class="btn btn-ghost btn-xs">💻 换别的电脑怎么也用来抓？</button>
       <button id="btn-top-push-github" class="btn btn-success btn-xs">☁️ 一键同步到 GitHub 网页（让别的电脑也能看）</button>
@@ -647,10 +649,27 @@
             </div>
             <div class="mt-8 inline-btns" style="justify-content:space-between;">
               <label class="check-row">
-                <input type="checkbox" id="cfg-gh-autopush" />
+                <input type="checkbox" id="cfg-gh-autopush" checked />
                 <span>每次抓取完视频后，自动把最新封面和结果同步到 GitHub 网页</span>
               </label>
               <span id="gh-pages-link-box" class="muted-small"></span>
+            </div>
+
+            <div class="form-grid-3 mt-12" style="padding-top:12px;border-top:1px dashed #cbd5e1;">
+              <div class="form-field">
+                <label>🔑 跨电脑远程控制口令（默认 8888）：</label>
+                <input type="text" id="cfg-remote-pin" class="form-input" placeholder="不改留空，默认 8888" />
+              </div>
+              <div class="form-field span-2">
+                <label>🛡️ 开机后台静默挂机 & 外网通道：</label>
+                <div class="inline-btns" style="justify-content:space-between;">
+                  <label class="check-row">
+                    <input type="checkbox" id="cfg-remote-autostart" checked />
+                    <span>开机自动在后台启动工作台与穿透通道（不用双击 bat，别的电脑随时可连）</span>
+                  </label>
+                  <span id="cfg-remote-tunnel-label" class="muted-small">正在检测公网通道…</span>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -1119,9 +1138,37 @@
     </div>
   </div>
 
+  <!-- 弹窗 8：跨电脑远程控制口令解锁弹窗 -->
+  <div id="modal-remote-pin" class="modal-backdrop hidden">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3>🔑 输入口令连上主电脑（开启远程控制）</h3>
+        <button class="modal-close" data-close="modal-remote-pin">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="sop-block">
+          <p style="margin:0 0 8px;">已检测到主电脑在线通道：<code id="remote-pin-target-label">自动检测中…</code></p>
+          <p class="muted-small" style="margin:0;">只需在这台电脑输入一次口令（默认 <code>8888</code>），浏览器会自动记住，以后打开同一个网址就能直接搜词、抓视频、同步两边进度！</p>
+        </div>
+        <div class="form-field mt-10">
+          <label>请输入主电脑控制口令</label>
+          <input type="password" id="inp-remote-pin" class="form-input" placeholder="默认口令 8888" />
+        </div>
+        <label class="check-row mt-8">
+          <input type="checkbox" id="chk-wake-bitbrowser-on-connect" checked />
+          <span>连上后顺便自动唤醒主电脑比特浏览器与防封窗口</span>
+        </label>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" data-close="modal-remote-pin">先只看不抓</button>
+        <button id="btn-confirm-remote-pin" class="btn btn-primary">🔓 验证口令并连上主电脑</button>
+      </div>
+    </div>
+  </div>
+
   <!-- 右下角大白话轻提示 -->
   <div id="toast-container" class="toast-container"></div>
 
-  <script src="./app.js?v=2.0.0"></script>
+  <script src="./app.js?v=2.1.0"></script>
 </body>
 </html>

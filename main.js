@@ -8,6 +8,7 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const os = require('os');
 const { exec } = require('child_process');
 const { PLATFORMS, PRESET_KEYWORD_PACKS, uid } = require('./lib/defaults');
 const store = require('./lib/store');
@@ -21,6 +22,7 @@ const mediaExtractor = require('./lib/media_extractor');
 const caseAnalyzer = require('./lib/case_analyzer');
 const githubSync = require('./lib/github_sync');
 const fingerprintBrowser = require('./lib/fingerprint_browser');
+const remoteControl = require('./lib/remote_control');
 
 const PORT = Number(process.env.PORT || 3080);
 const HOST = process.env.HOST || '0.0.0.0';
@@ -43,7 +45,7 @@ const MIME_TYPES = {
 const CORS_HEADERS = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+  'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Remote-Pin',
   'Access-Control-Allow-Private-Network': 'true',
 };
 
@@ -197,7 +199,7 @@ function computeDashboardStats(db, proxySummary) {
   };
 }
 
-function sanitizeSettingsForClient(settings) {
+function sanitizeSettingsForClient(settings, isLocal = false) {
   const clone = JSON.parse(JSON.stringify(settings || {}));
   if (clone.visionLlm) {
     clone.visionLlm.hasApiKey = Boolean(clone.visionLlm.apiKey || process.env.GEMINI_API_KEY || process.env.OPENAI_API_KEY);
@@ -212,6 +214,16 @@ function sanitizeSettingsForClient(settings) {
     delete clone.feishu.refreshToken;
     clone.feishu.hasSecret = Boolean(clone.feishu.appSecret || process.env.FEISHU_APP_SECRET);
     delete clone.feishu.appSecret;
+  }
+  const tunnelState = remoteControl.getTunnelState();
+  clone.remoteControl = Object.assign({ enabled: true, autoStartGuardian: true }, clone.remoteControl || {}, {
+    hasPin: Boolean((clone.remoteControl && clone.remoteControl.pin) || '8888'),
+    autoStartEnabled: remoteControl.getWindowsAutoStartStatus(),
+    tunnelUrl: tunnelState.tunnelUrl || '',
+    tunnelUpdatedAt: tunnelState.updatedAt || '',
+  });
+  if (!isLocal) {
+    delete clone.remoteControl.pin;
   }
   return clone;
 }
@@ -334,13 +346,78 @@ function filterAndSortSamples(samples, query) {
 async function handleApi(req, res, pathname, searchParams) {
   const db = store.getDb();
 
-  // 健康检查
+  // 健康检查（开放探测，返回主机名、隧道状态及远程口令校验状态，绝不返回真实口令）
   if (pathname === '/api/health') {
-    return sendJson(res, 200, { ok: true, service: 'laya-social-scout', time: new Date().toISOString() });
+    const pinStatus = remoteControl.checkPinOnly(req, db, searchParams.get('pin') || '');
+    const tunnelState = remoteControl.getTunnelState();
+    const remotePinRequired = !pinStatus.isLocal && remoteControl.isRemotePinEnabled(db);
+    return sendJson(res, 200, {
+      ok: true,
+      service: 'laya-social-scout',
+      hostComputer: os.hostname(),
+      time: new Date().toISOString(),
+      isLocal: pinStatus.isLocal,
+      remotePinRequired,
+      pinVerified: pinStatus.ok,
+      tunnelUrl: tunnelState.tunnelUrl || '',
+    });
+  }
+
+  // 跨电脑远程控制口令校验接口
+  if (pathname === '/api/remote/verify-pin' && req.method === 'POST') {
+    const body = await readJsonBody(req);
+    const auth = remoteControl.verifyRemotePin(req, db, body.pin || '');
+    if (!auth.ok) {
+      return sendJson(res, auth.status || 401, { error: auth.error, needPin: true });
+    }
+    return sendJson(res, 200, {
+      ok: true,
+      hostComputer: os.hostname(),
+      isLocal: auth.isLocal,
+    });
+  }
+
+  // 全局远程访问守卫：除健康检查、口令验证与飞书 OAuth 回调外，非本机回环请求一律须持有 X-Remote-Pin
+  if (pathname !== '/api/feishu/oauth/callback') {
+    const explicitPin = pathname === '/api/crawl/stream' ? (searchParams.get('pin') || '') : '';
+    const auth = remoteControl.verifyRemotePin(req, db, explicitPin);
+    if (!auth.ok) {
+      return sendJson(res, auth.status || 401, { error: auth.error, needPin: true });
+    }
+  }
+
+  // 查询主电脑远程通道、开机守护与比特浏览器状态
+  if (pathname === '/api/remote/status' && req.method === 'GET') {
+    const tunnelState = remoteControl.getTunnelState();
+    const fpCfg = db.settings.fingerprintBrowser || {};
+    const browserStatus = await fingerprintBrowser.detectFingerprintBrowsers(fpCfg);
+    return sendJson(res, 200, {
+      ok: true,
+      hostComputer: os.hostname(),
+      tunnelUrl: tunnelState.tunnelUrl || '',
+      tunnelUpdatedAt: tunnelState.updatedAt || '',
+      autoStartEnabled: remoteControl.getWindowsAutoStartStatus(),
+      bitbrowserOnline: browserStatus.bitbrowserOnline,
+    });
+  }
+
+  // 远程一键启动/唤醒主电脑工作台（拉起比特浏览器、预热窗口，或平滑重启主服务）
+  if (pathname === '/api/remote/wake-workbench' && req.method === 'POST') {
+    const body = await readJsonBody(req);
+    const resWake = await remoteControl.wakeHostWorkbench(db, body || {});
+    store.addOpLog({
+      module: '远程唤醒',
+      action: '远程启动/唤醒主电脑工作台与比特浏览器',
+      status: resWake.bitbrowserOnline ? 'success' : 'warning',
+      detail: resWake.message || '',
+    });
+    store.save(true);
+    return sendJson(res, 200, resWake);
   }
 
   // 全局引导与仪表盘首屏聚合接口
   if (pathname === '/api/bootstrap' && req.method === 'GET') {
+    const isLocal = remoteControl.isLocalLoopbackReq(req);
     const proxySummary = await proxyPool.evaluateProxyPoolHealth(false);
     const dashboard = computeDashboardStats(db, proxySummary);
     const activeAlerts = (db.alerts || []).filter((a) => !a.dismissed).slice(0, 5);
@@ -356,7 +433,7 @@ async function handleApi(req, res, pathname, searchParams) {
       },
       settings: (() => {
         feishuSync.upgradeSyncFieldsToPretty(db);
-        return sanitizeSettingsForClient(db.settings);
+        return sanitizeSettingsForClient(db.settings, isLocal);
       })(),
       crawlJob: crawlerEngine.getActiveJobStatus(),
       originUrl: getOriginFromReq(req),
@@ -455,7 +532,7 @@ async function handleApi(req, res, pathname, searchParams) {
       store.save(true);
     }
 
-    const result = await crawlerEngine.runCrawlTask({
+    const crawlOpts = {
       platforms: Array.isArray(body.platforms) && body.platforms.length ? body.platforms : ['instagram', 'facebook', 'x', 'threads', 'tiktok'],
       buckets: Array.isArray(body.buckets) && body.buckets.length ? body.buckets : ['brand', 'competitor', 'generic'],
       customKeywords,
@@ -467,7 +544,23 @@ async function handleApi(req, res, pathname, searchParams) {
       fastTest: body.fastTest !== false,
       awaitFeishuSync: Boolean(body.awaitFeishuSync),
       operator: body.operator || db.settings.operatorName || '运营手动触发',
-    });
+    };
+
+    const currentJob = crawlerEngine.getActiveJobStatus();
+    if (currentJob && currentJob.running) {
+      return sendJson(res, 200, { ok: true, alreadyRunning: true, job: currentJob });
+    }
+
+    // 远程跨网请求或前端显式开启异步模式：立即返回 202 并靠 SSE 实时同步双方页面进度，彻底规避 Cloudflare 100 秒代理超时
+    if (body.async || !remoteControl.isLocalLoopbackReq(req)) {
+      crawlerEngine.runCrawlTask(crawlOpts).catch((err) => {
+        console.error('[crawl/async] 异步采集失败:', err && err.message ? err.message : err);
+      });
+      await new Promise((r) => setTimeout(r, 40));
+      return sendJson(res, 202, { ok: true, started: true, job: crawlerEngine.getActiveJobStatus() });
+    }
+
+    const result = await crawlerEngine.runCrawlTask(crawlOpts);
     return sendJson(res, 200, { ok: true, result });
   }
 
@@ -946,6 +1039,25 @@ async function handleApi(req, res, pathname, searchParams) {
       }
       s.githubSync = Object.assign({}, s.githubSync || {}, nextGh);
     }
+    if (body.remoteControl) {
+      const nextRc = Object.assign({}, s.remoteControl || { enabled: true, pin: '8888', autoStartGuardian: true });
+      if (body.remoteControl.enabled !== undefined) {
+        nextRc.enabled = Boolean(body.remoteControl.enabled);
+      }
+      if (body.remoteControl.pin !== undefined) {
+        const cleanPin = String(body.remoteControl.pin || '').trim();
+        if (cleanPin) nextRc.pin = cleanPin;
+      }
+      if (body.remoteControl.autoStartGuardian !== undefined) {
+        nextRc.autoStartGuardian = Boolean(body.remoteControl.autoStartGuardian);
+        try {
+          remoteControl.setWindowsAutoStart(nextRc.autoStartGuardian, ROOT_DIR);
+        } catch (err) {
+          console.warn('[remote] 更新开机自启注册表失败:', err.message);
+        }
+      }
+      s.remoteControl = nextRc;
+    }
 
     store.addOpLog({
       module: '系统设置',
@@ -953,7 +1065,7 @@ async function handleApi(req, res, pathname, searchParams) {
       detail: `采集模式=${s.collectorMode}，质量合格线=${s.thresholds.minQualityScore}分，飞书形态=${s.feishu.targetMode}`,
     });
     store.save(true);
-    return sendJson(res, 200, { ok: true, settings: sanitizeSettingsForClient(db.settings) });
+    return sendJson(res, 200, { ok: true, settings: sanitizeSettingsForClient(db.settings, remoteControl.isLocalLoopbackReq(req)) });
   }
 
   // 运营免代码新增/管理自定义扩展字段
@@ -1210,6 +1322,13 @@ if (require.main === module) {
     .init()
     .then(() => seedDemo.ensureInitialSeedIfEmpty())
     .then(() => {
+      const db = store.getDb();
+      let changedBootCfg = false;
+      if (db && db.settings && !db.settings.remoteControl) {
+        db.settings.remoteControl = { enabled: true, pin: '8888', autoStartGuardian: true };
+        changedBootCfg = true;
+      }
+      if (changedBootCfg) store.save(true);
       if (isDryRun) {
         console.log('✅ 启动自检通过');
         process.exit(0);
