@@ -31,6 +31,8 @@
     settings: {},
     feishuOAuthUrl: '',
     caseImagesBase64: [], // 上传/粘贴待拆解的截图数组
+    crawlRefImagesBase64: [], // 抓词弹窗上传的找同款参考截图数组
+    activeReferenceProfile: null,
     caseHistory: [],
     crawlTimer: null,
     crawlEventSource: null,
@@ -735,6 +737,7 @@
               </div>
               <div class="auto-tags-wrap">
                 <span class="s-tag type">${esc(s.contentType)}</span>
+                ${s.similarBadge ? `<span class="s-tag viral">${esc(s.similarBadge)}</span>` : ''}
                 ${brandsHtml}
                 <span class="s-tag ${isHighDiff ? 'diff-high' : 'diff-low'}">照抄难度: ${stars}</span>
                 ${isViral ? '<span class="s-tag viral">🔥 过万赞爆款</span>' : ''}
@@ -757,6 +760,7 @@
               <a href="${esc(s.videoUrl)}" target="_blank" rel="noopener" class="btn btn-ghost btn-xs">🔗 查看原帖/原视频</a>
               <button class="btn btn-ghost btn-xs act-fav" data-id="${esc(s.id)}">${s.favorited ? '⭐ 已收藏' : '☆ 收藏'}</button>
               <button class="btn btn-ghost btn-xs act-used" data-id="${esc(s.id)}">${s.markedUsed ? '✅ 已用过' : '⬜ 标为已用'}</button>
+              <button class="btn btn-primary btn-xs act-similar" data-id="${esc(s.id)}">🔍 抓相似</button>
               <button class="btn btn-danger-outline btn-xs act-spam" data-id="${esc(s.id)}" data-handle="${esc(s.authorHandle)}">🚫 踢掉拉黑</button>
             </div>
             <button class="btn btn-primary btn-xs act-guide" data-id="${esc(s.id)}">💡 怎么抄 & 插广告指南</button>
@@ -766,9 +770,43 @@
       .join('');
   }
 
-  /* ---------------- 丢链接 / 传截图拆解案例 ---------------- */
+  /* ---------------- 丢链接 / 传截图拆解 & 找同款 ---------------- */
+  function compressImageFile(file) {
+    return new Promise((resolve) => {
+      const reader = new FileReader();
+      reader.onload = (ev) => {
+        const rawUrl = String((ev && ev.target && ev.target.result) || '');
+        const img = new Image();
+        img.onload = () => {
+          try {
+            const maxDim = 1280;
+            let w = img.naturalWidth || img.width;
+            let h = img.naturalHeight || img.height;
+            if (w > maxDim || h > maxDim) {
+              const scale = maxDim / Math.max(w, h);
+              w = Math.round(w * scale);
+              h = Math.round(h * scale);
+            }
+            const cvs = document.createElement('canvas');
+            cvs.width = Math.max(1, w);
+            cvs.height = Math.max(1, h);
+            const ctx = cvs.getContext('2d');
+            ctx.drawImage(img, 0, 0, cvs.width, cvs.height);
+            resolve(cvs.toDataURL('image/jpeg', 0.85));
+          } catch (_) {
+            resolve(rawUrl);
+          }
+        };
+        img.onerror = () => resolve(rawUrl);
+        img.src = rawUrl;
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+
   function renderUploadPreviews() {
     const strip = document.getElementById('an-preview-strip');
+    if (!strip) return;
     strip.innerHTML = state.caseImagesBase64
       .map(
         (src, idx) => `
@@ -780,17 +818,82 @@
       .join('');
   }
 
-  function handleImageFiles(files) {
-    Array.from(files || []).forEach((file) => {
-      if (!file.type || !file.type.startsWith('image/')) return;
-      if (state.caseImagesBase64.length >= 4) return toast('最多同时放 4 张截图哦', 'info');
-      const reader = new FileReader();
-      reader.onload = (ev) => {
-        state.caseImagesBase64.push(ev.target.result);
-        renderUploadPreviews();
-      };
-      reader.readAsDataURL(file);
-    });
+  function renderCrawlRefPreviews() {
+    const strip = document.getElementById('mc-ref-previews');
+    if (!strip) return;
+    strip.innerHTML = state.crawlRefImagesBase64
+      .map(
+        (src, idx) => `
+      <div class="preview-thumb">
+        <img src="${esc(resolveCoverSrc(src))}" alt="参考图${idx + 1}" />
+        <button type="button" data-rm-ref="${idx}" title="移除这张参考图">✕</button>
+      </div>`
+      )
+      .join('');
+  }
+
+  async function handleImageFiles(files, targetKey = 'caseImagesBase64', onDone = renderUploadPreviews) {
+    const imgFiles = Array.from(files || []).filter((f) => f && f.type && f.type.startsWith('image/'));
+    if (!imgFiles.length) return 0;
+    let added = 0;
+    for (const file of imgFiles) {
+      if (state[targetKey].length >= 4) {
+        toast('最多同时放 4 张截图哦', 'info');
+        break;
+      }
+      const dataUrl = await compressImageFile(file);
+      if (dataUrl) {
+        state[targetKey].push(dataUrl);
+        added += 1;
+        onDone();
+      }
+    }
+    return added;
+  }
+
+  async function analyzeAndFillSimilarReference({ imagesBase64 = [], referenceText = '', url = '', openModal = false } = {}) {
+    const box = document.getElementById('mc-ref-result-box');
+    const btn = document.getElementById('btn-mc-analyze-ref');
+    if (btn) {
+      btn.disabled = true;
+      btn.textContent = '⏳ 正在识别图内中文文字与版式…';
+    }
+    if (box) {
+      box.classList.remove('hidden');
+      box.innerHTML = '⏳ 正在分析截图与文案，生成纯简繁中文同款搜索词…';
+    }
+    try {
+      const res = await api('/api/crawl/analyze-reference', 'POST', { imagesBase64, referenceText, url });
+      const prof = res.profile || {};
+      state.activeReferenceProfile = prof;
+      const kwStr = (prof.suggestedKeywords || []).join(', ');
+      const kwInput = document.getElementById('mc-custom-keywords');
+      if (kwInput && kwStr) kwInput.value = kwStr;
+      const saveChk = document.getElementById('mc-save-custom-kw');
+      if (saveChk) saveChk.checked = false;
+      if (box) {
+        box.classList.remove('hidden');
+        box.innerHTML = `
+          <div><strong>✅ 已识别版式：${esc(prof.visualArchetypeLabel || '同款爆款案例')}</strong></div>
+          ${prof.ocrText ? `<div class="muted-small mt-4">图内提取文字：「${esc(prof.ocrText.slice(0, 80))}${prof.ocrText.length > 80 ? '…' : ''}」</div>` : ''}
+          <div class="muted-small mt-4" style="color:#059669;">已自动填入 ${(prof.suggestedKeywords || []).length} 个纯简繁中文同款搜词，直接点最下方「🚀 开始抓视频」就能去各平台抓相似内容！</div>
+        `;
+      }
+      if (openModal) {
+        document.getElementById('modal-crawl').classList.remove('hidden');
+      }
+      toast('已识别参考案例，同款纯中文搜词已填好！', 'success');
+      return prof;
+    } catch (err) {
+      if (box) box.classList.add('hidden');
+      toast(err.message, 'error');
+      return null;
+    } finally {
+      if (btn) {
+        btn.disabled = false;
+        btn.textContent = '🔍 识别图片/文案并自动填入同款搜索词';
+      }
+    }
   }
 
   function renderCaseReport(caseItem) {
@@ -844,12 +947,42 @@
           .join('')}
       </div>
 
-      <div class="inline-btns mt-10">
+      <div class="inline-btns wrap-btns mt-10">
         <button id="btn-save-case-to-samples" data-caseid="${esc(caseItem.id)}" class="btn btn-success">
           ${caseItem.savedToSamples ? '✅ 已存入好视频库' : '📥 把这个案例存进「抓到的好视频」库'}
         </button>
+        <button id="btn-case-crawl-similar" class="btn btn-primary">
+          🚀 去全网抓相似同款案例（纯简繁中文）
+        </button>
       </div>
     `;
+
+    const simCaseBtn = document.getElementById('btn-case-crawl-similar');
+    if (simCaseBtn && !state.isReadOnlyCloud) {
+      simCaseBtn.onclick = async () => {
+        if (caseItem.similarProfile && (caseItem.similarProfile.suggestedKeywords || []).length) {
+          state.activeReferenceProfile = caseItem.similarProfile;
+          state.crawlRefImagesBase64 = caseItem.coverUrl ? [caseItem.coverUrl] : [];
+          renderCrawlRefPreviews();
+          document.getElementById('mc-custom-keywords').value = caseItem.similarProfile.suggestedKeywords.join(', ');
+          document.getElementById('mc-ref-text').value = caseItem.extractedText || caseItem.userNote || '';
+          document.getElementById('mc-save-custom-kw').checked = false;
+          const rBox = document.getElementById('mc-ref-result-box');
+          if (rBox) {
+            rBox.classList.remove('hidden');
+            rBox.innerHTML = `<strong>✅ 已复用拆解特征：${esc(caseItem.similarProfile.visualArchetypeLabel || '同款案例')}</strong>`;
+          }
+          document.getElementById('modal-crawl').classList.remove('hidden');
+        } else {
+          await analyzeAndFillSimilarReference({
+            imagesBase64: caseItem.coverUrl ? [caseItem.coverUrl] : state.caseImagesBase64,
+            referenceText: `${caseItem.extractedTitle || ''} ${caseItem.extractedText || ''} ${caseItem.userNote || ''}`.trim(),
+            url: caseItem.url || '',
+            openModal: true,
+          });
+        }
+      };
+    }
 
     const saveBtn = document.getElementById('btn-save-case-to-samples');
     if (saveBtn && !caseItem.savedToSamples && !state.isReadOnlyCloud) {
@@ -1440,6 +1573,7 @@
           platforms,
           buckets,
           customKeywords,
+          referenceProfile: state.activeReferenceProfile || null,
           saveCustomKeywords,
           clearExisting,
           maxTotalCandidates,
@@ -1528,28 +1662,101 @@
       }
     });
 
+    // 抓取弹窗内：上传/拖拽/粘贴参考截图识别找同款
+    const mcDropzone = document.getElementById('mc-ref-dropzone');
+    const mcFileInp = document.getElementById('mc-ref-file');
+    const triggerModalRefAnalyze = async () => {
+      const refText = (document.getElementById('mc-ref-text')?.value || '').trim();
+      if (!state.crawlRefImagesBase64.length && !refText) {
+        return toast('请先放进参考截图或贴一段参考文案哦', 'info');
+      }
+      await analyzeAndFillSimilarReference({
+        imagesBase64: state.crawlRefImagesBase64,
+        referenceText: refText,
+        openModal: false,
+      });
+    };
+    if (mcDropzone && mcFileInp) {
+      mcDropzone.addEventListener('click', (e) => {
+        if (!e.target.closest('button')) mcFileInp.click();
+      });
+      mcFileInp.addEventListener('change', async (e) => {
+        const cnt = await handleImageFiles(e.target.files, 'crawlRefImagesBase64', renderCrawlRefPreviews);
+        e.target.value = '';
+        if (cnt > 0) triggerModalRefAnalyze();
+      });
+      mcDropzone.addEventListener('dragover', (e) => { e.preventDefault(); mcDropzone.classList.add('dragover'); });
+      mcDropzone.addEventListener('dragleave', () => mcDropzone.classList.remove('dragover'));
+      mcDropzone.addEventListener('drop', async (e) => {
+        e.preventDefault();
+        mcDropzone.classList.remove('dragover');
+        const cnt = await handleImageFiles(e.dataTransfer.files, 'crawlRefImagesBase64', renderCrawlRefPreviews);
+        if (cnt > 0) triggerModalRefAnalyze();
+      });
+    }
+    document.getElementById('mc-ref-previews')?.addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-rm-ref]');
+      if (!btn) return;
+      e.stopPropagation();
+      state.crawlRefImagesBase64.splice(Number(btn.dataset.rmRef), 1);
+      renderCrawlRefPreviews();
+    });
+    document.getElementById('btn-mc-analyze-ref')?.addEventListener('click', triggerModalRefAnalyze);
+    document.getElementById('btn-mc-clear-ref')?.addEventListener('click', () => {
+      state.crawlRefImagesBase64 = [];
+      state.activeReferenceProfile = null;
+      renderCrawlRefPreviews();
+      const rt = document.getElementById('mc-ref-text');
+      if (rt) rt.value = '';
+      const rb = document.getElementById('mc-ref-result-box');
+      if (rb) rb.classList.add('hidden');
+    });
+
     // 丢链接 / 传截图拆解案例事件
     const dropzone = document.getElementById('an-dropzone');
     const fileInput = document.getElementById('an-file-input');
     dropzone.addEventListener('click', (e) => {
       if (!e.target.closest('button')) fileInput.click();
     });
-    fileInput.addEventListener('change', (e) => handleImageFiles(e.target.files));
+    fileInput.addEventListener('change', (e) => handleImageFiles(e.target.files, 'caseImagesBase64', renderUploadPreviews));
     dropzone.addEventListener('dragover', (e) => { e.preventDefault(); dropzone.classList.add('dragover'); });
     dropzone.addEventListener('dragleave', () => dropzone.classList.remove('dragover'));
     dropzone.addEventListener('drop', (e) => {
       e.preventDefault();
       dropzone.classList.remove('dragover');
-      handleImageFiles(e.dataTransfer.files);
+      handleImageFiles(e.dataTransfer.files, 'caseImagesBase64', renderUploadPreviews);
     });
-    document.addEventListener('paste', (e) => {
-      if (state.currentView !== 'analyzer') return;
+    document.addEventListener('paste', async (e) => {
       const items = (e.clipboardData && e.clipboardData.items) || [];
       const files = [];
       for (const it of items) {
         if (it.type && it.type.startsWith('image/')) files.push(it.getAsFile());
       }
-      if (files.length) handleImageFiles(files);
+      if (!files.length) return;
+      const crawlModalOpen = !document.getElementById('modal-crawl')?.classList.contains('hidden');
+      if (crawlModalOpen) {
+        const cnt = await handleImageFiles(files, 'crawlRefImagesBase64', renderCrawlRefPreviews);
+        if (cnt > 0) triggerModalRefAnalyze();
+      } else if (state.currentView === 'analyzer') {
+        handleImageFiles(files, 'caseImagesBase64', renderUploadPreviews);
+      }
+    });
+    document.getElementById('btn-an-crawl-similar')?.addEventListener('click', async () => {
+      const url = document.getElementById('an-url-input').value.trim();
+      const refText = document.getElementById('an-note-input').value.trim();
+      if (!state.caseImagesBase64.length && !refText && !url) {
+        return toast('请先放一张参考图片/截图、链接，或写一句案例描述再找同款！', 'info');
+      }
+      state.crawlRefImagesBase64 = [...state.caseImagesBase64];
+      renderCrawlRefPreviews();
+      const rt = document.getElementById('mc-ref-text');
+      if (rt) rt.value = refText;
+      await analyzeAndFillSimilarReference({
+        imagesBase64: state.caseImagesBase64,
+        referenceText: refText,
+        url,
+        openModal: true,
+      });
     });
     document.getElementById('an-preview-strip').addEventListener('click', (e) => {
       const btn = e.target.closest('[data-rm-img]');
@@ -1608,6 +1815,20 @@
       if (usedBtn) {
         await api(`/api/samples/${usedBtn.dataset.id}/action`, 'POST', { action: 'toggleUsed' });
         return loadSamples();
+      }
+      const simBtn = e.target.closest('.act-similar');
+      if (simBtn) {
+        const s = (state.samples || []).find((x) => x.id === simBtn.dataset.id);
+        if (!s) return;
+        state.crawlRefImagesBase64 = s.coverUrl ? [s.coverUrl] : [];
+        renderCrawlRefPreviews();
+        const rt = document.getElementById('mc-ref-text');
+        if (rt) rt.value = `${s.title || ''} ${(s.fullText || '').slice(0, 120)}`.trim();
+        return analyzeAndFillSimilarReference({
+          imagesBase64: s.coverUrl ? [s.coverUrl] : [],
+          referenceText: `${s.title || ''} ${s.fullText || ''}`.trim(),
+          openModal: true,
+        });
       }
       const spamBtn = e.target.closest('.act-spam');
       if (spamBtn) {

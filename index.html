@@ -412,9 +412,14 @@
                 <textarea id="an-note-input" class="form-textarea" rows="3" placeholder="例如：这条聊天记录播放量很高，帮我看看第几秒最适合自然带出我们的 Laya 语音交友App，最好改成偏台湾男生的口吻"></textarea>
               </div>
 
-              <button id="btn-run-case-analyze" class="btn btn-primary btn-lg">
-                ✨ 开始帮我拆解这个案例
-              </button>
+              <div class="inline-btns wrap-btns">
+                <button id="btn-run-case-analyze" class="btn btn-primary btn-lg">
+                  ✨ 开始帮我拆解这个案例
+                </button>
+                <button id="btn-an-crawl-similar" class="btn btn-success btn-lg">
+                  🎯 按我传的图/文案去抓相似同款案例（纯简繁中文）
+                </button>
+              </div>
             </div>
           </div>
 
@@ -980,7 +985,25 @@
           </div>
 
           <div class="form-field">
-            <label>🎯 第 3 步：直接输入这次想搜的关键词（填什么就 100% 只搜什么！）</label>
+            <label>🖼️ 按上传图片 / 案例文案找相似同款抓（选填，支持拖拽或 Ctrl+V 粘贴截图）</label>
+            <div id="mc-ref-dropzone" class="upload-dropzone" style="padding:12px;" tabindex="0">
+              <input type="file" id="mc-ref-file" accept="image/*" multiple class="hidden" />
+              <div class="dropzone-hint" style="font-size:12.5px;">
+                <strong>🖼️ 点这里选参考图 / 拖进来 / 按 Ctrl+V 直接粘贴微信或手机截图（最多 4 张）</strong>
+                <div class="muted-small">上传后自动识别图片里的文字和版式，帮你自动填好同款简繁中文搜索词</div>
+              </div>
+              <div id="mc-ref-previews" class="preview-strip"></div>
+            </div>
+            <textarea id="mc-ref-text" class="form-textarea mt-8" rows="2" placeholder="也可以直接贴一段参考文案，或传上面截图，点下方自动识别出同款简繁中文搜索词"></textarea>
+            <div class="inline-btns wrap-btns mt-8">
+              <button type="button" id="btn-mc-analyze-ref" class="btn btn-primary btn-sm">🔍 识别图片/文案并自动填入同款搜索词</button>
+              <button type="button" id="btn-mc-clear-ref" class="btn btn-ghost btn-sm">清空参考图</button>
+            </div>
+            <div id="mc-ref-result-box" class="sop-block mt-8 hidden" style="font-size:12.5px;"></div>
+          </div>
+
+          <div class="form-field">
+            <label>🎯 第 3 步：直接输入这次想搜的关键词（填什么就 100% 只搜什么！）<span class="s-tag safe" style="margin-left:8px;">🇨🇳 纯华语过滤已开启：只抓简体中文 &amp; 繁体中文</span></label>
             <textarea id="mc-custom-keywords" class="form-textarea" rows="3" placeholder="多个词用逗号或换行隔开，例如：女友視角, 約會穿搭, 曖昧聊天紀錄, 搭訕&#10;（如果这里留空，就按下面勾选的词库抓）"></textarea>
             <div class="inline-btns wrap-btns mt-8">
               <label class="check-pill"><input type="checkbox" id="mc-save-custom-kw" checked /> 顺便把上面填的词存进词库</label>
@@ -1169,6 +1192,6 @@
   <!-- 右下角大白话轻提示 -->
   <div id="toast-container" class="toast-container"></div>
 
-  <script src="./app.js?v=2.1.0"></script>
+  <script src="./app.js?v=2.2.0"></script>
 </body>
 </html>

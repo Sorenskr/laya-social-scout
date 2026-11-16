@@ -23,6 +23,7 @@ const caseAnalyzer = require('./lib/case_analyzer');
 const githubSync = require('./lib/github_sync');
 const fingerprintBrowser = require('./lib/fingerprint_browser');
 const remoteControl = require('./lib/remote_control');
+const similarCaseFinder = require('./lib/similar_case_finder');
 
 const PORT = Number(process.env.PORT || 3080);
 const HOST = process.env.HOST || '0.0.0.0';
@@ -499,7 +500,26 @@ async function handleApi(req, res, pathname, searchParams) {
     return sendJson(res, 200, { ok: true, sample });
   }
 
-  // 手动触发采集任务（支持选定日期范围 + 指定关键词抓取）
+  // 上传参考图片 / 文案识别同款特征并生成纯简繁中文搜索词
+  if (pathname === '/api/crawl/analyze-reference' && req.method === 'POST') {
+    const body = await readJsonBody(req, 15 * 1024 * 1024);
+    const profile = await similarCaseFinder.analyzeReferenceForSimilarCrawl({
+      imagesBase64: body.imagesBase64 || [],
+      referenceText: body.referenceText || '',
+      url: body.url || '',
+      db,
+    });
+    store.addOpLog({
+      module: '找同款引擎',
+      action: '识别上传截图/文案生成同款中文搜词',
+      status: 'success',
+      detail: `${profile.visualArchetypeLabel} -> [${(profile.suggestedKeywords || []).join(', ')}]`,
+    });
+    store.save();
+    return sendJson(res, 200, { ok: true, profile });
+  }
+
+  // 手动触发采集任务（支持选定日期范围 + 指定关键词 + 传图找同款抓取）
   if (pathname === '/api/crawl/run' && req.method === 'POST') {
     const body = await readJsonBody(req);
     const customKeywords = Array.isArray(body.customKeywords)
@@ -536,6 +556,7 @@ async function handleApi(req, res, pathname, searchParams) {
       platforms: Array.isArray(body.platforms) && body.platforms.length ? body.platforms : ['instagram', 'facebook', 'x', 'threads', 'tiktok'],
       buckets: Array.isArray(body.buckets) && body.buckets.length ? body.buckets : ['brand', 'competitor', 'generic'],
       customKeywords,
+      referenceProfile: body.referenceProfile || null,
       maxTotalCandidates: Number(body.maxTotalCandidates || 80),
       dateFrom: body.dateFrom || '',
       dateTo: body.dateTo || '',

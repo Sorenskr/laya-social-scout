@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-16T03:32:46.727Z",
+  "updatedAt": "2026-11-16T07:39:24.980Z",
   "hostComputer": "LAPTOP-64OLL33R",
   "brandName": "Laya",
   "remoteTunnelUrl": "https://calculation-analyses-anything-concluded.trycloudflare.com",
@@ -19,23 +19,23 @@
     "periods": {
       "day": {
         "total": 100,
-        "qualified": 100,
-        "filtered": 0
+        "qualified": 98,
+        "filtered": 2
       },
       "week": {
         "total": 100,
-        "qualified": 100,
-        "filtered": 0
+        "qualified": 98,
+        "filtered": 2
       },
       "month": {
         "total": 141,
-        "qualified": 100,
-        "filtered": 41
+        "qualified": 98,
+        "filtered": 43
       },
       "allTime": {
         "total": 141,
-        "qualified": 100,
-        "filtered": 41
+        "qualified": 98,
+        "filtered": 43
       }
     },
     "platformBreakdown": [
@@ -44,9 +44,9 @@
         "name": "Instagram",
         "shortName": "IG",
         "color": "#E1306C",
-        "count": 50,
+        "count": 49,
         "ratioPct": 50,
-        "viralCount": 26
+        "viralCount": 25
       },
       {
         "id": "facebook",
@@ -72,7 +72,7 @@
         "shortName": "Threads",
         "color": "#000000",
         "count": 31,
-        "ratioPct": 31,
+        "ratioPct": 32,
         "viralCount": 3
       },
       {
@@ -80,12 +80,12 @@
         "name": "TikTok",
         "shortName": "TikTok",
         "color": "#ff0050",
-        "count": 1,
-        "ratioPct": 1,
+        "count": 0,
+        "ratioPct": 0,
         "viralCount": 0
       }
     ],
-    "totalViralCount": 29
+    "totalViralCount": 28
   },
   "samples": [
     {
@@ -147,7 +147,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "强情绪共鸣/反常识爆点"
       },
@@ -214,7 +214,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "强情绪共鸣/反常识爆点"
       },
@@ -281,7 +281,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "强情绪共鸣/反常识爆点"
       },
@@ -348,7 +348,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "强情绪共鸣/反常识爆点"
       },
@@ -415,7 +415,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "强情绪共鸣/反常识爆点"
       },
@@ -482,7 +482,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "高评论争议/提问共鸣钩子"
       },
@@ -549,7 +549,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "强情绪共鸣/反常识爆点"
       },
@@ -616,7 +616,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "强情绪共鸣/反常识爆点"
       },
@@ -683,7 +683,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "强情绪共鸣/反常识爆点"
       },
@@ -750,79 +750,12 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "强情绪共鸣/反常识爆点"
       },
       "feishuCoverTokens": {
         "QeUGb7sJ1aT9CesSsP0cY8s8n3c": "IWw6b4tL8oFagPxWqb7ckhqWnqe"
-      }
-    },
-    {
-      "id": "smp_mwibaqil_1fc918",
-      "platform": "instagram",
-      "mediaType": "video",
-      "mergedPlatforms": [
-        "instagram"
-      ],
-      "alternateUrls": [],
-      "duplicateCount": 1,
-      "title": "160 / 43 Outfit of the day ✨🪽 Mon. @puzzlestore_18 @net_taiwan | @kumoi__ Tue.",
-      "fullText": "160 / 43 Outfit of the day ✨🪽 Mon. @puzzlestore_18 @net_taiwan | @kumoi__ Tue. @puzzlestore_18 Wed. @puzzlestore_18 Thr. @puzzlestore_18 Fir. @_shh.studio_ | @puzzlestore_18 #fyp #ootd #outfit#穿搭",
-      "videoUrl": "https://www.instagram.com/reel/Dca11GjJ6Wp/",
-      "coverUrl": "./covers/fp_in_b301d83d.jpg",
-      "publishedAt": "2026-08-24T10:24:50.000Z",
-      "collectedAt": "2026-11-15T20:53:32.733Z",
-      "durationSec": 16,
-      "bgm": "浏览器真实音频",
-      "plays": 676466,
-      "likes": 26005,
-      "comments": 8,
-      "shares": 0,
-      "bookmarks": 6501,
-      "topComments": [],
-      "authorHandle": "do.o821",
-      "authorFollowers": 5000,
-      "authorAgeDays": 180,
-      "sourceKeyword": "甜妹穿搭",
-      "categoryGroup": "generic",
-      "exposedBrands": [],
-      "contentType": "🎞️ 素材混剪类",
-      "hasHumanFace": false,
-      "isGameRelated": false,
-      "implantDifficulty": 2,
-      "qualityScore": 97,
-      "dimensions": {
-        "hook": 10,
-        "engagement": 10,
-        "replicability": 7,
-        "safety": 10
-      },
-      "implantGuide": {
-        "exactTiming": "前 3 秒用「160 / 43 Outfit of the…」高颜值女友视角/穿搭氛围定帧吸睛，第 06 秒切出深夜来电或语音条邀请冒泡",
-        "visualHook": "复刻 @do.o821 的高颜值女友视角生活流质感（该帖互动极高（👍26005 / 💬8）），画面保持自然光影+轻氛围字幕，只露一角语音连麦来电状态卡",
-        "copyScript": "改写男向吸引文案（紧扣「160 / 43 Outfit of the…」）：『每次晚上加班回家没人说话就刷到这种女友日常…其实前几天无聊开了次 Laya 深夜语音，匹配到声音超甜的妹妹陪聊到两点！』",
-        "commentSeedScript": "小号A评论：『姐姐这穿搭也太犯规了！这种高颜值女生一般都在哪个软件玩啊？』→ 小号B轻回复：『我闺蜜几个近期都在 Laya 语音房冒泡，晚上真人可多了』",
-        "rewrittenCaption": "改写男向吸引文案（紧扣「160 / 43 Outfit of the…」）：『每次晚上加班回家没人说话就刷到这种女友日常…其实前几天无聊开了次 Laya 深夜语音，匹配到声音超甜的妹妹陪聊到两点！』",
-        "suggestedCta": "小号A评论：『姐姐这穿搭也太犯规了！这种高颜值女生一般都在哪个软件玩啊？』→ 小号B轻回复：『我闺蜜几个近期都在 Laya 语音房冒泡，晚上真人可多了』"
-      },
-      "replicationSteps": [
-        "1. 钩子借鉴：直接复用「160 / 43 Outfit of the…」的开篇冲突或反问结构，在前 2 秒/首行留住划屏注意力；",
-        "2. 视觉卡点：保留高清首图/对话气泡质感，在转折第 06 秒轻露出 Laya 界面细节；",
-        "3. 评论双簧：发帖后 5 分钟内用矩阵小号在评论区埋入 Laya 产品词问答承接自然搜索流量。"
-      ],
-      "auditEngine": "weekly_trending_evaluator_v2",
-      "contentHash": "affdaa13bf683ab3",
-      "mediaFingerprint": "",
-      "favorited": false,
-      "markedUsed": false,
-      "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
-      "customValues": {
-        "hookStyle": "强情绪共鸣/反常识爆点"
-      },
-      "feishuCoverTokens": {
-        "QeUGb7sJ1aT9CesSsP0cY8s8n3c": "LTh1b6irto74KyxkeWVcNWsunce"
       }
     },
     {
@@ -884,7 +817,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "强情绪共鸣/反常识爆点"
       },
@@ -951,7 +884,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "强情绪共鸣/反常识爆点"
       },
@@ -1018,7 +951,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "强情绪共鸣/反常识爆点"
       },
@@ -1085,7 +1018,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "强情绪共鸣/反常识爆点"
       },
@@ -1152,7 +1085,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "强情绪共鸣/反常识爆点"
       },
@@ -1219,7 +1152,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "高评论争议/提问共鸣钩子"
       },
@@ -1286,7 +1219,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "强情绪共鸣/反常识爆点"
       },
@@ -1353,7 +1286,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "强情绪共鸣/反常识爆点"
       },
@@ -1420,7 +1353,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "强情绪共鸣/反常识爆点"
       },
@@ -1487,7 +1420,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "强情绪共鸣/反常识爆点"
       },
@@ -1554,7 +1487,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "强情绪共鸣/反常识爆点"
       },
@@ -1621,7 +1554,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "强情绪共鸣/反常识爆点"
       },
@@ -1688,7 +1621,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "强情绪共鸣/反常识爆点"
       },
@@ -1755,7 +1688,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "强情绪共鸣/反常识爆点"
       },
@@ -1822,7 +1755,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "强情绪共鸣/反常识爆点"
       },
@@ -1889,7 +1822,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "强情绪共鸣/反常识爆点"
       },
@@ -1956,7 +1889,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "强情绪共鸣/反常识爆点"
       },
@@ -2023,7 +1956,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "强情绪共鸣/反常识爆点"
       },
@@ -2090,7 +2023,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "强情绪共鸣/反常识爆点"
       },
@@ -2157,7 +2090,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "强情绪共鸣/反常识爆点"
       },
@@ -2224,7 +2157,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "强情绪共鸣/反常识爆点"
       },
@@ -2291,7 +2224,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "强情绪共鸣/反常识爆点"
       },
@@ -2358,7 +2291,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "强情绪共鸣/反常识爆点"
       },
@@ -2425,7 +2358,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "强情绪共鸣/反常识爆点"
       },
@@ -2492,7 +2425,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "强情绪共鸣/反常识爆点"
       },
@@ -2559,7 +2492,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "强情绪共鸣/反常识爆点"
       },
@@ -2626,7 +2559,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "强情绪共鸣/反常识爆点"
       },
@@ -2693,7 +2626,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "强情绪共鸣/反常识爆点"
       },
@@ -2760,7 +2693,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "强情绪共鸣/反常识爆点"
       },
@@ -2827,7 +2760,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "高评论争议/提问共鸣钩子"
       },
@@ -2894,7 +2827,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "高评论争议/提问共鸣钩子"
       },
@@ -2961,7 +2894,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "强情绪共鸣/反常识爆点"
       },
@@ -3028,7 +2961,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "强情绪共鸣/反常识爆点"
       },
@@ -3095,7 +3028,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "强情绪共鸣/反常识爆点"
       },
@@ -3164,7 +3097,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "高评论争议/提问共鸣钩子"
       },
@@ -3231,7 +3164,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "轻日常碎碎念/真实感分享"
       },
@@ -3298,7 +3231,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "轻日常碎碎念/真实感分享"
       },
@@ -3365,7 +3298,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "高评论争议/提问共鸣钩子"
       },
@@ -3432,7 +3365,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "轻日常碎碎念/真实感分享"
       },
@@ -3499,7 +3432,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "高评论争议/提问共鸣钩子"
       },
@@ -3566,7 +3499,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "轻日常碎碎念/真实感分享"
       },
@@ -3633,7 +3566,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "轻日常碎碎念/真实感分享"
       },
@@ -3700,7 +3633,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "轻日常碎碎念/真实感分享"
       },
@@ -3767,7 +3700,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "轻日常碎碎念/真实感分享"
       },
@@ -3834,7 +3767,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "轻日常碎碎念/真实感分享"
       },
@@ -3901,7 +3834,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "轻日常碎碎念/真实感分享"
       },
@@ -3968,7 +3901,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "轻日常碎碎念/真实感分享"
       },
@@ -4035,7 +3968,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "高评论争议/提问共鸣钩子"
       },
@@ -4102,7 +4035,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "高评论争议/提问共鸣钩子"
       },
@@ -4169,7 +4102,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "高评论争议/提问共鸣钩子"
       },
@@ -4236,7 +4169,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "高评论争议/提问共鸣钩子"
       },
@@ -4303,7 +4236,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "轻日常碎碎念/真实感分享"
       },
@@ -4370,7 +4303,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "高评论争议/提问共鸣钩子"
       },
@@ -4437,7 +4370,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "高评论争议/提问共鸣钩子"
       },
@@ -4504,7 +4437,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "轻日常碎碎念/真实感分享"
       },
@@ -4571,7 +4504,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "轻日常碎碎念/真实感分享"
       },
@@ -4638,7 +4571,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "轻日常碎碎念/真实感分享"
       },
@@ -4705,7 +4638,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "轻日常碎碎念/真实感分享"
       },
@@ -4772,7 +4705,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "轻日常碎碎念/真实感分享"
       },
@@ -4841,7 +4774,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "轻日常碎碎念/真实感分享"
       },
@@ -4908,7 +4841,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "高评论争议/提问共鸣钩子"
       },
@@ -4975,7 +4908,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "轻日常碎碎念/真实感分享"
       },
@@ -5042,7 +4975,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "高评论争议/提问共鸣钩子"
       },
@@ -5109,7 +5042,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "高评论争议/提问共鸣钩子"
       },
@@ -5176,7 +5109,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "轻日常碎碎念/真实感分享"
       },
@@ -5243,7 +5176,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "高评论争议/提问共鸣钩子"
       },
@@ -5310,7 +5243,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "高评论争议/提问共鸣钩子"
       },
@@ -5377,7 +5310,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "轻日常碎碎念/真实感分享"
       },
@@ -5444,7 +5377,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "轻日常碎碎念/真实感分享"
       },
@@ -5511,7 +5444,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "高评论争议/提问共鸣钩子"
       },
@@ -5578,7 +5511,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "轻日常碎碎念/真实感分享"
       },
@@ -5645,7 +5578,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "高评论争议/提问共鸣钩子"
       },
@@ -5712,7 +5645,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "轻日常碎碎念/真实感分享"
       },
@@ -5779,7 +5712,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "轻日常碎碎念/真实感分享"
       },
@@ -5846,7 +5779,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "轻日常碎碎念/真实感分享"
       },
@@ -5913,7 +5846,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "轻日常碎碎念/真实感分享"
       },
@@ -5980,7 +5913,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "高评论争议/提问共鸣钩子"
       },
@@ -6047,7 +5980,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "高评论争议/提问共鸣钩子"
       },
@@ -6114,7 +6047,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "轻日常碎碎念/真实感分享"
       },
@@ -6181,7 +6114,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "轻日常碎碎念/真实感分享"
       },
@@ -6248,7 +6181,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "轻日常碎碎念/真实感分享"
       },
@@ -6315,7 +6248,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "高评论争议/提问共鸣钩子"
       },
@@ -6382,7 +6315,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "轻日常碎碎念/真实感分享"
       },
@@ -6449,7 +6382,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "轻日常碎碎念/真实感分享"
       },
@@ -6516,7 +6449,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "高评论争议/提问共鸣钩子"
       },
@@ -6583,7 +6516,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "高评论争议/提问共鸣钩子"
       },
@@ -6650,7 +6583,7 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "高评论争议/提问共鸣钩子"
       },
@@ -6717,14 +6650,16 @@
       "favorited": false,
       "markedUsed": false,
       "feishuSynced": true,
-      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "feishuSyncedAt": "2026-11-16T05:39:09.510Z",
       "customValues": {
         "hookStyle": "高评论争议/提问共鸣钩子"
       },
       "feishuCoverTokens": {
         "QeUGb7sJ1aT9CesSsP0cY8s8n3c": "FtmEbs44loM0ehxSynschQARn63"
       }
-    },
+    }
+  ],
+  "trash": [
     {
       "id": "smp_mwibaqiv_aea7c8",
       "platform": "tiktok",
@@ -6790,10 +6725,83 @@
       },
       "feishuCoverTokens": {
         "QeUGb7sJ1aT9CesSsP0cY8s8n3c": "NtRIbQQcjoZ4WtxPpf2cujWFn9e"
-      }
-    }
-  ],
-  "trash": [
+      },
+      "trashType": "manual_spam",
+      "filterCategory": "人工标记垃圾内容",
+      "vetoReason": "非简繁中文外语样本自动清洗：非简繁中文：缺少简繁中文文案（纯英文/其他外文内容）",
+      "trashedAt": "2026-11-16T05:32:47.507Z"
+    },
+    {
+      "id": "smp_mwibaqil_1fc918",
+      "platform": "instagram",
+      "mediaType": "video",
+      "mergedPlatforms": [
+        "instagram"
+      ],
+      "alternateUrls": [],
+      "duplicateCount": 1,
+      "title": "160 / 43 Outfit of the day ✨🪽 Mon. @puzzlestore_18 @net_taiwan | @kumoi__ Tue.",
+      "fullText": "160 / 43 Outfit of the day ✨🪽 Mon. @puzzlestore_18 @net_taiwan | @kumoi__ Tue. @puzzlestore_18 Wed. @puzzlestore_18 Thr. @puzzlestore_18 Fir. @_shh.studio_ | @puzzlestore_18 #fyp #ootd #outfit#穿搭",
+      "videoUrl": "https://www.instagram.com/reel/Dca11GjJ6Wp/",
+      "coverUrl": "./covers/fp_in_b301d83d.jpg",
+      "publishedAt": "2026-08-24T10:24:50.000Z",
+      "collectedAt": "2026-11-15T20:53:32.733Z",
+      "durationSec": 16,
+      "bgm": "浏览器真实音频",
+      "plays": 676466,
+      "likes": 26005,
+      "comments": 8,
+      "shares": 0,
+      "bookmarks": 6501,
+      "topComments": [],
+      "authorHandle": "do.o821",
+      "authorFollowers": 5000,
+      "authorAgeDays": 180,
+      "sourceKeyword": "甜妹穿搭",
+      "categoryGroup": "generic",
+      "exposedBrands": [],
+      "contentType": "🎞️ 素材混剪类",
+      "hasHumanFace": false,
+      "isGameRelated": false,
+      "implantDifficulty": 2,
+      "qualityScore": 97,
+      "dimensions": {
+        "hook": 10,
+        "engagement": 10,
+        "replicability": 7,
+        "safety": 10
+      },
+      "implantGuide": {
+        "exactTiming": "前 3 秒用「160 / 43 Outfit of the…」高颜值女友视角/穿搭氛围定帧吸睛，第 06 秒切出深夜来电或语音条邀请冒泡",
+        "visualHook": "复刻 @do.o821 的高颜值女友视角生活流质感（该帖互动极高（👍26005 / 💬8）），画面保持自然光影+轻氛围字幕，只露一角语音连麦来电状态卡",
+        "copyScript": "改写男向吸引文案（紧扣「160 / 43 Outfit of the…」）：『每次晚上加班回家没人说话就刷到这种女友日常…其实前几天无聊开了次 Laya 深夜语音，匹配到声音超甜的妹妹陪聊到两点！』",
+        "commentSeedScript": "小号A评论：『姐姐这穿搭也太犯规了！这种高颜值女生一般都在哪个软件玩啊？』→ 小号B轻回复：『我闺蜜几个近期都在 Laya 语音房冒泡，晚上真人可多了』",
+        "rewrittenCaption": "改写男向吸引文案（紧扣「160 / 43 Outfit of the…」）：『每次晚上加班回家没人说话就刷到这种女友日常…其实前几天无聊开了次 Laya 深夜语音，匹配到声音超甜的妹妹陪聊到两点！』",
+        "suggestedCta": "小号A评论：『姐姐这穿搭也太犯规了！这种高颜值女生一般都在哪个软件玩啊？』→ 小号B轻回复：『我闺蜜几个近期都在 Laya 语音房冒泡，晚上真人可多了』"
+      },
+      "replicationSteps": [
+        "1. 钩子借鉴：直接复用「160 / 43 Outfit of the…」的开篇冲突或反问结构，在前 2 秒/首行留住划屏注意力；",
+        "2. 视觉卡点：保留高清首图/对话气泡质感，在转折第 06 秒轻露出 Laya 界面细节；",
+        "3. 评论双簧：发帖后 5 分钟内用矩阵小号在评论区埋入 Laya 产品词问答承接自然搜索流量。"
+      ],
+      "auditEngine": "weekly_trending_evaluator_v2",
+      "contentHash": "affdaa13bf683ab3",
+      "mediaFingerprint": "",
+      "favorited": false,
+      "markedUsed": false,
+      "feishuSynced": true,
+      "feishuSyncedAt": "2026-11-15T21:00:00.508Z",
+      "customValues": {
+        "hookStyle": "强情绪共鸣/反常识爆点"
+      },
+      "feishuCoverTokens": {
+        "QeUGb7sJ1aT9CesSsP0cY8s8n3c": "LTh1b6irto74KyxkeWVcNWsunce"
+      },
+      "trashType": "manual_spam",
+      "filterCategory": "人工标记垃圾内容",
+      "vetoReason": "非简繁中文外语样本自动清洗：非简繁中文：缺少简繁中文文案（纯英文/其他外文内容）",
+      "trashedAt": "2026-11-16T05:32:47.498Z"
+    },
     {
       "id": "trsh_mwg7pobc_494666",
       "trashType": "auto_filtered",
@@ -8123,6 +8131,66 @@
   },
   "recentLogs": [
     {
+      "id": "log_mwiu2og7_5f482f",
+      "time": "2026-11-16T05:39:09.511Z",
+      "operator": "新媒体运营团队",
+      "module": "飞书同步",
+      "action": "飞书多维表格高颜值重构与总表同步",
+      "status": "success",
+      "detail": "已重建「📊 全部内容总表」(98条) +「📅 今日新增 2026-11-16」(98条) + 5个平台分表",
+      "errorReason": ""
+    },
+    {
+      "id": "log_mwituhoz_d8bfd7",
+      "time": "2026-11-16T05:32:47.507Z",
+      "operator": "新媒体运营团队",
+      "module": "内容审核",
+      "action": "标记垃圾内容并自动加黑过滤",
+      "status": "success",
+      "detail": "已将「7 FLIRTY TEXTS THAT MAKE」移入垃圾回收站",
+      "errorReason": ""
+    },
+    {
+      "id": "log_mwituhor_f59eef",
+      "time": "2026-11-16T05:32:47.499Z",
+      "operator": "新媒体运营团队",
+      "module": "内容审核",
+      "action": "标记垃圾内容并自动加黑过滤",
+      "status": "success",
+      "detail": "已将「160 / 43 Outfit of the d」移入垃圾回收站",
+      "errorReason": ""
+    },
+    {
+      "id": "log_mwitcmwi_74a21f",
+      "time": "2026-11-16T05:18:54.454Z",
+      "operator": "新媒体运营团队",
+      "module": "远程唤醒",
+      "action": "远程启动/唤醒主电脑工作台与比特浏览器",
+      "status": "success",
+      "detail": "主电脑工作台正在平滑重启中（约 2 秒恢复），并已检查比特浏览器状态",
+      "errorReason": ""
+    },
+    {
+      "id": "log_mwipwwwq_fc6bbc",
+      "time": "2026-11-16T03:42:42.074Z",
+      "operator": "新媒体运营团队",
+      "module": "远程唤醒",
+      "action": "远程启动/唤醒主电脑工作台与比特浏览器",
+      "status": "success",
+      "detail": "主电脑工作台与比特浏览器已就绪（窗口：🎯抓取爆款软广模版池），现在可直接开始搜词抓取！",
+      "errorReason": ""
+    },
+    {
+      "id": "log_mwipka5r_7f7e86",
+      "time": "2026-11-16T03:32:52.719Z",
+      "operator": "新媒体运营团队",
+      "module": "GitHub同步",
+      "action": "一键同步网页与最新视频封面到 GitHub",
+      "status": "success",
+      "detail": "同步成功！任何电脑可打开：https://sorenskr.github.io/laya-social-scout/",
+      "errorReason": ""
+    },
+    {
       "id": "log_mwip58uy_163465",
       "time": "2026-11-16T03:21:11.195Z",
       "operator": "新媒体运营团队",
@@ -8260,66 +8328,6 @@
       "action": "批量写入飞书表格",
       "status": "success",
       "detail": "成功同步 1 条合格样本至飞书总表及分表",
-      "errorReason": ""
-    },
-    {
-      "id": "log_mwg66lbz_ce03da",
-      "time": "2026-11-14T08:54:48.959Z",
-      "operator": "新媒体运营团队",
-      "module": "飞书同步",
-      "action": "飞书多维表格高颜值重构与总表同步",
-      "status": "success",
-      "detail": "已重建「📊 全部内容总表」(14条) +「📅 今日新增 2026-11-14」(14条) + 5个平台分表",
-      "errorReason": ""
-    },
-    {
-      "id": "log_mwg52no3_a6242d",
-      "time": "2026-11-14T08:23:45.747Z",
-      "operator": "TikTok_高赞全形态抓取",
-      "module": "采集引擎",
-      "action": "执行社媒采集任务 (防封浏览器静默抓)",
-      "status": "success",
-      "detail": "日期范围=不限发布日期，共抓取 9 条：合格入库 2 条，一票否决过滤废片 7 条，跨平台搬运合并 0 条，限流换IP重试 4 次",
-      "errorReason": ""
-    },
-    {
-      "id": "log_mwg4z4cf_a5ea1c",
-      "time": "2026-11-14T08:21:00.735Z",
-      "operator": "边抓边实时同步飞书",
-      "module": "飞书同步",
-      "action": "批量写入飞书表格",
-      "status": "success",
-      "detail": "成功同步 1 条合格样本至飞书（含原视频超链接与爆款/高难条件着色）",
-      "errorReason": ""
-    },
-    {
-      "id": "log_mwg4yrrf_34d524",
-      "time": "2026-11-14T08:20:44.427Z",
-      "operator": "边抓边实时同步飞书",
-      "module": "飞书同步",
-      "action": "批量写入飞书表格",
-      "status": "success",
-      "detail": "成功同步 1 条合格样本至飞书（含原视频超链接与爆款/高难条件着色）",
-      "errorReason": ""
-    },
-    {
-      "id": "log_mwg4xrb9_995ac1",
-      "time": "2026-11-14T08:19:57.189Z",
-      "operator": "TikTok_Laya优先抓取",
-      "module": "采集引擎",
-      "action": "执行社媒采集任务 (防封浏览器静默抓)",
-      "status": "success",
-      "detail": "日期范围=不限发布日期，共抓取 7 条：合格入库 3 条，一票否决过滤废片 3 条，跨平台搬运合并 1 条，限流换IP重试 0 次",
-      "errorReason": ""
-    },
-    {
-      "id": "log_mwg4xau2_0a48e8",
-      "time": "2026-11-14T08:19:35.834Z",
-      "operator": "边抓边实时同步飞书",
-      "module": "飞书同步",
-      "action": "批量写入飞书表格",
-      "status": "success",
-      "detail": "成功同步 1 条合格样本至飞书（含原视频超链接与爆款/高难条件着色）",
       "errorReason": ""
     }
   ]
