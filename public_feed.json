@@ -1,10 +1,10 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-16T09:43:47.021Z",
+  "updatedAt": "2026-11-16T12:32:58.306Z",
   "hostComputer": "LAPTOP-64OLL33R",
   "brandName": "Laya",
-  "remoteTunnelUrl": "https://calculation-analyses-anything-concluded.trycloudflare.com",
-  "remoteTunnelUpdatedAt": "2026-11-16T03:32:46.653Z",
+  "remoteTunnelUrl": "https://need-other-thu-importantly.trycloudflare.com",
+  "remoteTunnelUpdatedAt": "2026-11-16T12:32:58.241Z",
   "remotePinRequired": true,
   "crawlJob": {
     "id": "job_mwj2byqr_886274",
@@ -31,7 +31,7 @@
     "qualifiedCount": 11,
     "filteredTrash": 25,
     "filteredCount": 25,
-    "feishuSyncedCount": 9,
+    "feishuSyncedCount": 10,
     "duplicatesMerged": 4,
     "rateLimitRetries": 2,
     "recentFoundSamples": [
@@ -86,6 +86,10 @@
     ],
     "currentStep": "本次抓取完成！留下 11 条好视频，踢掉 25 条废片",
     "liveLogs": [
+      {
+        "time": "17:44:02",
+        "text": "📤 刚刚抓到的好内容已实时写进今日飞书表格（累计 10 条）"
+      },
       {
         "time": "17:43:46",
         "text": "🎉 抓取收工：共看 40 条，留下好视频 11 条，踢掉废片 25 条"
@@ -201,10 +205,6 @@
       {
         "time": "17:39:56",
         "text": "🛡️ 正在通过【🎯抓取爆款软广模版池】后台静默标签页打开 THREADS 搜「Laya交友」…"
-      },
-      {
-        "time": "17:39:56",
-        "text": "🔍 正在去 Threads 搜「Laya交友」（防封静默窗口）"
       }
     ]
   },
@@ -341,10 +341,13 @@
       "mediaFingerprint": "",
       "favorited": false,
       "markedUsed": false,
-      "feishuSynced": false,
-      "feishuSyncedAt": "",
+      "feishuSynced": true,
+      "feishuSyncedAt": "2026-11-16T09:44:02.967Z",
       "customValues": {
         "hookStyle": "网恋奔现反差"
+      },
+      "feishuCoverTokens": {
+        "QeUGb7sJ1aT9CesSsP0cY8s8n3c": "M1mCbuu5Uo1j5ExaLv3cxp5anqe"
       }
     },
     {
@@ -10635,6 +10638,16 @@
   },
   "recentLogs": [
     {
+      "id": "log_mwj2tlzs_d5144a",
+      "time": "2026-11-16T09:44:02.968Z",
+      "operator": "边抓边实时同步飞书",
+      "module": "飞书同步",
+      "action": "批量写入飞书表格",
+      "status": "success",
+      "detail": "成功同步 1 条合格样本至飞书总表及分表",
+      "errorReason": ""
+    },
+    {
       "id": "log_mwj2t9gx_68c79a",
       "time": "2026-11-16T09:43:46.737Z",
       "operator": "定时任务 (17:30)",
@@ -10818,16 +10831,6 @@
       "id": "log_mwiz91x4_d072ba",
       "time": "2026-11-16T08:04:04.984Z",
       "operator": "边抓边实时同步飞书",
-      "module": "飞书同步",
-      "action": "批量写入飞书表格",
-      "status": "success",
-      "detail": "成功同步 1 条合格样本至飞书总表及分表",
-      "errorReason": ""
-    },
-    {
-      "id": "log_mwiz7tjd_7a5088",
-      "time": "2026-11-16T08:03:07.465Z",
-      "operator": "1分钟实时同步守护",
       "module": "飞书同步",
       "action": "批量写入飞书表格",
       "status": "success",
