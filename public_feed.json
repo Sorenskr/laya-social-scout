@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-16T08:09:09.704Z",
+  "updatedAt": "2026-11-16T08:38:47.676Z",
   "hostComputer": "LAPTOP-64OLL33R",
   "brandName": "Laya",
   "remoteTunnelUrl": "https://calculation-analyses-anything-concluded.trycloudflare.com",
@@ -27,7 +27,7 @@
     "qualifiedCount": 6,
     "filteredTrash": 66,
     "filteredCount": 66,
-    "feishuSyncedCount": 4,
+    "feishuSyncedCount": 5,
     "duplicatesMerged": 8,
     "rateLimitRetries": 0,
     "recentFoundSamples": [
@@ -82,6 +82,10 @@
     ],
     "currentStep": "本次抓取完成！留下 6 条好视频，踢掉 66 条废片",
     "liveLogs": [
+      {
+        "time": "16:09:19",
+        "text": "📤 刚刚抓到的好内容已实时写进今日飞书表格（累计 5 条）"
+      },
       {
         "time": "16:09:09",
         "text": "🎉 抓取收工：共看 80 条，留下好视频 6 条，踢掉废片 66 条"
@@ -197,10 +201,6 @@
       {
         "time": "16:08:03",
         "text": "❌ 踢掉废片《今天的原味是黑蕾絲丁+nike襪》— 低互动量过滤"
-      },
-      {
-        "time": "16:08:03",
-        "text": "⏭️ 跳过不在所选日期内的旧视频：《感謝台北的天氣☁️ 讓我在12月還可》"
       }
     ]
   },
@@ -334,15 +334,14 @@
       "mediaFingerprint": "",
       "favorited": false,
       "markedUsed": false,
-      "feishuSynced": false,
-      "feishuSyncedAt": "",
+      "feishuSynced": true,
+      "feishuSyncedAt": "2026-11-16T08:09:19.674Z",
       "customValues": {
         "hookStyle": "甜妹反差主动"
       },
       "feishuCoverTokens": {
         "QeUGb7sJ1aT9CesSsP0cY8s8n3c": "XP6Vbxt9RoZzA3x4z15cHYVin4f"
-      },
-      "_feishuCoverToken": "XP6Vbxt9RoZzA3x4z15cHYVin4f"
+      }
     },
     {
       "id": "smp_mwiz8o1k_14f25e",
@@ -9532,6 +9531,16 @@
   },
   "recentLogs": [
     {
+      "id": "log_mwizfsqi_bd7ed1",
+      "time": "2026-11-16T08:09:19.674Z",
+      "operator": "边抓边实时同步飞书",
+      "module": "飞书同步",
+      "action": "批量写入飞书表格",
+      "status": "success",
+      "detail": "成功同步 1 条合格样本至飞书总表及分表",
+      "errorReason": ""
+    },
+    {
       "id": "log_mwizfkxr_e5b0b9",
       "time": "2026-11-16T08:09:09.567Z",
       "operator": "新媒体运营团队",
@@ -9719,16 +9728,6 @@
       "action": "远程启动/唤醒主电脑工作台与比特浏览器",
       "status": "success",
       "detail": "主电脑工作台正在平滑重启中（约 2 秒恢复），并已检查比特浏览器状态",
-      "errorReason": ""
-    },
-    {
-      "id": "log_mwiotzas_857d15",
-      "time": "2026-11-16T03:12:25.588Z",
-      "operator": "新媒体运营团队",
-      "module": "远程唤醒",
-      "action": "远程启动/唤醒主电脑工作台与比特浏览器",
-      "status": "success",
-      "detail": "主电脑工作台与比特浏览器已在线就绪，现在可直接开始搜词抓取！",
       "errorReason": ""
     }
   ]
