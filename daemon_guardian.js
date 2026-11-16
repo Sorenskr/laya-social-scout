@@ -13,7 +13,7 @@
  */
 const fs = require('fs');
 const path = require('path');
-const { spawn } = require('child_process');
+const { spawn, execSync } = require('child_process');
 const remoteControl = require('./lib/remote_control');
 
 const ROOT_DIR = __dirname;
@@ -34,8 +34,10 @@ let currentTunnelUrl = '';
 let publishedTunnelUrl = '';
 let isShuttingDown = false;
 let patrolTimer = null;
+let tunnelPatrolTimer = null;
 let tunnelRestartTimer = null;
 let verifyingTunnel = false;
+let tunnelDeadCount = 0;
 
 function logMsg(msg) {
   const line = `[${new Date().toLocaleString('zh-CN', { hour12: false })}] ${msg}`;
@@ -196,6 +198,7 @@ async function waitAndPublishTunnel(tunnelUrl) {
       const pushText = await pushRes.text();
       if (pushRes.ok) {
         publishedTunnelUrl = tunnelUrl;
+        tunnelDeadCount = 0;
         logMsg(`🚀 已自动把新公网穿透地址同步上 GitHub Pages！(${pushText.slice(0, 160)})`);
       } else {
         logMsg(`⚠️ 自动同步 GitHub 返回 ${pushRes.status}: ${pushText.slice(0, 160)}`);
@@ -260,10 +263,54 @@ function startCloudflareTunnel() {
   });
 }
 
+async function ensureTunnelPatrol() {
+  if (isShuttingDown || !tunnelChild || tunnelChild.killed || !currentTunnelUrl || verifyingTunnel) {
+    return;
+  }
+
+  // 若先前开机初期断网导致未完成推送，每 45 秒自动补推一次 GitHub Pages
+  if (publishedTunnelUrl !== currentTunnelUrl) {
+    await waitAndPublishTunnel(currentTunnelUrl);
+    return;
+  }
+
+  try {
+    const res = await fetch(`${currentTunnelUrl}/api/health?t=${Date.now()}`, { signal: AbortSignal.timeout(5000) });
+    if (res.ok) {
+      tunnelDeadCount = 0;
+      return;
+    }
+  } catch (_) { /* 穿透不可达时继续确认是否外网已恢复而隧道假死 */ }
+
+  const localOk = await probeLocalHealth(1500);
+  if (!localOk) return;
+
+  let netOk = false;
+  try {
+    const ext = await fetch('https://github.com', { method: 'HEAD', signal: AbortSignal.timeout(5000) });
+    netOk = ext.status > 0;
+  } catch (_) {
+    netOk = false;
+  }
+  if (!netOk) return;
+
+  tunnelDeadCount += 1;
+  logMsg(`⚠️ 公网隧道自检暂未连通 (${tunnelDeadCount}/3): ${currentTunnelUrl}`);
+  if (tunnelDeadCount >= 3) {
+    logMsg(`🔄 检测到穿透隧道连续 3 次不可达且本机与外网正常，正在自动重建新隧道...`);
+    tunnelDeadCount = 0;
+    publishedTunnelUrl = '';
+    try {
+      tunnelChild.kill();
+    } catch (_) { /* 交由 on('exit') 5 秒后自动拉起新隧道 */ }
+  }
+}
+
 function cleanupAndExit(code = 0) {
   if (isShuttingDown) return;
   isShuttingDown = true;
   if (patrolTimer) clearInterval(patrolTimer);
+  if (tunnelPatrolTimer) clearInterval(tunnelPatrolTimer);
   if (tunnelRestartTimer) clearTimeout(tunnelRestartTimer);
   try {
     if (tunnelChild && !tunnelChild.killed) tunnelChild.kill();
@@ -277,26 +324,46 @@ function cleanupAndExit(code = 0) {
   process.exit(code);
 }
 
+function stopListeningPortServer() {
+  if (process.platform !== 'win32') return;
+  try {
+    const ns = execSync('netstat -ano -p tcp', { encoding: 'utf8', windowsHide: true });
+    const regex = new RegExp(`:${PORT}\\s+.*LISTENING\\s+(\\d+)`, 'i');
+    const pids = new Set();
+    for (const line of ns.split(/\r?\n/)) {
+      const m = line.match(regex);
+      if (m && Number(m[1]) > 0) pids.add(Number(m[1]));
+    }
+    for (const p of pids) {
+      try {
+        process.kill(p);
+        console.log(`已停止主服务端口 ${PORT} 进程 PID=${p}`);
+      } catch (_) {}
+    }
+  } catch (_) {}
+}
+
 function stopExistingGuardian() {
   const meta = readPidMeta();
   if (!meta) {
     console.log('未发现正在运行的守护进程记录。');
-    return;
-  }
-  if (meta.cloudflaredPid && isPidAlive(meta.cloudflaredPid)) {
-    try { process.kill(Number(meta.cloudflaredPid)); } catch (_) {}
-  }
-  if (meta.pid && isPidAlive(meta.pid)) {
-    try {
-      process.kill(Number(meta.pid));
-      console.log(`已停止守护进程 PID=${meta.pid}`);
-    } catch (e) {
-      console.log(`停止守护进程失败: ${e.message}`);
-    }
   } else {
-    console.log('旧守护进程已不在运行，清理残留 PID 文件。');
+    if (meta.cloudflaredPid && isPidAlive(meta.cloudflaredPid)) {
+      try { process.kill(Number(meta.cloudflaredPid)); } catch (_) {}
+    }
+    if (meta.pid && isPidAlive(meta.pid)) {
+      try {
+        process.kill(Number(meta.pid));
+        console.log(`已停止守护进程 PID=${meta.pid}`);
+      } catch (e) {
+        console.log(`停止守护进程失败: ${e.message}`);
+      }
+    } else {
+      console.log('旧守护进程已不在运行，清理残留 PID 文件。');
+    }
+    try { fs.unlinkSync(PID_FILE); } catch (_) {}
   }
-  try { fs.unlinkSync(PID_FILE); } catch (_) {}
+  stopListeningPortServer();
 }
 
 if (require.main === module) {
@@ -321,4 +388,7 @@ if (require.main === module) {
   patrolTimer = setInterval(() => {
     ensureServerPatrol().catch(() => {});
   }, 3000);
+  tunnelPatrolTimer = setInterval(() => {
+    ensureTunnelPatrol().catch(() => {});
+  }, 45000);
 }

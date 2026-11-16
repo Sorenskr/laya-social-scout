@@ -1,10 +1,10 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-16T02:43:45.204Z",
+  "updatedAt": "2026-11-16T03:32:46.727Z",
   "hostComputer": "LAPTOP-64OLL33R",
   "brandName": "Laya",
-  "remoteTunnelUrl": "https://notebooks-beginners-element-handbags.trycloudflare.com",
-  "remoteTunnelUpdatedAt": "2026-11-16T02:43:45.151Z",
+  "remoteTunnelUrl": "https://calculation-analyses-anything-concluded.trycloudflare.com",
+  "remoteTunnelUpdatedAt": "2026-11-16T03:32:46.653Z",
   "remotePinRequired": true,
   "crawlJob": {
     "running": false,
@@ -8123,6 +8123,46 @@
   },
   "recentLogs": [
     {
+      "id": "log_mwip58uy_163465",
+      "time": "2026-11-16T03:21:11.195Z",
+      "operator": "新媒体运营团队",
+      "module": "远程唤醒",
+      "action": "远程启动/唤醒主电脑工作台与比特浏览器",
+      "status": "success",
+      "detail": "主电脑工作台与比特浏览器已就绪（窗口：🎯抓取爆款软广模版池），现在可直接开始搜词抓取！",
+      "errorReason": ""
+    },
+    {
+      "id": "log_mwip4ufu_7b96a5",
+      "time": "2026-11-16T03:20:52.506Z",
+      "operator": "新媒体运营团队",
+      "module": "远程唤醒",
+      "action": "远程启动/唤醒主电脑工作台与比特浏览器",
+      "status": "success",
+      "detail": "主电脑工作台正在平滑重启中（约 2 秒恢复），并已检查比特浏览器状态",
+      "errorReason": ""
+    },
+    {
+      "id": "log_mwiotzas_857d15",
+      "time": "2026-11-16T03:12:25.588Z",
+      "operator": "新媒体运营团队",
+      "module": "远程唤醒",
+      "action": "远程启动/唤醒主电脑工作台与比特浏览器",
+      "status": "success",
+      "detail": "主电脑工作台与比特浏览器已在线就绪，现在可直接开始搜词抓取！",
+      "errorReason": ""
+    },
+    {
+      "id": "log_mwint8vo_c76410",
+      "time": "2026-11-16T02:43:51.732Z",
+      "operator": "新媒体运营团队",
+      "module": "GitHub同步",
+      "action": "一键同步网页与最新视频封面到 GitHub",
+      "status": "success",
+      "detail": "同步成功！任何电脑可打开：https://sorenskr.github.io/laya-social-scout/",
+      "errorReason": ""
+    },
+    {
       "id": "log_mwic2dme_fd67c0",
       "time": "2026-11-15T21:15:02.390Z",
       "operator": "新媒体运营团队",
@@ -8275,46 +8315,6 @@
     {
       "id": "log_mwg4xau2_0a48e8",
       "time": "2026-11-14T08:19:35.834Z",
-      "operator": "边抓边实时同步飞书",
-      "module": "飞书同步",
-      "action": "批量写入飞书表格",
-      "status": "success",
-      "detail": "成功同步 1 条合格样本至飞书（含原视频超链接与爆款/高难条件着色）",
-      "errorReason": ""
-    },
-    {
-      "id": "log_mwg4w2r7_b096b9",
-      "time": "2026-11-14T08:18:38.707Z",
-      "operator": "边抓边实时同步飞书",
-      "module": "飞书同步",
-      "action": "批量写入飞书表格",
-      "status": "success",
-      "detail": "成功同步 1 条合格样本至飞书（含原视频超链接与爆款/高难条件着色）",
-      "errorReason": ""
-    },
-    {
-      "id": "log_mwg4vhdn_b02f4b",
-      "time": "2026-11-14T08:18:11.004Z",
-      "operator": "边抓边实时同步飞书",
-      "module": "飞书同步",
-      "action": "批量写入飞书表格",
-      "status": "success",
-      "detail": "成功同步 1 条合格样本至飞书（含原视频超链接与爆款/高难条件着色）",
-      "errorReason": ""
-    },
-    {
-      "id": "log_mwg3y5j5_438c1a",
-      "time": "2026-11-14T07:52:16.001Z",
-      "operator": "全形态高赞交友内容抓取",
-      "module": "采集引擎",
-      "action": "执行社媒采集任务 (防封浏览器静默抓)",
-      "status": "success",
-      "detail": "日期范围=不限发布日期，共抓取 14 条：合格入库 2 条，一票否决过滤废片 12 条，跨平台搬运合并 0 条，限流换IP重试 5 次",
-      "errorReason": ""
-    },
-    {
-      "id": "log_mwg3y5j4_b22c1b",
-      "time": "2026-11-14T07:52:16.000Z",
       "operator": "边抓边实时同步飞书",
       "module": "飞书同步",
       "action": "批量写入飞书表格",
