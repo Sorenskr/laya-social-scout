@@ -1,10 +1,10 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-17T01:17:30.690Z",
+  "updatedAt": "2026-11-17T07:29:05.382Z",
   "hostComputer": "LAPTOP-64OLL33R",
   "brandName": "Laya",
-  "remoteTunnelUrl": "https://dancing-walter-guidance-sharp.trycloudflare.com",
-  "remoteTunnelUpdatedAt": "2026-11-17T01:17:30.670Z",
+  "remoteTunnelUrl": "https://sensitive-auction-colorado-too.trycloudflare.com",
+  "remoteTunnelUpdatedAt": "2026-11-17T07:29:05.291Z",
   "remotePinRequired": true,
   "crawlJob": {
     "running": false,
@@ -10445,6 +10445,16 @@
   },
   "recentLogs": [
     {
+      "id": "log_mwk069d6_97b46a",
+      "time": "2026-11-17T01:17:40.458Z",
+      "operator": "新媒体运营团队",
+      "module": "GitHub同步",
+      "action": "一键同步网页与最新视频封面到 GitHub",
+      "status": "success",
+      "detail": "同步成功！任何电脑可打开：https://sorenskr.github.io/laya-social-scout/",
+      "errorReason": ""
+    },
+    {
       "id": "log_mwk01i9o_40fb3c",
       "time": "2026-11-17T01:13:58.722Z",
       "operator": "新媒体运营团队",
@@ -10633,16 +10643,6 @@
       "status": "warning",
       "detail": "样本「地府審案處24｜月老請吃飯 #omi」视觉接口报错，已切换本地0费用智能审片",
       "errorReason": "代理TLS请求超时"
-    },
-    {
-      "id": "log_mwj0ht69_cb3337",
-      "time": "2026-11-16T08:38:53.170Z",
-      "operator": "新媒体运营团队",
-      "module": "GitHub同步",
-      "action": "一键同步网页与最新视频封面到 GitHub",
-      "status": "success",
-      "detail": "同步成功！任何电脑可打开：https://sorenskr.github.io/laya-social-scout/",
-      "errorReason": ""
     }
   ]
 }
