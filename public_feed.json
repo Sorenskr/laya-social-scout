@@ -1,16 +1,16 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-16T12:32:58.306Z",
+  "updatedAt": "2026-11-17T00:11:59.341Z",
   "hostComputer": "LAPTOP-64OLL33R",
   "brandName": "Laya",
   "remoteTunnelUrl": "https://need-other-thu-importantly.trycloudflare.com",
   "remoteTunnelUpdatedAt": "2026-11-16T12:32:58.241Z",
   "remotePinRequired": true,
   "crawlJob": {
-    "id": "job_mwj2byqr_886274",
+    "id": "job_mwjxehyc_b1b028",
     "running": false,
-    "startedAt": "2026-11-16T09:30:19.695Z",
-    "finishedAt": "2026-11-16T09:43:46.737Z",
+    "startedAt": "2026-11-17T00:00:06.022Z",
+    "finishedAt": "2026-11-17T00:11:59.194Z",
     "mode": "fingerprint",
     "browserChannelLabel": "🛡️ 指纹/防封浏览器通道",
     "platforms": [
@@ -25,195 +25,146 @@
     "dateRangeLabel": "不限发布日期",
     "targetMax": 40,
     "progressPct": 100,
-    "totalFetched": 40,
-    "fetchedCount": 40,
-    "qualifiedAdded": 11,
-    "qualifiedCount": 11,
-    "filteredTrash": 25,
-    "filteredCount": 25,
-    "feishuSyncedCount": 10,
-    "duplicatesMerged": 4,
-    "rateLimitRetries": 2,
-    "recentFoundSamples": [
-      {
-        "id": "smp_mwj2t9gw_356bbf",
-        "title": "當你第一次用Litmatch見網戀女友⋯#litmatch #網戀 #愛情 #交友 #戀愛 litmatchtaiwan_official5-16",
-        "platform": "tiktok",
-        "coverUrl": "./covers/fp_ti_7145f675.jpg",
-        "likes": 0,
-        "qualityScore": 88
-      },
-      {
-        "id": "smp_mwj2qtnv_7968a5",
-        "title": "美国🇺🇸女生想要认识中国🇨🇳朋友！ JOEL2025-11-30",
-        "platform": "tiktok",
-        "coverUrl": "./covers/fp_ti_6d5e1755.jpg",
-        "likes": 0,
-        "qualityScore": 71
-      },
-      {
-        "id": "smp_mwj2q7jt_d4c501",
-        "title": "#海外华人 #交友 #单身 #附近100米的人 柯基宝宝🫧10-16",
-        "platform": "tiktok",
-        "coverUrl": "./covers/fp_ti_093042dd.jpg",
-        "likes": 100,
-        "qualityScore": 84
-      },
-      {
-        "id": "smp_mwj2osyw_073876",
-        "title": "#台灣 #交友 35歲的我還能找到愛情嗎",
-        "platform": "threads",
-        "coverUrl": "./covers/fp_th_0ce673a0.jpg",
-        "likes": 35,
-        "qualityScore": 92
-      },
-      {
-        "id": "smp_mwj2nwkh_93189d",
-        "title": "林昕穎💤4,215 followers",
-        "platform": "threads",
-        "coverUrl": "./covers/fp_th_592df28e.jpg",
-        "likes": 4,
-        "qualityScore": 78
-      },
-      {
-        "id": "smp_mwj2m378_bd9275",
-        "title": "粉絲專頁 Litmatch Philippines應用程式專頁 · 8.7 萬位追蹤者Litmatch Philippines社群媒體代理商 · 841 位追蹤者Litmatc",
-        "platform": "facebook",
-        "coverUrl": "./covers/fp_fa_29423483.jpg",
-        "likes": 841,
-        "qualityScore": 79
-      }
-    ],
-    "currentStep": "本次抓取完成！留下 11 条好视频，踢掉 25 条废片",
+    "totalFetched": 0,
+    "fetchedCount": 0,
+    "qualifiedAdded": 0,
+    "qualifiedCount": 0,
+    "filteredTrash": 0,
+    "filteredCount": 0,
+    "feishuSyncedCount": 0,
+    "duplicatesMerged": 0,
+    "rateLimitRetries": 120,
+    "recentFoundSamples": [],
+    "currentStep": "本次抓取完成！留下 0 条好视频，踢掉 0 条废片",
     "liveLogs": [
       {
-        "time": "17:44:02",
-        "text": "📤 刚刚抓到的好内容已实时写进今日飞书表格（累计 10 条）"
+        "time": "08:11:59",
+        "text": "🎉 抓取收工：共看 0 条，留下好视频 0 条，踢掉废片 0 条"
       },
       {
-        "time": "17:43:46",
-        "text": "🎉 抓取收工：共看 40 条，留下好视频 11 条，踢掉废片 25 条"
+        "time": "08:11:56",
+        "text": "🛡️ TikTok「Sugoo chat」被限流，已换新IP改搜「Sugoo chat」重试"
       },
       {
-        "time": "17:43:46",
-        "text": "✅ 留下好视频《當你第一次用Litmatch見網戀女》(88分 · 大封面已保存)"
+        "time": "08:11:56",
+        "text": "🔍 正在去 TikTok 搜「Sugoo chat」（防封静默窗口）"
       },
       {
-        "time": "17:43:24",
-        "text": "📸 从【🎯抓取爆款软广模版池】后台成功拿到 1 条内容（含视频/图文/文字）"
+        "time": "08:11:53",
+        "text": "🛡️ TikTok「Sugoo语音」被限流，已换新IP改搜「Sugoo chat」重试"
       },
       {
-        "time": "17:43:11",
-        "text": "⏳ 正在后台标签页拟人停顿 6 秒，等页面帖子和封面加载完…"
+        "time": "08:11:53",
+        "text": "🔍 正在去 TikTok 搜「Sugoo语音」（防封静默窗口）"
       },
       {
-        "time": "17:43:11",
-        "text": "🛡️ 正在通过【🎯抓取爆款软广模版池】后台静默标签页打开 TIKTOK 搜「Litmatch」…"
+        "time": "08:11:50",
+        "text": "🛡️ TikTok「Sugoo」被限流，已换新IP改搜「Sugoo语音」重试"
       },
       {
-        "time": "17:43:11",
-        "text": "🔍 正在去 TikTok 搜「Litmatch」（防封静默窗口）"
+        "time": "08:11:50",
+        "text": "🔍 正在去 TikTok 搜「Sugoo」（防封静默窗口）"
       },
       {
-        "time": "17:43:01",
-        "text": "❌ 踢掉废片《🥳🥳🥳🥰#熱門推薦 #單》— 硬广内容过滤"
+        "time": "08:11:37",
+        "text": "🛡️ TikTok「Cheers語音」被限流，已换新IP改搜「Cheers語音」重试"
       },
       {
-        "time": "17:42:41",
-        "text": "🔗 发现跨平台搬运同款视频，已自动合并省去重复占表：《#海外华人 #交友 #单身 #附近1》"
+        "time": "08:11:37",
+        "text": "🔍 正在去 TikTok 搜「Cheers語音」（防封静默窗口）"
       },
       {
-        "time": "17:42:41",
-        "text": "📸 从【🎯抓取爆款软广模版池】后台成功拿到 2 条内容（含视频/图文/文字）"
+        "time": "08:11:34",
+        "text": "🛡️ TikTok「Cheers交友」被限流，已换新IP改搜「Cheers語音」重试"
       },
       {
-        "time": "17:42:31",
-        "text": "⏳ 正在后台标签页拟人停顿 3 秒，等页面帖子和封面加载完…"
+        "time": "08:11:34",
+        "text": "🔍 正在去 TikTok 搜「Cheers交友」（防封静默窗口）"
       },
       {
-        "time": "17:42:30",
-        "text": "🛡️ 正在通过【🎯抓取爆款软广模版池】后台静默标签页打开 TIKTOK 搜「Laya交友」…"
+        "time": "08:11:31",
+        "text": "🛡️ TikTok「Cheers」被限流，已换新IP改搜「Cheers交友」重试"
       },
       {
-        "time": "17:42:30",
-        "text": "🔍 正在去 TikTok 搜「Laya交友」（防封静默窗口）"
+        "time": "08:11:31",
+        "text": "🔍 正在去 TikTok 搜「Cheers」（防封静默窗口）"
       },
       {
-        "time": "17:42:20",
-        "text": "❌ 踢掉废片《我是想和中国朋友交朋友的韩国人 》— 无法复刻过滤"
+        "time": "08:11:18",
+        "text": "🛡️ TikTok「Soul连麦」被限流，已换新IP改搜「Soul聊天记录」重试"
       },
       {
-        "time": "17:42:08",
-        "text": "📤 刚刚抓到的好内容已实时写进今日飞书表格（累计 9 条）"
+        "time": "08:11:18",
+        "text": "🔍 正在去 TikTok 搜「Soul连麦」（防封静默窗口）"
       },
       {
-        "time": "17:42:06",
-        "text": "❌ 踢掉废片《如果你想找个女朋友的话，可以看看》— 硬广内容过滤"
+        "time": "08:11:15",
+        "text": "🛡️ TikTok「Soul语音匹配」被限流，已换新IP改搜「Soul连麦」重试"
       },
       {
-        "time": "17:41:52",
-        "text": "✅ 留下好视频《美国🇺🇸女生想要认识中国🇨🇳》(71分 · 大封面已保存)"
+        "time": "08:11:15",
+        "text": "🔍 正在去 TikTok 搜「Soul语音匹配」（防封静默窗口）"
       },
       {
-        "time": "17:41:41",
-        "text": "📤 刚刚抓到的好内容已实时写进今日飞书表格（累计 8 条）"
+        "time": "08:11:11",
+        "text": "🛡️ TikTok「Soul」被限流，已换新IP改搜「Soul语音匹配」重试"
       },
       {
-        "time": "17:41:24",
-        "text": "✅ 留下好视频《#海外华人 #交友 #单身 #附近1》(84分 · 大封面已保存)"
+        "time": "08:11:11",
+        "text": "🔍 正在去 TikTok 搜「Soul」（防封静默窗口）"
       },
       {
-        "time": "17:41:09",
-        "text": "❌ 踢掉废片《下班后的时光#附近100米的人 》— 无法复刻过滤"
+        "time": "08:10:58",
+        "text": "🛡️ TikTok「Omi配对」被限流，已换新IP改搜「Omi配对」重试"
       },
       {
-        "time": "17:40:48",
-        "text": "📸 从【🎯抓取爆款软广模版池】后台成功拿到 5 条内容（含视频/图文/文字）"
+        "time": "08:10:58",
+        "text": "🔍 正在去 TikTok 搜「Omi配对」（防封静默窗口）"
       },
       {
-        "time": "17:40:35",
-        "text": "📤 刚刚抓到的好内容已实时写进今日飞书表格（累计 7 条）"
+        "time": "08:10:55",
+        "text": "🛡️ TikTok「Omi交友」被限流，已换新IP改搜「Omi配对」重试"
       },
       {
-        "time": "17:40:29",
-        "text": "⏳ 正在后台标签页拟人停顿 3 秒，等页面帖子和封面加载完…"
+        "time": "08:10:55",
+        "text": "🔍 正在去 TikTok 搜「Omi交友」（防封静默窗口）"
       },
       {
-        "time": "17:40:28",
-        "text": "🛡️ 正在通过【🎯抓取爆款软广模版池】后台静默标签页打开 TIKTOK 搜「Laya」…"
+        "time": "08:10:52",
+        "text": "🛡️ TikTok「Omi」被限流，已换新IP改搜「Omi交友」重试"
       },
       {
-        "time": "17:40:28",
-        "text": "🔍 正在去 TikTok 搜「Laya」（防封静默窗口）"
+        "time": "08:10:52",
+        "text": "🔍 正在去 TikTok 搜「Omi」（防封静默窗口）"
       },
       {
-        "time": "17:40:18",
-        "text": "🔗 发现跨平台搬运同款视频，已自动合并省去重复占表：《林昕穎💤4,215 followe》"
+        "time": "08:10:39",
+        "text": "🛡️ TikTok「Goodnight交友」被限流，已换新IP改搜「Goodnight聊天」重试"
       },
       {
-        "time": "17:40:18",
-        "text": "✅ 留下好视频《#台灣 #交友 35歲的我還能找到愛》(92分 · 大封面已保存)"
+        "time": "08:10:39",
+        "text": "🔍 正在去 TikTok 搜「Goodnight交友」（防封静默窗口）"
       },
       {
-        "time": "17:40:08",
-        "text": "📸 从【🎯抓取爆款软广模版池】后台成功拿到 3 条内容（含视频/图文/文字）"
+        "time": "08:10:36",
+        "text": "🛡️ TikTok「Goodnight语音」被限流，已换新IP改搜「Goodnight交友」重试"
       },
       {
-        "time": "17:39:57",
-        "text": "⏳ 正在后台标签页拟人停顿 5 秒，等页面帖子和封面加载完…"
+        "time": "08:10:36",
+        "text": "🔍 正在去 TikTok 搜「Goodnight语音」（防封静默窗口）"
       },
       {
-        "time": "17:39:56",
-        "text": "🛡️ 正在通过【🎯抓取爆款软广模版池】后台静默标签页打开 THREADS 搜「Laya交友」…"
+        "time": "08:10:33",
+        "text": "🛡️ TikTok「Goodnight」被限流，已换新IP改搜「Goodnight语音」重试"
       }
     ]
   },
   "dashboard": {
     "periods": {
       "day": {
-        "total": 153,
-        "qualified": 115,
-        "filtered": 38
+        "total": 0,
+        "qualified": 0,
+        "filtered": 0
       },
       "week": {
         "total": 153,
@@ -10638,6 +10589,36 @@
   },
   "recentLogs": [
     {
+      "id": "log_mwjxts9o_5d67f6",
+      "time": "2026-11-17T00:11:59.196Z",
+      "operator": "定时任务 (08:00)",
+      "module": "采集引擎",
+      "action": "执行社媒采集任务 (防封浏览器静默抓)",
+      "status": "warning",
+      "detail": "日期范围=不限发布日期，共抓取 0 条：合格入库 0 条，一票否决过滤废片 0 条，跨平台搬运合并 0 条，限流换IP重试 120 次",
+      "errorReason": ""
+    },
+    {
+      "id": "log_mwjg9hre_efa89d",
+      "time": "2026-11-16T16:00:18.992Z",
+      "operator": "每日0点自动归档",
+      "module": "飞书归档",
+      "action": "执行单日自动分表归档",
+      "status": "success",
+      "detail": "归档子表「日归档_2026-11-15」，归档样本数 0 条（本地归档快照已完成）",
+      "errorReason": ""
+    },
+    {
+      "id": "log_mwj8uyks_812b01",
+      "time": "2026-11-16T12:33:03.635Z",
+      "operator": "新媒体运营团队",
+      "module": "GitHub同步",
+      "action": "一键同步网页与最新视频封面到 GitHub",
+      "status": "success",
+      "detail": "同步成功！任何电脑可打开：https://sorenskr.github.io/laya-social-scout/",
+      "errorReason": ""
+    },
+    {
       "id": "log_mwj2tlzs_d5144a",
       "time": "2026-11-16T09:44:02.968Z",
       "operator": "边抓边实时同步飞书",
@@ -10800,36 +10781,6 @@
     {
       "id": "log_mwizfsqi_bd7ed1",
       "time": "2026-11-16T08:09:19.674Z",
-      "operator": "边抓边实时同步飞书",
-      "module": "飞书同步",
-      "action": "批量写入飞书表格",
-      "status": "success",
-      "detail": "成功同步 1 条合格样本至飞书总表及分表",
-      "errorReason": ""
-    },
-    {
-      "id": "log_mwizfkxr_e5b0b9",
-      "time": "2026-11-16T08:09:09.567Z",
-      "operator": "新媒体运营团队",
-      "module": "采集引擎",
-      "action": "执行社媒采集任务 (防封浏览器静默抓)",
-      "status": "success",
-      "detail": "日期范围=2026-11-14 至 2026-11-16，共抓取 80 条：合格入库 6 条，一票否决过滤废片 66 条，跨平台搬运合并 8 条，限流换IP重试 0 次",
-      "errorReason": ""
-    },
-    {
-      "id": "log_mwizfem2_8ad431",
-      "time": "2026-11-16T08:09:01.370Z",
-      "operator": "AI视觉审核器",
-      "module": "视觉大模型审核",
-      "action": "调用多模态API异常",
-      "status": "warning",
-      "detail": "样本「有人醒了嗎？😎 還是還沒睡好～😣」视觉接口报错，已切换本地0费用智能审片",
-      "errorReason": "代理TLS请求超时"
-    },
-    {
-      "id": "log_mwiz91x4_d072ba",
-      "time": "2026-11-16T08:04:04.984Z",
       "operator": "边抓边实时同步飞书",
       "module": "飞书同步",
       "action": "批量写入飞书表格",
