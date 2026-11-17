@@ -1,10 +1,10 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-17T07:29:05.382Z",
+  "updatedAt": "2026-11-17T08:32:52.139Z",
   "hostComputer": "LAPTOP-64OLL33R",
   "brandName": "Laya",
-  "remoteTunnelUrl": "https://sensitive-auction-colorado-too.trycloudflare.com",
-  "remoteTunnelUpdatedAt": "2026-11-17T07:29:05.291Z",
+  "remoteTunnelUrl": "https://athletic-diamond-girlfriend-including.trycloudflare.com",
+  "remoteTunnelUpdatedAt": "2026-11-17T08:32:52.005Z",
   "remotePinRequired": true,
   "crawlJob": {
     "running": false,
@@ -10445,6 +10445,16 @@
   },
   "recentLogs": [
     {
+      "id": "log_mwkdg2f0_5e7137",
+      "time": "2026-11-17T07:29:13.023Z",
+      "operator": "新媒体运营团队",
+      "module": "GitHub同步",
+      "action": "一键同步网页与最新视频封面到 GitHub",
+      "status": "success",
+      "detail": "同步成功！任何电脑可打开：https://sorenskr.github.io/laya-social-scout/",
+      "errorReason": ""
+    },
+    {
       "id": "log_mwk069d6_97b46a",
       "time": "2026-11-17T01:17:40.458Z",
       "operator": "新媒体运营团队",
@@ -10633,16 +10643,6 @@
       "status": "success",
       "detail": "成功同步 1 条合格样本至飞书总表及分表",
       "errorReason": ""
-    },
-    {
-      "id": "log_mwj2h3qc_6e4bab",
-      "time": "2026-11-16T09:34:19.429Z",
-      "operator": "AI视觉审核器",
-      "module": "视觉大模型审核",
-      "action": "调用多模态API异常",
-      "status": "warning",
-      "detail": "样本「地府審案處24｜月老請吃飯 #omi」视觉接口报错，已切换本地0费用智能审片",
-      "errorReason": "代理TLS请求超时"
     }
   ]
 }
