@@ -1,18 +1,14 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-17T11:47:17.868Z",
+  "updatedAt": "2026-11-18T01:17:13.960Z",
   "hostComputer": "LAPTOP-64OLL33R",
   "brandName": "Laya",
-  "remoteTunnelUrl": "https://synthesis-close-prohibited-transcription.trycloudflare.com",
-  "remoteTunnelUpdatedAt": "2026-11-17T11:47:17.832Z",
+  "remoteTunnelUrl": "https://slip-medal-returned-relation.trycloudflare.com",
+  "remoteTunnelUpdatedAt": "2026-11-18T01:17:13.319Z",
   "remotePinRequired": true,
   "crawlJob": {
     "running": false,
-    "fetchedCount": 0,
-    "qualifiedCount": 0,
-    "filteredCount": 0,
-    "feishuSyncedCount": 0,
-    "recentFoundSamples": [],
+    "currentStep": "空闲待命",
     "liveLogs": []
   },
   "dashboard": {
@@ -10445,6 +10441,26 @@
   },
   "recentLogs": [
     {
+      "id": "log_mwkvoze7_245385",
+      "time": "2026-11-17T16:00:02.132Z",
+      "operator": "每日0点自动归档",
+      "module": "飞书归档",
+      "action": "执行单日自动分表归档",
+      "status": "success",
+      "detail": "归档子表「日归档_2026-11-16」，归档样本数 115 条（本地归档快照已完成）",
+      "errorReason": ""
+    },
+    {
+      "id": "log_mwkmo2ec_0033e6",
+      "time": "2026-11-17T11:47:22.788Z",
+      "operator": "新媒体运营团队",
+      "module": "GitHub同步",
+      "action": "一键同步网页与最新视频封面到 GitHub",
+      "status": "success",
+      "detail": "同步成功！任何电脑可打开：https://sorenskr.github.io/laya-social-scout/",
+      "errorReason": ""
+    },
+    {
       "id": "log_mwki7313_b972ad",
       "time": "2026-11-17T09:42:11.991Z",
       "operator": "定时任务 (17:30)",
@@ -10618,26 +10634,6 @@
       "id": "log_mwj2kxwe_c32d4a",
       "time": "2026-11-16T09:37:18.494Z",
       "operator": "边抓边实时同步飞书",
-      "module": "飞书同步",
-      "action": "批量写入飞书表格",
-      "status": "success",
-      "detail": "成功同步 1 条合格样本至飞书总表及分表",
-      "errorReason": ""
-    },
-    {
-      "id": "log_mwj2j6g0_c02bb2",
-      "time": "2026-11-16T09:35:56.256Z",
-      "operator": "边抓边实时同步飞书",
-      "module": "飞书同步",
-      "action": "批量写入飞书表格",
-      "status": "success",
-      "detail": "成功同步 1 条合格样本至飞书总表及分表",
-      "errorReason": ""
-    },
-    {
-      "id": "log_mwj2ih0b_1a727a",
-      "time": "2026-11-16T09:35:23.291Z",
-      "operator": "1分钟实时同步守护",
       "module": "飞书同步",
       "action": "批量写入飞书表格",
       "status": "success",
