@@ -1,10 +1,10 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-19T12:22:20.850Z",
+  "updatedAt": "2026-11-19T21:30:57.556Z",
   "hostComputer": "LAPTOP-64OLL33R",
   "brandName": "Laya",
-  "remoteTunnelUrl": "https://member-job-premises-coating.trycloudflare.com",
-  "remoteTunnelUpdatedAt": "2026-11-19T12:22:20.801Z",
+  "remoteTunnelUrl": "https://mine-rover-medication-rejected.trycloudflare.com",
+  "remoteTunnelUpdatedAt": "2026-11-19T21:30:57.488Z",
   "remotePinRequired": true,
   "crawlJob": {
     "running": false,
@@ -10445,6 +10445,26 @@
   },
   "recentLogs": [
     {
+      "id": "log_mwnqko75_d663c3",
+      "time": "2026-11-19T16:00:01.414Z",
+      "operator": "每日0点自动归档",
+      "module": "飞书归档",
+      "action": "执行单日自动分表归档",
+      "status": "success",
+      "detail": "归档子表「日归档_2026-11-18」，归档样本数 0 条（本地归档快照已完成）",
+      "errorReason": ""
+    },
+    {
+      "id": "log_mwnisunu_92b2da",
+      "time": "2026-11-19T12:22:26.106Z",
+      "operator": "新媒体运营团队",
+      "module": "GitHub同步",
+      "action": "一键同步网页与最新视频封面到 GitHub",
+      "status": "success",
+      "detail": "同步成功！任何电脑可打开：https://sorenskr.github.io/laya-social-scout/",
+      "errorReason": ""
+    },
+    {
       "id": "log_mwnd2lju_1ce021",
       "time": "2026-11-19T09:42:03.165Z",
       "operator": "定时任务 (17:30)",
@@ -10622,26 +10642,6 @@
       "action": "一键同步网页与最新视频封面到 GitHub",
       "status": "success",
       "detail": "同步成功！任何电脑可打开：https://sorenskr.github.io/laya-social-scout/",
-      "errorReason": ""
-    },
-    {
-      "id": "log_mwj2tlzs_d5144a",
-      "time": "2026-11-16T09:44:02.968Z",
-      "operator": "边抓边实时同步飞书",
-      "module": "飞书同步",
-      "action": "批量写入飞书表格",
-      "status": "success",
-      "detail": "成功同步 1 条合格样本至飞书总表及分表",
-      "errorReason": ""
-    },
-    {
-      "id": "log_mwj2t9gx_68c79a",
-      "time": "2026-11-16T09:43:46.737Z",
-      "operator": "定时任务 (17:30)",
-      "module": "采集引擎",
-      "action": "执行社媒采集任务 (防封浏览器静默抓)",
-      "status": "success",
-      "detail": "日期范围=不限发布日期，共抓取 40 条：合格入库 11 条，一票否决过滤废片 25 条，跨平台搬运合并 4 条，限流换IP重试 2 次",
       "errorReason": ""
     }
   ]
