@@ -1,16 +1,16 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-19T01:12:58.299Z",
+  "updatedAt": "2026-11-19T09:42:03.324Z",
   "hostComputer": "LAPTOP-64OLL33R",
   "brandName": "Laya",
   "remoteTunnelUrl": "https://terrace-township-lamp-strain.trycloudflare.com",
   "remoteTunnelUpdatedAt": "2026-11-19T01:12:58.204Z",
   "remotePinRequired": true,
   "crawlJob": {
-    "id": "job_mwmsabvc_c2cb3f",
+    "id": "job_mwncnb3n_b07247",
     "running": false,
-    "startedAt": "2026-11-19T00:00:11.943Z",
-    "finishedAt": "2026-11-19T00:12:05.112Z",
+    "startedAt": "2026-11-19T09:30:09.788Z",
+    "finishedAt": "2026-11-19T09:42:03.160Z",
     "mode": "fingerprint",
     "browserChannelLabel": "🛡️ 指纹/防封浏览器通道",
     "platforms": [
@@ -38,123 +38,123 @@
     "currentStep": "本次抓取完成！留下 0 条好视频，踢掉 0 条废片",
     "liveLogs": [
       {
-        "time": "08:12:05",
+        "time": "17:42:03",
         "text": "🎉 抓取收工：共看 0 条，留下好视频 0 条，踢掉废片 0 条"
       },
       {
-        "time": "08:12:02",
+        "time": "17:42:00",
         "text": "🛡️ TikTok「Sugoo chat」被限流，已换新IP改搜「Sugoo chat」重试"
       },
       {
-        "time": "08:12:02",
+        "time": "17:42:00",
         "text": "🔍 正在去 TikTok 搜「Sugoo chat」（防封静默窗口）"
       },
       {
-        "time": "08:11:59",
+        "time": "17:41:57",
         "text": "🛡️ TikTok「Sugoo语音」被限流，已换新IP改搜「Sugoo chat」重试"
       },
       {
-        "time": "08:11:59",
+        "time": "17:41:57",
         "text": "🔍 正在去 TikTok 搜「Sugoo语音」（防封静默窗口）"
       },
       {
-        "time": "08:11:56",
+        "time": "17:41:54",
         "text": "🛡️ TikTok「Sugoo」被限流，已换新IP改搜「Sugoo语音」重试"
       },
       {
-        "time": "08:11:56",
+        "time": "17:41:54",
         "text": "🔍 正在去 TikTok 搜「Sugoo」（防封静默窗口）"
       },
       {
-        "time": "08:11:43",
+        "time": "17:41:41",
         "text": "🛡️ TikTok「Cheers語音」被限流，已换新IP改搜「Cheers語音」重试"
       },
       {
-        "time": "08:11:43",
+        "time": "17:41:41",
         "text": "🔍 正在去 TikTok 搜「Cheers語音」（防封静默窗口）"
       },
       {
-        "time": "08:11:39",
+        "time": "17:41:38",
         "text": "🛡️ TikTok「Cheers交友」被限流，已换新IP改搜「Cheers語音」重试"
       },
       {
-        "time": "08:11:39",
+        "time": "17:41:38",
         "text": "🔍 正在去 TikTok 搜「Cheers交友」（防封静默窗口）"
       },
       {
-        "time": "08:11:36",
+        "time": "17:41:35",
         "text": "🛡️ TikTok「Cheers」被限流，已换新IP改搜「Cheers交友」重试"
       },
       {
-        "time": "08:11:36",
+        "time": "17:41:34",
         "text": "🔍 正在去 TikTok 搜「Cheers」（防封静默窗口）"
       },
       {
-        "time": "08:11:23",
+        "time": "17:41:21",
         "text": "🛡️ TikTok「Soul连麦」被限流，已换新IP改搜「Soul聊天记录」重试"
       },
       {
-        "time": "08:11:23",
+        "time": "17:41:21",
         "text": "🔍 正在去 TikTok 搜「Soul连麦」（防封静默窗口）"
       },
       {
-        "time": "08:11:20",
+        "time": "17:41:18",
         "text": "🛡️ TikTok「Soul语音匹配」被限流，已换新IP改搜「Soul连麦」重试"
       },
       {
-        "time": "08:11:20",
+        "time": "17:41:18",
         "text": "🔍 正在去 TikTok 搜「Soul语音匹配」（防封静默窗口）"
       },
       {
-        "time": "08:11:17",
+        "time": "17:41:15",
         "text": "🛡️ TikTok「Soul」被限流，已换新IP改搜「Soul语音匹配」重试"
       },
       {
-        "time": "08:11:17",
+        "time": "17:41:15",
         "text": "🔍 正在去 TikTok 搜「Soul」（防封静默窗口）"
       },
       {
-        "time": "08:11:04",
+        "time": "17:41:02",
         "text": "🛡️ TikTok「Omi配对」被限流，已换新IP改搜「Omi配对」重试"
       },
       {
-        "time": "08:11:04",
+        "time": "17:41:02",
         "text": "🔍 正在去 TikTok 搜「Omi配对」（防封静默窗口）"
       },
       {
-        "time": "08:11:01",
+        "time": "17:40:59",
         "text": "🛡️ TikTok「Omi交友」被限流，已换新IP改搜「Omi配对」重试"
       },
       {
-        "time": "08:11:01",
+        "time": "17:40:59",
         "text": "🔍 正在去 TikTok 搜「Omi交友」（防封静默窗口）"
       },
       {
-        "time": "08:10:58",
+        "time": "17:40:56",
         "text": "🛡️ TikTok「Omi」被限流，已换新IP改搜「Omi交友」重试"
       },
       {
-        "time": "08:10:58",
+        "time": "17:40:56",
         "text": "🔍 正在去 TikTok 搜「Omi」（防封静默窗口）"
       },
       {
-        "time": "08:10:45",
+        "time": "17:40:43",
         "text": "🛡️ TikTok「Goodnight交友」被限流，已换新IP改搜「Goodnight聊天」重试"
       },
       {
-        "time": "08:10:45",
+        "time": "17:40:43",
         "text": "🔍 正在去 TikTok 搜「Goodnight交友」（防封静默窗口）"
       },
       {
-        "time": "08:10:42",
+        "time": "17:40:40",
         "text": "🛡️ TikTok「Goodnight语音」被限流，已换新IP改搜「Goodnight交友」重试"
       },
       {
-        "time": "08:10:42",
+        "time": "17:40:40",
         "text": "🔍 正在去 TikTok 搜「Goodnight语音」（防封静默窗口）"
       },
       {
-        "time": "08:10:39",
+        "time": "17:40:37",
         "text": "🛡️ TikTok「Goodnight」被限流，已换新IP改搜「Goodnight语音」重试"
       }
     ]
@@ -10589,6 +10589,26 @@
   },
   "recentLogs": [
     {
+      "id": "log_mwnd2lju_1ce021",
+      "time": "2026-11-19T09:42:03.165Z",
+      "operator": "定时任务 (17:30)",
+      "module": "采集引擎",
+      "action": "执行社媒采集任务 (防封浏览器静默抓)",
+      "status": "warning",
+      "detail": "日期范围=不限发布日期，共抓取 0 条：合格入库 0 条，一票否决过滤废片 0 条，跨平台搬运合并 0 条，限流换IP重试 120 次",
+      "errorReason": ""
+    },
+    {
+      "id": "log_mwmuvzy3_b30af7",
+      "time": "2026-11-19T01:13:02.141Z",
+      "operator": "新媒体运营团队",
+      "module": "GitHub同步",
+      "action": "一键同步网页与最新视频封面到 GitHub",
+      "status": "success",
+      "detail": "同步成功！任何电脑可打开：https://sorenskr.github.io/laya-social-scout/",
+      "errorReason": ""
+    },
+    {
       "id": "log_mwmspm61_077c1f",
       "time": "2026-11-19T00:12:05.113Z",
       "operator": "定时任务 (08:00)",
@@ -10767,26 +10787,6 @@
       "status": "success",
       "detail": "日期范围=不限发布日期，共抓取 40 条：合格入库 11 条，一票否决过滤废片 25 条，跨平台搬运合并 4 条，限流换IP重试 2 次",
       "errorReason": ""
-    },
-    {
-      "id": "log_mwj2r5ys_5be2e7",
-      "time": "2026-11-16T09:42:08.884Z",
-      "operator": "边抓边实时同步飞书",
-      "module": "飞书同步",
-      "action": "批量写入飞书表格",
-      "status": "success",
-      "detail": "成功同步 1 条合格样本至飞书总表及分表",
-      "errorReason": ""
-    },
-    {
-      "id": "log_mwj2qtnt_16ad3b",
-      "time": "2026-11-16T09:41:52.938Z",
-      "operator": "AI视觉审核器",
-      "module": "视觉大模型审核",
-      "action": "调用多模态API异常",
-      "status": "warning",
-      "detail": "样本「美国🇺🇸女生想要认识中国🇨🇳朋友！ JO」视觉接口报错，已切换本地0费用智能审片",
-      "errorReason": "代理TLS请求超时"
     }
   ]
 }
