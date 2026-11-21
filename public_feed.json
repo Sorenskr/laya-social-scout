@@ -1,10 +1,10 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-21T09:42:13.625Z",
+  "updatedAt": "2026-11-21T20:33:33.439Z",
   "hostComputer": "LAPTOP-64OLL33R",
   "brandName": "Laya",
-  "remoteTunnelUrl": "https://geological-extremely-stopped-mat.trycloudflare.com",
-  "remoteTunnelUpdatedAt": "2026-11-20T14:35:20.535Z",
+  "remoteTunnelUrl": "https://bernard-par-specified-overhead.trycloudflare.com",
+  "remoteTunnelUpdatedAt": "2026-11-21T20:33:33.376Z",
   "remotePinRequired": true,
   "crawlJob": {
     "id": "job_mwq7j97i_aaab50",
@@ -10589,6 +10589,16 @@
   },
   "recentLogs": [
     {
+      "id": "log_mwqlgfc0_53930b",
+      "time": "2026-11-21T16:00:03.748Z",
+      "operator": "每日0点自动归档",
+      "module": "飞书归档",
+      "action": "执行单日自动分表归档",
+      "status": "success",
+      "detail": "归档子表「日归档_2026-11-20」，归档样本数 0 条（本地归档快照已完成）",
+      "errorReason": ""
+    },
+    {
       "id": "log_mwq7yive_964855",
       "time": "2026-11-21T09:42:13.517Z",
       "operator": "定时任务 (17:30)",
@@ -10776,16 +10786,6 @@
       "action": "一键同步网页与最新视频封面到 GitHub",
       "status": "success",
       "detail": "同步成功！任何电脑可打开：https://sorenskr.github.io/laya-social-scout/",
-      "errorReason": ""
-    },
-    {
-      "id": "log_mwlxn00w_680695",
-      "time": "2026-11-18T09:42:15.008Z",
-      "operator": "定时任务 (17:30)",
-      "module": "采集引擎",
-      "action": "执行社媒采集任务 (防封浏览器静默抓)",
-      "status": "warning",
-      "detail": "日期范围=不限发布日期，共抓取 0 条：合格入库 0 条，一票否决过滤废片 0 条，跨平台搬运合并 0 条，限流换IP重试 120 次",
       "errorReason": ""
     }
   ]
