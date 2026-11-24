@@ -1,10 +1,10 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-24T11:31:26.326Z",
+  "updatedAt": "2026-11-24T16:25:36.780Z",
   "hostComputer": "LAPTOP-64OLL33R",
   "brandName": "Laya",
-  "remoteTunnelUrl": "https://libraries-contacted-myrtle-middle.trycloudflare.com",
-  "remoteTunnelUpdatedAt": "2026-11-24T11:31:26.300Z",
+  "remoteTunnelUrl": "https://sets-medicare-tan-para.trycloudflare.com",
+  "remoteTunnelUpdatedAt": "2026-11-24T16:25:36.674Z",
   "remotePinRequired": true,
   "crawlJob": {
     "id": "job_mwuhumb1_339703",
@@ -10589,6 +10589,16 @@
   },
   "recentLogs": [
     {
+      "id": "log_mwum6nmr_31a981",
+      "time": "2026-11-24T11:31:32.260Z",
+      "operator": "新媒体运营团队",
+      "module": "GitHub同步",
+      "action": "一键同步网页与最新视频封面到 GitHub",
+      "status": "success",
+      "detail": "同步成功！任何电脑可打开：https://sorenskr.github.io/laya-social-scout/",
+      "errorReason": ""
+    },
+    {
       "id": "log_mwui9xtl_700fe3",
       "time": "2026-11-24T09:42:06.969Z",
       "operator": "定时任务 (17:30)",
@@ -10771,16 +10781,6 @@
     {
       "id": "log_mwp2zqha_7124c7",
       "time": "2026-11-20T14:35:25.777Z",
-      "operator": "新媒体运营团队",
-      "module": "GitHub同步",
-      "action": "一键同步网页与最新视频封面到 GitHub",
-      "status": "success",
-      "detail": "同步成功！任何电脑可打开：https://sorenskr.github.io/laya-social-scout/",
-      "errorReason": ""
-    },
-    {
-      "id": "log_mwp1gox7_d112e4",
-      "time": "2026-11-20T13:52:37.675Z",
       "operator": "新媒体运营团队",
       "module": "GitHub同步",
       "action": "一键同步网页与最新视频封面到 GitHub",
