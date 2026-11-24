@@ -1,163 +1,19 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-24T16:25:36.780Z",
+  "updatedAt": "2026-11-24T17:47:16.072Z",
   "hostComputer": "LAPTOP-64OLL33R",
   "brandName": "Laya",
-  "remoteTunnelUrl": "https://sets-medicare-tan-para.trycloudflare.com",
-  "remoteTunnelUpdatedAt": "2026-11-24T16:25:36.674Z",
+  "remoteTunnelUrl": "https://radar-excitement-norman-gap.trycloudflare.com",
+  "remoteTunnelUpdatedAt": "2026-11-24T17:47:16.040Z",
   "remotePinRequired": true,
   "crawlJob": {
-    "id": "job_mwuhumb1_339703",
     "running": false,
-    "startedAt": "2026-11-24T09:30:12.223Z",
-    "finishedAt": "2026-11-24T09:42:06.969Z",
-    "mode": "fingerprint",
-    "browserChannelLabel": "🛡️ 指纹/防封浏览器通道",
-    "platforms": [
-      "instagram",
-      "facebook",
-      "x",
-      "threads",
-      "tiktok"
-    ],
-    "dateFrom": "",
-    "dateTo": "",
-    "dateRangeLabel": "不限发布日期",
-    "targetMax": 40,
-    "progressPct": 100,
-    "totalFetched": 0,
     "fetchedCount": 0,
-    "qualifiedAdded": 0,
     "qualifiedCount": 0,
-    "filteredTrash": 0,
     "filteredCount": 0,
     "feishuSyncedCount": 0,
-    "duplicatesMerged": 0,
-    "rateLimitRetries": 120,
     "recentFoundSamples": [],
-    "currentStep": "本次抓取完成！留下 0 条好视频，踢掉 0 条废片",
-    "liveLogs": [
-      {
-        "time": "17:42:06",
-        "text": "🎉 抓取收工：共看 0 条，留下好视频 0 条，踢掉废片 0 条"
-      },
-      {
-        "time": "17:42:03",
-        "text": "🛡️ TikTok「Sugoo chat」被限流，已换新IP改搜「Sugoo chat」重试"
-      },
-      {
-        "time": "17:42:03",
-        "text": "🔍 正在去 TikTok 搜「Sugoo chat」（防封静默窗口）"
-      },
-      {
-        "time": "17:42:00",
-        "text": "🛡️ TikTok「Sugoo语音」被限流，已换新IP改搜「Sugoo chat」重试"
-      },
-      {
-        "time": "17:42:00",
-        "text": "🔍 正在去 TikTok 搜「Sugoo语音」（防封静默窗口）"
-      },
-      {
-        "time": "17:41:57",
-        "text": "🛡️ TikTok「Sugoo」被限流，已换新IP改搜「Sugoo语音」重试"
-      },
-      {
-        "time": "17:41:57",
-        "text": "🔍 正在去 TikTok 搜「Sugoo」（防封静默窗口）"
-      },
-      {
-        "time": "17:41:44",
-        "text": "🛡️ TikTok「Cheers語音」被限流，已换新IP改搜「Cheers語音」重试"
-      },
-      {
-        "time": "17:41:44",
-        "text": "🔍 正在去 TikTok 搜「Cheers語音」（防封静默窗口）"
-      },
-      {
-        "time": "17:41:41",
-        "text": "🛡️ TikTok「Cheers交友」被限流，已换新IP改搜「Cheers語音」重试"
-      },
-      {
-        "time": "17:41:41",
-        "text": "🔍 正在去 TikTok 搜「Cheers交友」（防封静默窗口）"
-      },
-      {
-        "time": "17:41:38",
-        "text": "🛡️ TikTok「Cheers」被限流，已换新IP改搜「Cheers交友」重试"
-      },
-      {
-        "time": "17:41:38",
-        "text": "🔍 正在去 TikTok 搜「Cheers」（防封静默窗口）"
-      },
-      {
-        "time": "17:41:25",
-        "text": "🛡️ TikTok「Soul连麦」被限流，已换新IP改搜「Soul聊天记录」重试"
-      },
-      {
-        "time": "17:41:25",
-        "text": "🔍 正在去 TikTok 搜「Soul连麦」（防封静默窗口）"
-      },
-      {
-        "time": "17:41:22",
-        "text": "🛡️ TikTok「Soul语音匹配」被限流，已换新IP改搜「Soul连麦」重试"
-      },
-      {
-        "time": "17:41:22",
-        "text": "🔍 正在去 TikTok 搜「Soul语音匹配」（防封静默窗口）"
-      },
-      {
-        "time": "17:41:19",
-        "text": "🛡️ TikTok「Soul」被限流，已换新IP改搜「Soul语音匹配」重试"
-      },
-      {
-        "time": "17:41:19",
-        "text": "🔍 正在去 TikTok 搜「Soul」（防封静默窗口）"
-      },
-      {
-        "time": "17:41:06",
-        "text": "🛡️ TikTok「Omi配对」被限流，已换新IP改搜「Omi配对」重试"
-      },
-      {
-        "time": "17:41:06",
-        "text": "🔍 正在去 TikTok 搜「Omi配对」（防封静默窗口）"
-      },
-      {
-        "time": "17:41:03",
-        "text": "🛡️ TikTok「Omi交友」被限流，已换新IP改搜「Omi配对」重试"
-      },
-      {
-        "time": "17:41:03",
-        "text": "🔍 正在去 TikTok 搜「Omi交友」（防封静默窗口）"
-      },
-      {
-        "time": "17:41:00",
-        "text": "🛡️ TikTok「Omi」被限流，已换新IP改搜「Omi交友」重试"
-      },
-      {
-        "time": "17:41:00",
-        "text": "🔍 正在去 TikTok 搜「Omi」（防封静默窗口）"
-      },
-      {
-        "time": "17:40:47",
-        "text": "🛡️ TikTok「Goodnight交友」被限流，已换新IP改搜「Goodnight聊天」重试"
-      },
-      {
-        "time": "17:40:47",
-        "text": "🔍 正在去 TikTok 搜「Goodnight交友」（防封静默窗口）"
-      },
-      {
-        "time": "17:40:44",
-        "text": "🛡️ TikTok「Goodnight语音」被限流，已换新IP改搜「Goodnight交友」重试"
-      },
-      {
-        "time": "17:40:44",
-        "text": "🔍 正在去 TikTok 搜「Goodnight语音」（防封静默窗口）"
-      },
-      {
-        "time": "17:40:41",
-        "text": "🛡️ TikTok「Goodnight」被限流，已换新IP改搜「Goodnight语音」重试"
-      }
-    ]
+    "liveLogs": []
   },
   "dashboard": {
     "periods": {
@@ -10589,6 +10445,16 @@
   },
   "recentLogs": [
     {
+      "id": "log_mwuwoyhu_c6e8e5",
+      "time": "2026-11-24T16:25:42.307Z",
+      "operator": "新媒体运营团队",
+      "module": "GitHub同步",
+      "action": "一键同步网页与最新视频封面到 GitHub",
+      "status": "success",
+      "detail": "同步成功！任何电脑可打开：https://sorenskr.github.io/laya-social-scout/",
+      "errorReason": ""
+    },
+    {
       "id": "log_mwum6nmr_31a981",
       "time": "2026-11-24T11:31:32.260Z",
       "operator": "新媒体运营团队",
@@ -10776,16 +10642,6 @@
       "action": "执行单日自动分表归档",
       "status": "success",
       "detail": "归档子表「日归档_2026-11-19」，归档样本数 0 条（本地归档快照已完成）",
-      "errorReason": ""
-    },
-    {
-      "id": "log_mwp2zqha_7124c7",
-      "time": "2026-11-20T14:35:25.777Z",
-      "operator": "新媒体运营团队",
-      "module": "GitHub同步",
-      "action": "一键同步网页与最新视频封面到 GitHub",
-      "status": "success",
-      "detail": "同步成功！任何电脑可打开：https://sorenskr.github.io/laya-social-scout/",
       "errorReason": ""
     }
   ]
