@@ -1,10 +1,10 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-24T17:47:16.072Z",
+  "updatedAt": "2026-11-25T01:27:29.763Z",
   "hostComputer": "LAPTOP-64OLL33R",
   "brandName": "Laya",
-  "remoteTunnelUrl": "https://radar-excitement-norman-gap.trycloudflare.com",
-  "remoteTunnelUpdatedAt": "2026-11-24T17:47:16.040Z",
+  "remoteTunnelUrl": "https://pete-emphasis-phenomenon-integrity.trycloudflare.com",
+  "remoteTunnelUpdatedAt": "2026-11-25T01:27:29.701Z",
   "remotePinRequired": true,
   "crawlJob": {
     "running": false,
@@ -10445,6 +10445,16 @@
   },
   "recentLogs": [
     {
+      "id": "log_mwuzlyu7_b18a63",
+      "time": "2026-11-24T17:47:21.631Z",
+      "operator": "新媒体运营团队",
+      "module": "GitHub同步",
+      "action": "一键同步网页与最新视频封面到 GitHub",
+      "status": "success",
+      "detail": "同步成功！任何电脑可打开：https://sorenskr.github.io/laya-social-scout/",
+      "errorReason": ""
+    },
+    {
       "id": "log_mwuwoyhu_c6e8e5",
       "time": "2026-11-24T16:25:42.307Z",
       "operator": "新媒体运营团队",
@@ -10632,16 +10642,6 @@
       "action": "执行社媒采集任务 (防封浏览器静默抓)",
       "status": "warning",
       "detail": "日期范围=不限发布日期，共抓取 0 条：合格入库 0 条，一票否决过滤废片 0 条，跨平台搬运合并 0 条，限流换IP重试 120 次",
-      "errorReason": ""
-    },
-    {
-      "id": "log_mwp60i79_46915a",
-      "time": "2026-11-20T16:00:00.554Z",
-      "operator": "每日0点自动归档",
-      "module": "飞书归档",
-      "action": "执行单日自动分表归档",
-      "status": "success",
-      "detail": "归档子表「日归档_2026-11-19」，归档样本数 0 条（本地归档快照已完成）",
       "errorReason": ""
     }
   ]
