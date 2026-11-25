@@ -1,10 +1,10 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-25T09:45:33.005Z",
+  "updatedAt": "2026-11-25T16:16:24.293Z",
   "hostComputer": "LAPTOP-64OLL33R",
   "brandName": "Laya",
-  "remoteTunnelUrl": "https://valves-woods-remain-environmental.trycloudflare.com",
-  "remoteTunnelUpdatedAt": "2026-11-25T08:25:17.875Z",
+  "remoteTunnelUrl": "https://portable-blocking-usgs-troy.trycloudflare.com",
+  "remoteTunnelUpdatedAt": "2026-11-25T16:16:24.211Z",
   "remotePinRequired": true,
   "crawlJob": {
     "id": "job_mwvxahy1_cbdbfd",
@@ -211,9 +211,9 @@
   "dashboard": {
     "periods": {
       "day": {
-        "total": 30,
-        "qualified": 11,
-        "filtered": 19
+        "total": 0,
+        "qualified": 0,
+        "filtered": 0
       },
       "week": {
         "total": 30,
@@ -343,7 +343,11 @@
       "feishuSyncedAt": "",
       "customValues": {
         "hookStyle": "幽默接梗反差"
-      }
+      },
+      "feishuCoverTokens": {
+        "QeUGb7sJ1aT9CesSsP0cY8s8n3c": "LMb9bl5QRoZdhKx4uxHcCH8AnEd"
+      },
+      "_feishuCoverToken": "LMb9bl5QRoZdhKx4uxHcCH8AnEd"
     },
     {
       "id": "smp_mwvxrn6g_09f4af",
@@ -11413,6 +11417,26 @@
   },
   "recentLogs": [
     {
+      "id": "log_mwvxvj6v_cc7970",
+      "time": "2026-11-25T09:46:34.855Z",
+      "operator": "1分钟实时同步守护",
+      "module": "飞书同步",
+      "action": "自动重试3次后仍失败",
+      "status": "error",
+      "detail": "样本「#fyp #聊天記錄 #搞笑 安吉爾9-3」已保留在待补推队列，零数据丢失",
+      "errorReason": "飞书API错误 [1254041]: TableIdNotFound"
+    },
+    {
+      "id": "log_mwvxueet_d0423f",
+      "time": "2026-11-25T09:45:42.005Z",
+      "operator": "1分钟实时同步守护",
+      "module": "飞书同步",
+      "action": "自动重试3次后仍失败",
+      "status": "error",
+      "detail": "样本「就讓網戀奔現成功的我們#laya （朋友介紹的然後奔」已保留在待补推队列，零数据丢失",
+      "errorReason": "飞书API错误 [1254041]: TableIdNotFound"
+    },
+    {
       "id": "log_mwvxu7d4_af6035",
       "time": "2026-11-25T09:45:32.872Z",
       "operator": "定时任务 (17:30)",
@@ -11590,26 +11614,6 @@
       "action": "一键同步网页与最新视频封面到 GitHub",
       "status": "success",
       "detail": "同步成功！任何电脑可打开：https://sorenskr.github.io/laya-social-scout/",
-      "errorReason": ""
-    },
-    {
-      "id": "log_mwum6nmr_31a981",
-      "time": "2026-11-24T11:31:32.260Z",
-      "operator": "新媒体运营团队",
-      "module": "GitHub同步",
-      "action": "一键同步网页与最新视频封面到 GitHub",
-      "status": "success",
-      "detail": "同步成功！任何电脑可打开：https://sorenskr.github.io/laya-social-scout/",
-      "errorReason": ""
-    },
-    {
-      "id": "log_mwui9xtl_700fe3",
-      "time": "2026-11-24T09:42:06.969Z",
-      "operator": "定时任务 (17:30)",
-      "module": "采集引擎",
-      "action": "执行社媒采集任务 (防封浏览器静默抓)",
-      "status": "warning",
-      "detail": "日期范围=不限发布日期，共抓取 0 条：合格入库 0 条，一票否决过滤废片 0 条，跨平台搬运合并 0 条，限流换IP重试 120 次",
       "errorReason": ""
     }
   ]
