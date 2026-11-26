@@ -1,212 +1,19 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-25T16:16:24.293Z",
+  "updatedAt": "2026-11-26T01:55:03.967Z",
   "hostComputer": "LAPTOP-64OLL33R",
   "brandName": "Laya",
-  "remoteTunnelUrl": "https://portable-blocking-usgs-troy.trycloudflare.com",
-  "remoteTunnelUpdatedAt": "2026-11-25T16:16:24.211Z",
+  "remoteTunnelUrl": "https://dialogue-andrew-ambien-offered.trycloudflare.com",
+  "remoteTunnelUpdatedAt": "2026-11-26T01:55:03.940Z",
   "remotePinRequired": true,
   "crawlJob": {
-    "id": "job_mwvxahy1_cbdbfd",
     "running": false,
-    "startedAt": "2026-11-25T09:30:13.468Z",
-    "finishedAt": "2026-11-25T09:45:32.871Z",
-    "mode": "fingerprint",
-    "browserChannelLabel": "🛡️ 指纹/防封浏览器通道",
-    "platforms": [
-      "instagram",
-      "facebook",
-      "x",
-      "threads",
-      "tiktok"
-    ],
-    "dateFrom": "",
-    "dateTo": "",
-    "dateRangeLabel": "不限发布日期",
-    "targetMax": 40,
-    "progressPct": 100,
-    "totalFetched": 40,
-    "fetchedCount": 40,
-    "qualifiedAdded": 11,
-    "qualifiedCount": 11,
-    "filteredTrash": 25,
-    "filteredCount": 25,
+    "fetchedCount": 0,
+    "qualifiedCount": 0,
+    "filteredCount": 0,
     "feishuSyncedCount": 0,
-    "duplicatesMerged": 4,
-    "rateLimitRetries": 19,
-    "recentFoundSamples": [
-      {
-        "id": "smp_mwvxu7d2_93f94e",
-        "title": "#fyp #聊天記錄 #搞笑 安吉爾9-3",
-        "platform": "tiktok",
-        "coverUrl": "./covers/fp_ti_196ae6b6.jpg",
-        "likes": 0,
-        "qualityScore": 83
-      },
-      {
-        "id": "smp_mwvxrn6g_09f4af",
-        "title": "就讓網戀奔現成功的我們#laya （朋友介紹的然後奔現了） 詩涵 周11-2",
-        "platform": "tiktok",
-        "coverUrl": "./covers/fp_ti_eda03185.jpg",
-        "likes": 0,
-        "qualityScore": 87
-      },
-      {
-        "id": "smp_mwvxqt5i_9c1ddc",
-        "title": "我不再玩交友軟體的原因：",
-        "platform": "threads",
-        "coverUrl": "./covers/fp_th_bb6e88c3.jpg",
-        "likes": 1,
-        "qualityScore": 85
-      },
-      {
-        "id": "smp_mwvxqdzo_9ecab8",
-        "title": "每天哄我八百遍all or nothing10.8K followers",
-        "platform": "threads",
-        "coverUrl": "./covers/fp_th_8e16a0b8.jpg",
-        "likes": 10,
-        "qualityScore": 84
-      },
-      {
-        "id": "smp_mwvxpy6x_69575d",
-        "title": "#台灣 #單親媽媽 想被法 最好能長期固定 可來家",
-        "platform": "threads",
-        "coverUrl": "./covers/fp_th_033842ac.jpg",
-        "likes": 12,
-        "qualityScore": 74
-      },
-      {
-        "id": "smp_mwvxpcgm_49409b",
-        "title": "#台灣 單純交友聊天打發時間",
-        "platform": "threads",
-        "coverUrl": "./covers/fp_th_5330e3f9.jpg",
-        "likes": 18,
-        "qualityScore": 80
-      }
-    ],
-    "currentStep": "本次抓取完成！留下 11 条好视频，踢掉 25 条废片",
-    "liveLogs": [
-      {
-        "time": "17:45:32",
-        "text": "🎉 抓取收工：共看 40 条，留下好视频 11 条，踢掉废片 25 条"
-      },
-      {
-        "time": "17:45:32",
-        "text": "✅ 留下好视频《#fyp #聊天記錄 #搞笑 安吉爾》(83分 · 大封面已保存)"
-      },
-      {
-        "time": "17:45:18",
-        "text": "🔄 「Laya交友」遇到拦截，已自动换新IP改搜「Laya聊天」成功！"
-      },
-      {
-        "time": "17:45:18",
-        "text": "📸 从【🎯抓取爆款软广模版池】后台成功拿到 1 条内容（含视频/图文/文字）"
-      },
-      {
-        "time": "17:45:05",
-        "text": "⏳ 正在后台标签页拟人停顿 6 秒，等页面帖子和封面加载完…"
-      },
-      {
-        "time": "17:45:05",
-        "text": "🛡️ 正在通过【🎯抓取爆款软广模版池】后台静默标签页打开 TIKTOK 搜「Laya聊天」…"
-      },
-      {
-        "time": "17:45:05",
-        "text": "🔍 正在去 TikTok 搜「Laya聊天」（防封静默窗口）"
-      },
-      {
-        "time": "17:45:05",
-        "text": "⚠️ 在 TikTok 搜「Laya交友」没抓到东西，正在换新IP改搜「Laya聊天」…"
-      },
-      {
-        "time": "17:44:42",
-        "text": "🌐 TikTok 正在通过公开检索通道补充搜「Laya交友」…"
-      },
-      {
-        "time": "17:44:42",
-        "text": "📸 从【🎯抓取爆款软广模版池】后台成功拿到 0 条内容（含视频/图文/文字）"
-      },
-      {
-        "time": "17:44:32",
-        "text": "⏳ 正在后台标签页拟人停顿 5 秒，等页面帖子和封面加载完…"
-      },
-      {
-        "time": "17:44:32",
-        "text": "🛡️ 正在通过【🎯抓取爆款软广模版池】后台静默标签页打开 TIKTOK 搜「Laya交友」…"
-      },
-      {
-        "time": "17:44:32",
-        "text": "🔍 正在去 TikTok 搜「Laya交友」（防封静默窗口）"
-      },
-      {
-        "time": "17:44:22",
-        "text": "❌ 踢掉废片《#单身 #交友 #美国华人 #留》— 硬广内容过滤"
-      },
-      {
-        "time": "17:44:11",
-        "text": "🔗 发现跨平台搬运同款视频，已自动合并省去重复占表：《美国🇺🇸女生想要认识中国🇨🇳》"
-      },
-      {
-        "time": "17:44:11",
-        "text": "❌ 踢掉废片《你的异地恋女友日常报备：台风天宅》— 无法复刻过滤"
-      },
-      {
-        "time": "17:44:00",
-        "text": "❌ 踢掉废片《同城🉑🈷️#交友 Layia》— 硬广内容过滤"
-      },
-      {
-        "time": "17:43:45",
-        "text": "❌ 踢掉废片《东北交友俱乐部！！！！人妻 换7》— 硬广内容过滤"
-      },
-      {
-        "time": "17:43:33",
-        "text": "✅ 留下好视频《就讓網戀奔現成功的我們#laya （》(87分 · 大封面已保存)"
-      },
-      {
-        "time": "17:43:19",
-        "text": "📸 从【🎯抓取爆款软广模版池】后台成功拿到 7 条内容（含视频/图文/文字）"
-      },
-      {
-        "time": "17:43:04",
-        "text": "⏳ 正在后台标签页拟人停顿 5 秒，等页面帖子和封面加载完…"
-      },
-      {
-        "time": "17:43:04",
-        "text": "🛡️ 正在通过【🎯抓取爆款软广模版池】后台静默标签页打开 TIKTOK 搜「Laya」…"
-      },
-      {
-        "time": "17:43:04",
-        "text": "🔍 正在去 TikTok 搜「Laya」（防封静默窗口）"
-      },
-      {
-        "time": "17:42:54",
-        "text": "✅ 留下好视频《我不再玩交友軟體的原因：》(85分 · 大封面已保存)"
-      },
-      {
-        "time": "17:42:34",
-        "text": "✅ 留下好视频《每天哄我八百遍all or noth》(84分 · 大封面已保存)"
-      },
-      {
-        "time": "17:42:14",
-        "text": "✅ 留下好视频《#台灣 #單親媽媽 想被法 最好能長》(74分 · 大封面已保存)"
-      },
-      {
-        "time": "17:41:46",
-        "text": "✅ 留下好视频《#台灣 單純交友聊天打發時間》(80分 · 大封面已保存)"
-      },
-      {
-        "time": "17:41:29",
-        "text": "✅ 留下好视频《交友這兩款有人跟我一樣用了的心得嗎》(85分 · 大封面已保存)"
-      },
-      {
-        "time": "17:41:11",
-        "text": "❌ 踢掉废片《𝘑𝘢𝘯𝘪𝘤𝘦 ෆ窩ㄉ》— 非男向/无关过滤"
-      },
-      {
-        "time": "17:40:58",
-        "text": "❌ 踢掉废片《𝐈𝐯𝐲 艾薇3,591 f》— 非男向/无关过滤"
-      }
-    ]
+    "recentFoundSamples": [],
+    "liveLogs": []
   },
   "dashboard": {
     "periods": {
@@ -11417,6 +11224,16 @@
   },
   "recentLogs": [
     {
+      "id": "log_mwwbsz0z_347143",
+      "time": "2026-11-25T16:16:30.035Z",
+      "operator": "新媒体运营团队",
+      "module": "GitHub同步",
+      "action": "一键同步网页与最新视频封面到 GitHub",
+      "status": "success",
+      "detail": "同步成功！任何电脑可打开：https://sorenskr.github.io/laya-social-scout/",
+      "errorReason": ""
+    },
+    {
       "id": "log_mwvxvj6v_cc7970",
       "time": "2026-11-25T09:46:34.855Z",
       "operator": "1分钟实时同步守护",
@@ -11599,16 +11416,6 @@
     {
       "id": "log_mwuzlyu7_b18a63",
       "time": "2026-11-24T17:47:21.631Z",
-      "operator": "新媒体运营团队",
-      "module": "GitHub同步",
-      "action": "一键同步网页与最新视频封面到 GitHub",
-      "status": "success",
-      "detail": "同步成功！任何电脑可打开：https://sorenskr.github.io/laya-social-scout/",
-      "errorReason": ""
-    },
-    {
-      "id": "log_mwuwoyhu_c6e8e5",
-      "time": "2026-11-24T16:25:42.307Z",
       "operator": "新媒体运营团队",
       "module": "GitHub同步",
       "action": "一键同步网页与最新视频封面到 GitHub",
