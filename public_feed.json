@@ -1,163 +1,19 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-27T09:41:59.998Z",
+  "updatedAt": "2026-11-27T11:32:32.737Z",
   "hostComputer": "LAPTOP-64OLL33R",
   "brandName": "Laya",
-  "remoteTunnelUrl": "https://proteins-assumptions-limitation-magnet.trycloudflare.com",
-  "remoteTunnelUpdatedAt": "2026-11-27T05:37:22.407Z",
+  "remoteTunnelUrl": "https://tribute-belfast-devoted-encoding.trycloudflare.com",
+  "remoteTunnelUpdatedAt": "2026-11-27T11:32:32.701Z",
   "remotePinRequired": true,
   "crawlJob": {
-    "id": "job_mwys60uf_f5c28e",
     "running": false,
-    "startedAt": "2026-11-27T09:30:05.143Z",
-    "finishedAt": "2026-11-27T09:41:59.881Z",
-    "mode": "fingerprint",
-    "browserChannelLabel": "🛡️ 指纹/防封浏览器通道",
-    "platforms": [
-      "instagram",
-      "facebook",
-      "x",
-      "threads",
-      "tiktok"
-    ],
-    "dateFrom": "",
-    "dateTo": "",
-    "dateRangeLabel": "不限发布日期",
-    "targetMax": 40,
-    "progressPct": 100,
-    "totalFetched": 0,
     "fetchedCount": 0,
-    "qualifiedAdded": 0,
     "qualifiedCount": 0,
-    "filteredTrash": 0,
     "filteredCount": 0,
     "feishuSyncedCount": 0,
-    "duplicatesMerged": 0,
-    "rateLimitRetries": 120,
     "recentFoundSamples": [],
-    "currentStep": "本次抓取完成！留下 0 条好视频，踢掉 0 条废片",
-    "liveLogs": [
-      {
-        "time": "17:41:59",
-        "text": "🎉 抓取收工：共看 0 条，留下好视频 0 条，踢掉废片 0 条"
-      },
-      {
-        "time": "17:41:56",
-        "text": "🛡️ TikTok「Omi 配對」被限流，已换新IP改搜「Omi 配對」重试"
-      },
-      {
-        "time": "17:41:56",
-        "text": "🔍 正在去 TikTok 搜「Omi 配對」（防封静默窗口）"
-      },
-      {
-        "time": "17:41:53",
-        "text": "🛡️ TikTok「Omi 交友」被限流，已换新IP改搜「Omi 配對」重试"
-      },
-      {
-        "time": "17:41:53",
-        "text": "🔍 正在去 TikTok 搜「Omi 交友」（防封静默窗口）"
-      },
-      {
-        "time": "17:41:50",
-        "text": "🛡️ TikTok「Omi 奇葩」被限流，已换新IP改搜「Omi 交友」重试"
-      },
-      {
-        "time": "17:41:50",
-        "text": "🔍 正在去 TikTok 搜「Omi 奇葩」（防封静默窗口）"
-      },
-      {
-        "time": "17:41:37",
-        "text": "🛡️ TikTok「Omi 網友」被限流，已换新IP改搜「Omi 網友」重试"
-      },
-      {
-        "time": "17:41:37",
-        "text": "🔍 正在去 TikTok 搜「Omi 網友」（防封静默窗口）"
-      },
-      {
-        "time": "17:41:34",
-        "text": "🛡️ TikTok「Omi 奇葩」被限流，已换新IP改搜「Omi 網友」重试"
-      },
-      {
-        "time": "17:41:34",
-        "text": "🔍 正在去 TikTok 搜「Omi 奇葩」（防封静默窗口）"
-      },
-      {
-        "time": "17:41:31",
-        "text": "🛡️ TikTok「Omi 聊天紀錄」被限流，已换新IP改搜「Omi 奇葩」重试"
-      },
-      {
-        "time": "17:41:31",
-        "text": "🔍 正在去 TikTok 搜「Omi 聊天紀錄」（防封静默窗口）"
-      },
-      {
-        "time": "17:41:18",
-        "text": "🛡️ TikTok「Litmatch 交友」被限流，已换新IP改搜「Litmatch 交友」重试"
-      },
-      {
-        "time": "17:41:18",
-        "text": "🔍 正在去 TikTok 搜「Litmatch 交友」（防封静默窗口）"
-      },
-      {
-        "time": "17:41:15",
-        "text": "🛡️ TikTok「Litmatch chat」被限流，已换新IP改搜「Litmatch 交友」重试"
-      },
-      {
-        "time": "17:41:15",
-        "text": "🔍 正在去 TikTok 搜「Litmatch chat」（防封静默窗口）"
-      },
-      {
-        "time": "17:41:12",
-        "text": "🛡️ TikTok「Litmatch 聊天」被限流，已换新IP改搜「Litmatch chat」重试"
-      },
-      {
-        "time": "17:41:12",
-        "text": "🔍 正在去 TikTok 搜「Litmatch 聊天」（防封静默窗口）"
-      },
-      {
-        "time": "17:40:59",
-        "text": "🛡️ TikTok「Litmatch voice」被限流，已换新IP改搜「Litmatch voice」重试"
-      },
-      {
-        "time": "17:40:59",
-        "text": "🔍 正在去 TikTok 搜「Litmatch voice」（防封静默窗口）"
-      },
-      {
-        "time": "17:40:56",
-        "text": "🛡️ TikTok「Litmatch 聊天」被限流，已换新IP改搜「Litmatch voice」重试"
-      },
-      {
-        "time": "17:40:56",
-        "text": "🔍 正在去 TikTok 搜「Litmatch 聊天」（防封静默窗口）"
-      },
-      {
-        "time": "17:40:53",
-        "text": "🛡️ TikTok「Litmatch 語音」被限流，已换新IP改搜「Litmatch 聊天」重试"
-      },
-      {
-        "time": "17:40:53",
-        "text": "🔍 正在去 TikTok 搜「Litmatch 語音」（防封静默窗口）"
-      },
-      {
-        "time": "17:40:40",
-        "text": "🛡️ TikTok「Goodnight 語音房」被限流，已换新IP改搜「Goodnight 語音房」重试"
-      },
-      {
-        "time": "17:40:40",
-        "text": "🔍 正在去 TikTok 搜「Goodnight 語音房」（防封静默窗口）"
-      },
-      {
-        "time": "17:40:37",
-        "text": "🛡️ TikTok「Goodnight聊天」被限流，已换新IP改搜「Goodnight 語音房」重试"
-      },
-      {
-        "time": "17:40:37",
-        "text": "🔍 正在去 TikTok 搜「Goodnight聊天」（防封静默窗口）"
-      },
-      {
-        "time": "17:40:34",
-        "text": "🛡️ TikTok「Goodnight 語音」被限流，已换新IP改搜「Goodnight聊天」重试"
-      }
-    ]
+    "liveLogs": []
   },
   "dashboard": {
     "periods": {
