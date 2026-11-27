@@ -1,219 +1,26 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-26T09:54:38.360Z",
+  "updatedAt": "2026-11-27T01:27:25.224Z",
   "hostComputer": "LAPTOP-64OLL33R",
   "brandName": "Laya",
-  "remoteTunnelUrl": "https://dialogue-andrew-ambien-offered.trycloudflare.com",
-  "remoteTunnelUpdatedAt": "2026-11-26T01:55:03.940Z",
+  "remoteTunnelUrl": "https://treat-marvel-hop-coming.trycloudflare.com",
+  "remoteTunnelUpdatedAt": "2026-11-27T01:27:25.187Z",
   "remotePinRequired": true,
   "crawlJob": {
-    "id": "job_mwxcq3nb_0e5e0e",
     "running": false,
-    "startedAt": "2026-11-26T09:30:01.853Z",
-    "finishedAt": "2026-11-26T09:54:38.280Z",
-    "mode": "fingerprint",
-    "browserChannelLabel": "🛡️ 指纹/防封浏览器通道",
-    "platforms": [
-      "instagram",
-      "facebook",
-      "x",
-      "threads",
-      "tiktok"
-    ],
-    "dateFrom": "",
-    "dateTo": "",
-    "dateRangeLabel": "不限发布日期",
-    "targetMax": 40,
-    "progressPct": 100,
-    "totalFetched": 40,
-    "fetchedCount": 40,
-    "qualifiedAdded": 10,
-    "qualifiedCount": 10,
-    "filteredTrash": 30,
-    "filteredCount": 30,
-    "feishuSyncedCount": 7,
-    "duplicatesMerged": 0,
-    "rateLimitRetries": 22,
-    "recentFoundSamples": [
-      {
-        "id": "smp_mwxdlqvc_6918ff",
-        "title": "最近的我迷上Litmatch，幾乎有空就會打開Litmatch滑一下，對於我這個I人，無需露臉的快速匹配好友，聊天整個都超自在，無需顧慮太多 與Litmatch的用戶們 心靈交",
-        "platform": "tiktok",
-        "coverUrl": "./covers/fp_ti_c173f711.jpg",
-        "likes": 0,
-        "qualityScore": 88
-      },
-      {
-        "id": "smp_mwxdhhlu_bf2a05",
-        "title": "對不起#流量 #仿 #fyp #聊天記錄 4lcnee10-22",
-        "platform": "tiktok",
-        "coverUrl": "./covers/fp_ti_0395c23b.jpg",
-        "likes": 0,
-        "qualityScore": 86
-      },
-      {
-        "id": "smp_mwxdcnrx_99595d",
-        "title": "就讓網戀奔現成功的我們#laya （朋友介紹的然後奔現了） 詩涵 周11-2",
-        "platform": "tiktok",
-        "coverUrl": "./covers/fp_ti_eda03185.jpg",
-        "likes": 0,
-        "qualityScore": 86
-      },
-      {
-        "id": "smp_mwxdbol8_e3644f",
-        "title": "台灣交友 好想找個人一起吃飯，聊天看電影 找了好久沒找不到 有人約嗎？ 可以認識一下～😎😎😎",
-        "platform": "threads",
-        "coverUrl": "./covers/fp_th_349ac4d7.jpg",
-        "likes": 2000,
-        "qualityScore": 86
-      },
-      {
-        "id": "smp_mwxdba7j_d90b5f",
-        "title": "剛分手真的會很想報復性約砲欸== 求推薦現在什麼交友軟體最多真人？",
-        "platform": "threads",
-        "coverUrl": "./covers/fp_th_9504b8de.jpg",
-        "likes": 1995,
-        "qualityScore": 92
-      },
-      {
-        "id": "smp_mwxdaby1_095194",
-        "title": "缺女朋友的可以考慮我嗎 好聊 好追 主打純粹交友",
-        "platform": "threads",
-        "coverUrl": "./covers/fp_th_70aaecb0.jpg",
-        "likes": 7,
-        "qualityScore": 88
-      }
-    ],
-    "currentStep": "本次抓取完成！留下 10 条好视频，踢掉 30 条废片",
-    "liveLogs": [
-      {
-        "time": "17:54:38",
-        "text": "🎉 抓取收工：共看 40 条，留下好视频 10 条，踢掉废片 30 条"
-      },
-      {
-        "time": "17:54:38",
-        "text": "✅ 留下好视频《最近的我迷上Litmatch，幾乎有》(88分 · 大封面已保存)"
-      },
-      {
-        "time": "17:54:19",
-        "text": "🔄 「Litmatch 聊天」遇到拦截，已自动换新IP改搜「Litmatch 交友」成功！"
-      },
-      {
-        "time": "17:54:19",
-        "text": "📸 从【🎯抓取爆款软广模版池】后台成功拿到 1 条内容（含视频/图文/文字）"
-      },
-      {
-        "time": "17:54:06",
-        "text": "⏳ 正在后台标签页拟人停顿 5 秒，等页面帖子和封面加载完…"
-      },
-      {
-        "time": "17:54:06",
-        "text": "🛡️ 正在通过【🎯抓取爆款软广模版池】后台静默标签页打开 TIKTOK 搜「Litmatch 交友」…"
-      },
-      {
-        "time": "17:54:05",
-        "text": "🔍 正在去 TikTok 搜「Litmatch 交友」（防封静默窗口）"
-      },
-      {
-        "time": "17:54:05",
-        "text": "⚠️ 在 TikTok 搜「Litmatch chat」没抓到东西，正在换新IP改搜「Litmatch 交友」…"
-      },
-      {
-        "time": "17:54:00",
-        "text": "🌐 TikTok 正在通过公开检索通道补充搜「Litmatch chat」…"
-      },
-      {
-        "time": "17:54:00",
-        "text": "📸 从【🎯抓取爆款软广模版池】后台成功拿到 0 条内容（含视频/图文/文字）"
-      },
-      {
-        "time": "17:53:50",
-        "text": "⏳ 正在后台标签页拟人停顿 5 秒，等页面帖子和封面加载完…"
-      },
-      {
-        "time": "17:53:50",
-        "text": "🛡️ 正在通过【🎯抓取爆款软广模版池】后台静默标签页打开 TIKTOK 搜「Litmatch chat」…"
-      },
-      {
-        "time": "17:53:50",
-        "text": "🔍 正在去 TikTok 搜「Litmatch chat」（防封静默窗口）"
-      },
-      {
-        "time": "17:53:50",
-        "text": "⚠️ 在 TikTok 搜「Litmatch 聊天」没抓到东西，正在换新IP改搜「Litmatch chat」…"
-      },
-      {
-        "time": "17:53:45",
-        "text": "🌐 TikTok 正在通过公开检索通道补充搜「Litmatch 聊天」…"
-      },
-      {
-        "time": "17:53:45",
-        "text": "📸 从【🎯抓取爆款软广模版池】后台成功拿到 0 条内容（含视频/图文/文字）"
-      },
-      {
-        "time": "17:53:34",
-        "text": "⏳ 正在后台标签页拟人停顿 5 秒，等页面帖子和封面加载完…"
-      },
-      {
-        "time": "17:53:33",
-        "text": "🛡️ 正在通过【🎯抓取爆款软广模版池】后台静默标签页打开 TIKTOK 搜「Litmatch 聊天」…"
-      },
-      {
-        "time": "17:53:33",
-        "text": "🔍 正在去 TikTok 搜「Litmatch 聊天」（防封静默窗口）"
-      },
-      {
-        "time": "17:53:23",
-        "text": "⚠️ 在 TikTok 搜「Litmatch voice」没抓到东西，正在换新IP改搜「Litmatch 語音 恋爱」…"
-      },
-      {
-        "time": "17:53:15",
-        "text": "🌐 TikTok 正在通过公开检索通道补充搜「Litmatch voice」…"
-      },
-      {
-        "time": "17:53:15",
-        "text": "📸 从【🎯抓取爆款软广模版池】后台成功拿到 0 条内容（含视频/图文/文字）"
-      },
-      {
-        "time": "17:53:05",
-        "text": "⏳ 正在后台标签页拟人停顿 6 秒，等页面帖子和封面加载完…"
-      },
-      {
-        "time": "17:53:05",
-        "text": "🛡️ 正在通过【🎯抓取爆款软广模版池】后台静默标签页打开 TIKTOK 搜「Litmatch voice」…"
-      },
-      {
-        "time": "17:53:05",
-        "text": "🔍 正在去 TikTok 搜「Litmatch voice」（防封静默窗口）"
-      },
-      {
-        "time": "17:53:02",
-        "text": "🛡️ TikTok「Litmatch 聊天」被限流，已换新IP改搜「Litmatch voice」重试"
-      },
-      {
-        "time": "17:52:58",
-        "text": "🌐 TikTok 正在通过公开检索通道补充搜「Litmatch 聊天」…"
-      },
-      {
-        "time": "17:52:58",
-        "text": "📸 从【🎯抓取爆款软广模版池】后台成功拿到 0 条内容（含视频/图文/文字）"
-      },
-      {
-        "time": "17:52:47",
-        "text": "⏳ 正在后台标签页拟人停顿 6 秒，等页面帖子和封面加载完…"
-      },
-      {
-        "time": "17:52:47",
-        "text": "🛡️ 正在通过【🎯抓取爆款软广模版池】后台静默标签页打开 TIKTOK 搜「Litmatch 聊天」…"
-      }
-    ]
+    "fetchedCount": 0,
+    "qualifiedCount": 0,
+    "filteredCount": 0,
+    "feishuSyncedCount": 0,
+    "recentFoundSamples": [],
+    "liveLogs": []
   },
   "dashboard": {
     "periods": {
       "day": {
-        "total": 59,
-        "qualified": 32,
-        "filtered": 27
+        "total": 0,
+        "qualified": 0,
+        "filtered": 0
       },
       "week": {
         "total": 59,
@@ -343,10 +150,13 @@
       "mediaFingerprint": "",
       "favorited": false,
       "markedUsed": false,
-      "feishuSynced": false,
-      "feishuSyncedAt": "",
+      "feishuSynced": true,
+      "feishuSyncedAt": "2026-11-26T09:54:54.132Z",
       "customValues": {
         "hookStyle": "社恐解压脱单"
+      },
+      "feishuCoverTokens": {
+        "QeUGb7sJ1aT9CesSsP0cY8s8n3c": "ZPLebQ9mroCxrVxG6XVcqk9snEd"
       }
     },
     {
@@ -5980,6 +5790,16 @@
   },
   "recentLogs": [
     {
+      "id": "log_mwxdm33o_870401",
+      "time": "2026-11-26T09:54:54.132Z",
+      "operator": "边抓边实时同步飞书",
+      "module": "飞书同步",
+      "action": "批量写入飞书表格",
+      "status": "success",
+      "detail": "成功同步 1 条合格样本至飞书总表及分表",
+      "errorReason": ""
+    },
+    {
       "id": "log_mwxdlqvd_c136dc",
       "time": "2026-11-26T09:54:38.281Z",
       "operator": "定时任务 (17:30)",
@@ -6167,16 +5987,6 @@
       "action": "自动重试3次后仍失败",
       "status": "error",
       "detail": "样本「我不再玩交友軟體的原因：」已保留在待补推队列，零数据丢失",
-      "errorReason": "飞书API错误 [1254041]: TableIdNotFound"
-    },
-    {
-      "id": "log_mwvxtmhx_0e7e43",
-      "time": "2026-11-25T09:45:05.829Z",
-      "operator": "1分钟实时同步守护",
-      "module": "飞书同步",
-      "action": "自动重试3次后仍失败",
-      "status": "error",
-      "detail": "样本「每天哄我八百遍all or nothing10.8K」已保留在待补推队列，零数据丢失",
       "errorReason": "飞书API错误 [1254041]: TableIdNotFound"
     }
   ]
