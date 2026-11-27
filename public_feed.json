@@ -1,10 +1,10 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-27T01:29:18.178Z",
+  "updatedAt": "2026-11-27T01:30:48.618Z",
   "hostComputer": "LAPTOP-64OLL33R",
   "brandName": "Laya",
   "remoteTunnelUrl": "https://treat-marvel-hop-coming.trycloudflare.com",
-  "remoteTunnelUpdatedAt": "2026-11-27T01:29:18.165Z",
+  "remoteTunnelUpdatedAt": "2026-11-27T01:30:48.598Z",
   "remotePinRequired": true,
   "crawlJob": {
     "running": false,
